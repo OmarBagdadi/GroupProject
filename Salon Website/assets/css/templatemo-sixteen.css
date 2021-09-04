@@ -255,6 +255,26 @@ header .navbar {
 	margin-top: -12px;
 	outline: none;
 }
+
+.LogIn {
+	width: 100%;
+}
+.LogIn ul{
+	width: auto;
+	float: right;
+	margin-top: 8px;
+	margin-right: 20px;
+}
+
+.LogIn li{
+	display: inline-block;
+}
+
+.LogIn a{
+	text-align: center;
+	font-size: 17px;
+}
+
 .navbar .navbar-brand h2 {
 	color: #fff;
 	font-size: 35px;

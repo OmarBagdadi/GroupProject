@@ -1,0 +1,33 @@
+.container{
+   height: 100%;
+   align-content: center;
+}
+
+.image_outer_container{
+   margin-top: auto;
+   margin-bottom: auto;
+   border-radius: 50%;
+   position: relative;
+}
+
+.image_inner_container{
+   border-radius: 50%;
+   padding: 1px;
+   background: blue;
+}
+.image_inner_container img{
+   height: 30px;
+   width: 30px;
+   border-radius: 50%;
+}
+
+.image_outer_container .green_icon{
+ background-color: #4cd137;
+ position: absolute;
+ right: 25px;
+ bottom: 20px;
+ height: 5px;
+ width: 5px;
+ border: 1px solid white;
+ border-radius: 50%;
+}
