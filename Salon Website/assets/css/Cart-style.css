@@ -18,6 +18,13 @@
 	right: 0;
 	position: absolute;
 }
+
+.cart .btnContinue{
+    position: relative;
+    width: 50%;
+    margin-left: 40px;
+}
+
 .cart .table{
     margin: 30px;
     border-bottom: 1px solid #fff;
