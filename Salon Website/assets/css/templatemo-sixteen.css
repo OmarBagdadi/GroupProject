@@ -84,7 +84,7 @@ a.filled-button:hover {
 
 .profile h6{
 	font-size: 18px;
-	color: #2196F3;
+	color: #2162f0;
 }
 
 .section-heading {
@@ -513,13 +513,17 @@ header .navbar {
 
 .product-item .down-content span {
 	position: absolute;
+	display: inline-block;
 	right: 30px;
-	bottom: 30px;
+	top: 140px;
 	font-size: 13px;
 	color: #f33f3f;
 	font-weight: 500;
 }
 
+.product-item .down-content button{
+	margin-top: 10px;
+}
 
 
 

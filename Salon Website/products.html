@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Sixteen Clothing Products</title>
+    <title>Salon Products</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,52 +25,94 @@ https://templatemo.com/tm-546-sixteen-clothing
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/Icon.css">
+    <link rel="stylesheet" href="assets/css/UserDropdown.css">
 
   </head>
 
   <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
+    <div class="content">
+      <!-- ***** Preloader Start ***** -->
+      <div id="preloader">
         <div class="jumper">
             <div></div>
             <div></div>
             <div></div>
         </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
+      </div>  
+      <!-- ***** Preloader End ***** -->
 
-    <!-- Header -->
-    <header class="">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Sixteen <em>Clothing</em></h2></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li> 
-              <li class="nav-item active">
-                <a class="nav-link" href="products.html">Our Products</a>
+      <!-- Header -->
+      <header class="">
+        <nav class="LogIn">
+            <ul>
+              <li>
+                <div class="container">
+                  <div class="d-flex justify-content-center h-100">
+                    <div class="image_outer_container">
+                      <div class="green_icon" hidden="true"></div>
+                      <div class="image_inner_container">
+                        <img src="assets/images/Icon.jpg">
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
+              <li>
+                <div class="action">
+                  <div class="profile">
+                    <h6 onclick="menuToggle();">Username</h6>
+                    <div class="menu">
+                      <h6>Name Surname</h6>
+                      <ul>
+                        <li><img src="assets/images/user-icon.png"><a href="#">My Profile</a></li>
+                        <li><img src="assets/images/edit-icon.png"><a href="#">Edit Profile</a></li>
+                        <li><img src="assets/images/Shopping-Cart.jfif"><a href="#">My Cart</a></li>
+                        <li><img src="assets/images/log-out-icon.png"><a href="#">Log Out</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
-              </li>
+              <li ><a href="Login.html">Sign In</a></li>
+              <li><p style="color: blue;">|</p></li>
+              <li ><a href="Register.html">Register</a></li>
+              <li hidden="true"><a href="#">Register Staff</a></li>
             </ul>
+        </nav>
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href="index.html" style="font-family: myFirstFont;"><h2>Simply <em>Salon</em></h2></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link" href="products.html">Our Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Book Now</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
 
-    <!-- Page Content -->
+    <!-- Banner Start -->
     <div class="page-heading products-heading header-text">
       <div class="container">
         <div class="row">
@@ -83,10 +125,12 @@ https://templatemo.com/tm-546-sixteen-clothing
         </div>
       </div>
     </div>
+    <!-- Banner End -->
 
-    
+    <!-- Page Content -->
     <div class="products">
       <div class="container">
+        <div class="container-background"></div>
         <div class="row">
           <div class="col-md-12">
             <div class="filters">
@@ -103,19 +147,31 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <div class="row grid">
                     <div class="col-lg-4 col-md-4 all des">
                       <div class="product-item">
-                        <a href="#"><img src="assets/images/product_01.jpg" alt=""></a>
+                        <a href="AboutProduct.html"><img src="assets/images/product_01.jpg" alt=""></a>
                         <div class="down-content">
                           <a href="#"><h4>Tittle goes here</h4></a>
-                          <h6>$18.25</h6>
+                          <h6>$25.75</h6>
                           <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                          <ul class="stars">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                          </ul>
-                          <span>Reviews (12)</span>
+                          <div class="rating">
+                            <ul class="stars">
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                            </ul>
+                            <a href="#"> <span>Reviews (24)</span></a>
+                          </div>
+                          <a href="Cart.html">
+                            <button type="button" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-share-alt"></span> Add to Cart
+                          </button>
+                          </a>
+                          <a href="AboutProduct.html">
+                            <button type="button" class="btn btn-primary btn-sm btn-block">
+                            <span class="glyphicon glyphicon-share-alt"></span> Edit Product
+                          </button>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -231,9 +287,9 @@ https://templatemo.com/tm-546-sixteen-clothing
         <div class="row">
           <div class="col-md-12">
             <div class="inner-content">
-              <p>Copyright &copy; 2020 Sixteen Clothing Co., Ltd.
+              <p><b>Copyright &copy; 2020 Sixteen Clothing Co., Ltd.
             
-            - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+            - Design: <b><a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
             </div>
           </div>
         </div>
@@ -252,7 +308,7 @@ https://templatemo.com/tm-546-sixteen-clothing
     <script src="assets/js/slick.js"></script>
     <script src="assets/js/isotope.js"></script>
     <script src="assets/js/accordions.js"></script>
-
+    <script src="assets/js/user-menu.js"></script>
 
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
@@ -264,6 +320,7 @@ https://templatemo.com/tm-546-sixteen-clothing
           }
       }
     </script>
+  </div>
 
 
   </body>
