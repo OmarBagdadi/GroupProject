@@ -1,0 +1,160 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SalonMaster.master.cs" Inherits="Group_Project_WebApplication.SalonMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Simply Salon</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--
+
+TemplateMo 546 Sixteen Clothing
+
+https://templatemo.com/tm-546-sixteen-clothing
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/Icon.css">
+    <link rel="stylesheet" href="assets/css/UserDropdown.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <div class="content">
+        <!-- ***** Preloader Start ***** -->
+        <div id="preloader">
+          <div class="jumper">
+              <div></div>
+              <div></div>
+              <div></div>
+          </div>
+        </div>  
+        <!-- ***** Preloader End ***** -->
+
+        <!-- Header -->
+        <header class="">
+          <nav class="LogIn">
+              <ul>
+                <li>
+                  <div class="container">
+                    <div class="d-flex justify-content-center h-100">
+                      <div class="image_outer_container">
+                        <div class="green_icon" hidden="true"></div>
+                        <div class="image_inner_container">
+                          <img src="assets/images/Icon.jpg">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="action">
+                    <div class="profile">
+                      <h6 onclick="menuToggle();">Username</h6>
+                      <div class="menu">
+                        <h6>Name Surname</h6>
+                        <ul>
+                          <li><img src="assets/images/user-icon.png"><a href="Register.aspx?userID">My Profile</a></li>
+                          <li><img src="assets/images/edit-icon.png"><a href="Register.aspx">Edit Profile</a></li>
+                          <li><img src="assets/images/register-staff-icon.png"><a href="Register.aspx">Register Staff</a></li>
+                          <li><img src="assets/images/report-icon.png"><a href="Register.aspx">Reports</a></li>
+                          <li><img src="assets/images/Shopping-Cart.jfif"><a href="Cart.aspx">My Cart</a></li>
+                          <li><img src="assets/images/log-out-icon.png"><a href="Logout.aspx">Log Out</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li ><a href="Login.html">Sign In</a></li>
+                <li><p style="color: blue;">|</p></li>
+                <li ><a href="Register.html">Register</a></li>
+              </ul>
+          </nav>
+          <nav class="navbar navbar-expand-lg">
+            <div class="container">
+              <a class="navbar-brand" href="index.html" style="font-family: myFirstFont;"><h2>Simply <em>Salon</em></h2></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="Home.aspx">Home
+                      <span class="sr-only">(current)</span>
+                    </a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link" href="Products.aspx">Our Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Book Now</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="AboutUs.aspx">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="ContactUs.aspx">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <!-- Page Content-->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <!-- End Page Content-->
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="inner-content">
+                  <p><b>Copyright &copy; 2020 Sixteen Clothing Co., Ltd.
+                
+                - Design: <b><a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+        <!-- Additional Scripts -->
+        <script src="assets/js/custom.js"></script>
+        <script src="assets/js/owl.js"></script>
+        <script src="assets/js/slick.js"></script>
+        <script src="assets/js/isotope.js"></script>
+        <script src="assets/js/accordions.js"></script>
+        <script src="assets/js/user-menu.js"></script>
+
+        <script language = "text/Javascript"> 
+          cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+          function clearField(t){                   //declaring the array outside of the
+          if(! cleared[t.id]){                      // function makes it static and global
+              cleared[t.id] = 1;  // you could use true and false, but that's more typing
+              t.value='';         // with more chance of typos
+              t.style.color='#fff';
+              }
+          }
+        </script>
+      </div>
+</body>
+</html>
