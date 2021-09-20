@@ -39,20 +39,20 @@ namespace Group_Project_WebApplication
                 {
                     registerStatus.Visible = true;
                     registerStatus.InnerText = "Registered Sucessfully";
-                    registerStatus.Attributes.Add("style:","color: green");
+                    registerStatus.Attributes.Add("style","color: green");
                 }
                 else
                 {
                     registerStatus.Visible = true;
                     registerStatus.InnerText = "Did not register Try Again";
-                    registerStatus.Attributes.Add("style:", "color: red");
+                    registerStatus.Attributes.Add("style", "color: red");
                 }
             }
             else
             {
                 registerStatus.Visible = true;
                 registerStatus.InnerText = "Password did not match Confirm Password";
-                registerStatus.Attributes.Add("style:", "color: red");
+                registerStatus.Attributes.Add("style", "color: red");
             }
         }
     }

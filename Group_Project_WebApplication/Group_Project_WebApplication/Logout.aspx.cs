@@ -11,7 +11,16 @@ namespace Group_Project_WebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("Home.aspx");
+            if(Session["UserType"] != null)
+            {
+                Session["UserType"] = null;
+                Session["UserID"] = null;
+                Session["UserEmail"] = null;
+                Response.Redirect("Home.aspx");
+            }else
+            {
+                Response.Redirect("Home.aspx");
+            }
         }
     }
 }
