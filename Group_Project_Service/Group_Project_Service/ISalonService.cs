@@ -15,6 +15,9 @@ namespace Group_Project_Service
         bool Register(string Name,string Surname,string Email, string Password,string phoneNo, string Usertype);
 
         [OperationContract]
+        bool doesExist(string Name, string Surname, string Email);
+
+        [OperationContract]
         bool UpdateInfo(int id, string name, string Surname, string email, string phoneNo,string UserType);
 
         [OperationContract]

@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="assets/css/Register.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="call-to-action">
+    <form runat="server">
+        <div class="call-to-action">
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
@@ -12,53 +13,51 @@
                     <h1>Register</h1>
                     <div class="txtbox">
                         <label for="">First Name:</label>
-                        <input type="text" placeholder="First Name" required>
+                        <input runat="server" id="uName" type="text" placeholder="First Name" required>
                         <h6 hidden>Testing</h6>
                     </div>
             
                     <div class="txtbox">
                         <label for="">Last Name:</label>
-                        <input type="text" placeholder="Last Name" required>
+                        <input runat="server" id="uSurname" type="text" placeholder="Last Name" required>
                         <h6 hidden>Testing</h6>
                     </div>
             
                     <div class="txtbox">
                         <label for="">Email:</label>
-                        <input type="email" placeholder="example@gmail.com" required>
+                        <input runat="server" id="uEmail" type="email" placeholder="example@gmail.com" required>
                         <h6 hidden>Testing</h6>
                     </div>
             
                     <div class="txtbox">
                         <label for="">Phone Number:</label>
-                        <input type="email" placeholder="Phone Number">
+                        <input type="tel" runat="server" id="uPhoneNo" name="phone" placeholder="123 456 789" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
                         <h6 hidden>Testing</h6>
                     </div>
             
                     <div class="txtbox">
-                        <label for="">Date of Birth:</label>
-                        <input type="date" placeholder="Date of Brith">
-                    </div>
-            
-                    <div class="txtbox">
                         <label for="">Password:</label>
-                        <input type="password" placeholder="Password" required>
+                        <input runat="server" id="uPassword" type="password" placeholder="Password" required>
                     </div>
             
                     <div class="txtbox">
                         <label for="">Confirm Password:</label>
-                        <input type="password" placeholder="Confirm Password" required>
+                        <input runat="server" id="uCPassword" type="password" placeholder="Confirm Password" required>
                     </div>
-            
-                    <input type="submit" class="btnLogin" value="Register Account">
-            
+                    
+                    <label runat="server" id="registerStatus" for="" visible="false"></label>
+
+                    <asp:Button class="btnLogin" ID="btnRegister" runat="server" Text="Register Account" OnClick="btnRegister_Click" />
+
                     <div class="register">
-                        <p>Already have an account? <a href="#">Sign In</a></p>
+                        <p>Already have an account? <a href="Login.aspx">Sign In</a></p>
                     </div>
 
                     <div class="Invoices" hidden>
                       <h6>Invoice ID</h6>
-                      <a href="Invoice.html">
+                      <a href="Invoice.aspx">
                         <button type="button" class="btn btn-primary btn-sm btn-block">
+                        <asp:Button class="btn btn-primary btn-sm btn-block" ID="btnInvoice" runat="server" Text="Button" />
                         <span class="glyphicon glyphicon-share-alt"></span> View Invoice
                         </button>
                       </a>
@@ -72,4 +71,5 @@
               </div>
             </div>
         </div>
+    </form>
 </asp:Content>

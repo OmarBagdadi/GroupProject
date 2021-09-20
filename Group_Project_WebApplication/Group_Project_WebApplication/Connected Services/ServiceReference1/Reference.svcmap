@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="406dec4f-b1c6-4b5e-80e0-0e25592e1e90" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60515/SalonService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SalonService.disco" MetadataType="Disco" ID="af101f2e-6418-42a2-b59a-409e58148e49" SourceId="1" SourceUrl="http://localhost:60515/SalonService.svc?disco" />
+    <MetadataFile FileName="SalonService2.xsd" MetadataType="Schema" ID="e35dde99-171a-456f-956b-f6c601c28dfb" SourceId="1" SourceUrl="http://localhost:60515/SalonService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SalonService1.xsd" MetadataType="Schema" ID="47ecff26-c9de-49ec-91bd-745569bfa029" SourceId="1" SourceUrl="http://localhost:60515/SalonService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SalonService.wsdl" MetadataType="Wsdl" ID="d3013fd3-a441-4287-afbf-4f6b832d655d" SourceId="1" SourceUrl="http://localhost:60515/SalonService.svc?wsdl" />
+    <MetadataFile FileName="SalonService3.xsd" MetadataType="Schema" ID="6b1e2c6c-e17f-49f2-ac8a-d9158802cd8d" SourceId="1" SourceUrl="http://localhost:60515/SalonService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

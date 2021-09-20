@@ -15,27 +15,15 @@ namespace Group_Project_Service
         public bool Register(string uName, string Surname, string Email, string Password, string phoneNo, string Usertype)
         {
             bool registered = false;
-            User newUser;
-            if(phoneNo != "")
+            User newUser = new User
             {
-                newUser = new User
-                {
-                    Name = uName,
-                    Surname = Surname,
-                    Email = Email,
-                    Usertype = Usertype,
-                    PhoneNo = phoneNo
-                };
-            }else
-            {
-                newUser = new User
-                {
-                    Name = uName,
-                    Surname = Surname,
-                    Email = Email,
-                    Usertype = Usertype
-                };
-            }
+                Name = uName,
+                Surname = Surname,
+                Email = Email,
+                Password = Password,
+                Usertype = Usertype,
+                PhoneNo = phoneNo
+            };
             
             db.Users.InsertOnSubmit(newUser);
             try
@@ -83,6 +71,26 @@ namespace Group_Project_Service
                         where u.Email.Equals(Email) && u.Password.Equals(Password)
                         select u).FirstOrDefault();
             return user;
+        }
+
+        public bool doesExist(string Name, string Surname, string Email)
+        {
+            Boolean exists = false;
+
+            var user = (from u in db.Users
+                        where u.Name.Equals(Name) && u.Surname.Equals(Surname)
+                        && u.Email.Equals(Email)
+                        select u).FirstOrDefault();
+
+            if(user is User)
+            {
+                exists = true;
+            }else
+            {
+                exists = false;
+            }
+
+            return exists;
         }
     }
 }

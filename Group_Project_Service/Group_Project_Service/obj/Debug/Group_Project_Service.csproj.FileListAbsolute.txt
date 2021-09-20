@@ -1,0 +1,7 @@
+D:\University of johannesburg\GroupProject\Group_Project_Service\Group_Project_Service\bin\Group_Project_Service.dll.config
+D:\University of johannesburg\GroupProject\Group_Project_Service\Group_Project_Service\bin\Group_Project_Service.dll
+D:\University of johannesburg\GroupProject\Group_Project_Service\Group_Project_Service\bin\Group_Project_Service.pdb
+D:\University of johannesburg\GroupProject\Group_Project_Service\Group_Project_Service\obj\Debug\Group_Project_Service.csproj.AssemblyReference.cache
+D:\University of johannesburg\GroupProject\Group_Project_Service\Group_Project_Service\obj\Debug\Group_Project_Service.csproj.CoreCompileInputs.cache
+D:\University of johannesburg\GroupProject\Group_Project_Service\Group_Project_Service\obj\Debug\Group_Project_Service.dll
+D:\University of johannesburg\GroupProject\Group_Project_Service\Group_Project_Service\obj\Debug\Group_Project_Service.pdb
