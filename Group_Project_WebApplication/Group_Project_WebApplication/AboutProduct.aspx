@@ -29,12 +29,13 @@
                             <div class="wrapper row">
                                 <div runat="server" id="prodImage" class="preview col-md-6">
                                     <div class="preview-pic tab-content">
-                                      <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
+                                      <div class="tab-pane active" id="pic-1"><img runat="server" id="oldImage" src="http://placekitten.com/400/252" /></div>
+                                      <input runat="server" id="newImage" type="file" accept=".jpg,.jpeg,.png,.jfif" visible="false">
                                     </div>
                                 </div>
                                 <div class="details col-md-6">
                                     <div runat="server" id="prodInfo">
-                                        <h3 class="product-title">men's shoes fashion</h3>
+                                        <h3 class="product-title"><input runat="server" id="newName" type="text" visible="false" required></h3>
                                         <div class="rating">
                                             <div class="stars">
                                                 <span class="fa fa-star checked"></span>
@@ -45,10 +46,12 @@
                                             </div>
                                             <span class="review-no">41 reviews</span>
                                         </div>
-                                        <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
-                                        <h4 class="price">current price: <span>$180</span></h4>
+                                        <p class="product-description"><textarea runat="server" id="newDesc" type="description" rows="5" cols="70" visible="false" required></textarea></p>
+                                        <p class="product-description"><input runat="server" id="newQuantity" type="text" visible="false" required></p>
+                                        <h4 class="price">current price: <span>R<input runat="server" id="newPrice" type="number" step="any" visible="false" required></span></h4>
                                         <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
                                     </div>
+                                    <div><p runat="server" id="errorMessage" visible="false"></p></div>
                                     <div class="action">
                                         <asp:Button class="btn btn-primary btn-sm btn-block" ID="btnAddCart" runat="server" Text="Add to Cart" OnClick="btnAddCart_Click" />
                                         <asp:Button class="btn btn-primary btn-sm btn-block" ID="btnEditProduct" runat="server" Text="Edit Product" OnClick="btnEditProduct_Click" />

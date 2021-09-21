@@ -34,5 +34,8 @@ namespace Group_Project_Service
 
         [OperationContract]
         Product getProduct(int prodID);
+
+        [OperationContract]
+        bool updateProductInfo(int prodID,string prodName,string prodDesc,int prodQuantity,decimal prodPrice,string imgLoc);
     }
 }

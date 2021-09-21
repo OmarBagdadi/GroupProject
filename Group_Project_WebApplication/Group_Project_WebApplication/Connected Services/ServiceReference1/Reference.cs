@@ -362,6 +362,12 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getProduct", ReplyAction="http://tempuri.org/ISalonService/getProductResponse")]
         System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product> getProductAsync(int prodID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateProductInfo", ReplyAction="http://tempuri.org/ISalonService/updateProductInfoResponse")]
+        bool updateProductInfo(int prodID, string prodName, string prodDesc, int prodQuantity, decimal prodPrice, string imgLoc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateProductInfo", ReplyAction="http://tempuri.org/ISalonService/updateProductInfoResponse")]
+        System.Threading.Tasks.Task<bool> updateProductInfoAsync(int prodID, string prodName, string prodDesc, int prodQuantity, decimal prodPrice, string imgLoc);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -453,6 +459,14 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product> getProductAsync(int prodID) {
             return base.Channel.getProductAsync(prodID);
+        }
+        
+        public bool updateProductInfo(int prodID, string prodName, string prodDesc, int prodQuantity, decimal prodPrice, string imgLoc) {
+            return base.Channel.updateProductInfo(prodID, prodName, prodDesc, prodQuantity, prodPrice, imgLoc);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updateProductInfoAsync(int prodID, string prodName, string prodDesc, int prodQuantity, decimal prodPrice, string imgLoc) {
+            return base.Channel.updateProductInfoAsync(prodID, prodName, prodDesc, prodQuantity, prodPrice, imgLoc);
         }
     }
 }

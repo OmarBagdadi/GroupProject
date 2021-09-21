@@ -162,5 +162,30 @@ namespace Group_Project_Service
 
             return prod;
         }
+
+        public bool updateProductInfo(int prodID, string prodName, string prodDesc, int prodQuantity, decimal prodPrice, string imgLoc)
+        {
+            bool didUpdate = false;
+            var reqProduct = (from p in db.Products
+                              where p.Id.Equals(prodID)
+                              select p).FirstOrDefault();
+            reqProduct.Name = prodName;
+            reqProduct.Description = prodDesc;
+            reqProduct.Quantity = prodQuantity;
+            reqProduct.Price = prodPrice;
+            reqProduct.ImageLocation = imgLoc;
+
+            try
+            {
+                db.SubmitChanges();
+                didUpdate = true;
+            }
+            catch (Exception ex)
+            {
+                didUpdate = false;
+                ex.GetBaseException();
+            }
+            return didUpdate;
+        }
     }
 }

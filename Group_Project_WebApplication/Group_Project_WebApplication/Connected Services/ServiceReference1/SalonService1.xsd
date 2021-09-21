@@ -125,4 +125,23 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="updateProductInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="prodID" type="xs:int" />
+        <xs:element minOccurs="0" name="prodName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="prodDesc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="prodQuantity" type="xs:int" />
+        <xs:element minOccurs="0" name="prodPrice" type="xs:decimal" />
+        <xs:element minOccurs="0" name="imgLoc" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateProductInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateProductInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
