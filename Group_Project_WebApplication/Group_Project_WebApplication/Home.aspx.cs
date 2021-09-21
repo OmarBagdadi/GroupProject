@@ -39,7 +39,7 @@ namespace Group_Project_WebApplication
                             + "<div class=\"product-item\">"
                             + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\"><img src=\"" + p.ImageLocation + "\" alt=\"\"></a>"
                             + "<div class=\"down-content\">"
-                            + "<a href=\"?prodID=" + p.Id + "\"><h4>" + p.Name + "</h4></a>"
+                            + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\"><h4>" + p.Name + "</h4></a>"
                             + "<h6>R" + p.Price + "</h6>"
                             + "<p>Quantity: " + p.Quantity + "</p>"
                             + "<div class=\"rating\">"

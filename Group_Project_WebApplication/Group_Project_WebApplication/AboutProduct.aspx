@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="assets/css/About-Product.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="banner header-text">
+    <form runat="server">
+        <div class="banner header-text">
             <div class="owl-banner owl-carousel">
               <div>
                 <div class="About-banner"></div>
@@ -22,46 +23,67 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="inner-content">
+                    <!-- Snippet taken from: https://bootsnipp.com/snippets/56bAW -->
                     <div class="card">
                         <div class="container-fliud">
                             <div class="wrapper row">
-                                <div class="preview col-md-6">
-                                    
+                                <div runat="server" id="prodImage" class="preview col-md-6">
                                     <div class="preview-pic tab-content">
                                       <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
-                                      <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
-                                      <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
-                                      <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
-                                      <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
                                     </div>
-                                    <ul class="preview-thumbnail nav nav-tabs">
-                                      <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                                      <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                                      <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                                      <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                                      <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                                    </ul>
-                                    
                                 </div>
                                 <div class="details col-md-6">
-                                    <h3 class="product-title">men's shoes fashion</h3>
-                                    <div class="rating">
-                                        <div class="stars">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
+                                    <div runat="server" id="prodInfo">
+                                        <h3 class="product-title">men's shoes fashion</h3>
+                                        <div class="rating">
+                                            <div class="stars">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                            <span class="review-no">41 reviews</span>
                                         </div>
-                                        <span class="review-no">41 reviews</span>
+                                        <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
+                                        <h4 class="price">current price: <span>$180</span></h4>
+                                        <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
                                     </div>
-                                    <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
-                                    <h4 class="price">current price: <span>$180</span></h4>
-                                    <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
                                     <div class="action">
-                                        <button class="add-to-cart btn btn-default" type="button">add to cart</button>
-                                        <button class="add-to-cart btn btn-default" type="button">Edit Product</button>
-                                        <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                                        <asp:Button class="btn btn-primary btn-sm btn-block" ID="btnAddCart" runat="server" Text="Add to Cart" OnClick="btnAddCart_Click" />
+                                        <asp:Button class="btn btn-primary btn-sm btn-block" ID="btnEditProduct" runat="server" Text="Edit Product" OnClick="btnEditProduct_Click" />
+                                    </div>
+                                </div>
+                                <!--Snippet taken from: https://codepen.io/budb/pen/mddKgJw -->
+                                <div runat="server" id="prodReviews" class="col-md-12">
+                                    <h3 class="title">Reviews</h3>
+                                    <div class="review">
+                                       <div class="body-review">
+                                          <div class="name-review">Nathan D.</div>
+                                          <div class="place-review">Germany</div>
+                                          <div class="rating">
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star-half"></i>
+                                          </div>
+                                          <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
+                                       </div>
+                                    </div>
+                                    <div class="review">
+                                       <div class="body-review">
+                                          <div class="name-review">Nathan D.</div>
+                                          <div class="place-review">Germany</div>
+                                          <div class="rating">
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star"></i>
+                                             <i class="fa fa-star-half"></i>
+                                          </div>
+                                          <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
+                                       </div>
                                     </div>
                                 </div>
                             </div>
@@ -71,4 +93,5 @@
               </div>
             </div>
         </div>
+    </form>
 </asp:Content>
