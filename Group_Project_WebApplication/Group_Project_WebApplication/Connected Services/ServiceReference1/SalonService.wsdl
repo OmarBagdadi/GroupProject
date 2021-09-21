@@ -37,6 +37,24 @@
   <wsdl:message name="ISalonService_SignIn_OutputMessage">
     <wsdl:part name="parameters" element="tns:SignInResponse" />
   </wsdl:message>
+  <wsdl:message name="ISalonService_getLatestProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLatestProducts" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getLatestProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getLatestProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProducts" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISalonService">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/Register" message="tns:ISalonService_Register_InputMessage" />
@@ -57,6 +75,18 @@
     <wsdl:operation name="SignIn">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/SignIn" message="tns:ISalonService_SignIn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/SignInResponse" message="tns:ISalonService_SignIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLatestProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getLatestProducts" message="tns:ISalonService_getLatestProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getLatestProductsResponse" message="tns:ISalonService_getLatestProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getProducts" message="tns:ISalonService_getProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getProductsResponse" message="tns:ISalonService_getProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getProduct" message="tns:ISalonService_getProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getProductResponse" message="tns:ISalonService_getProduct_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISalonService" type="tns:ISalonService">
@@ -99,6 +129,33 @@
     </wsdl:operation>
     <wsdl:operation name="SignIn">
       <soap:operation soapAction="http://tempuri.org/ISalonService/SignIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLatestProducts">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/getLatestProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/getProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProduct">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/getProduct" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

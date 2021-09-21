@@ -25,5 +25,14 @@ namespace Group_Project_Service
 
         [OperationContract]
         User SignIn(string Email,string Password);
+
+        [OperationContract]
+        List<Product> getLatestProducts();
+
+        [OperationContract]
+        List<Product> getProducts();
+
+        [OperationContract]
+        Product getProduct(int prodID);
     }
 }

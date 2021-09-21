@@ -178,6 +178,9 @@
     <Content Include="Connected Services\ServiceReference1\Group_Project_WebApplication.ServiceReference1.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiceReference1\Group_Project_WebApplication.ServiceReference1.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServiceReference1\SalonService.disco" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />

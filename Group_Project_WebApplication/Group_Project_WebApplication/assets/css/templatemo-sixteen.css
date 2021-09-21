@@ -486,7 +486,7 @@ header .navbar {
 
 .product-item img {
 	width: 100%;
-	height: 200px;
+	height: 250px;
 	padding: 10px;
 	border-radius: 20px;
 	overflow: hidden;
@@ -523,7 +523,7 @@ header .navbar {
 	position: absolute;
 	display: inline-block;
 	right: 30px;
-	top: 140px;
+	top: 120px;
 	font-size: 13px;
 	color: #f33f3f;
 	font-weight: 500;

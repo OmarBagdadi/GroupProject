@@ -154,6 +154,163 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/Group_Project_Service")]
+    [System.SerializableAttribute()]
+    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageLocationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> LatestProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Category {
+            get {
+                return this.CategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ImageLocation {
+            get {
+                return this.ImageLocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageLocationField, value) != true)) {
+                    this.ImageLocationField = value;
+                    this.RaisePropertyChanged("ImageLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> LatestProduct {
+            get {
+                return this.LatestProductField;
+            }
+            set {
+                if ((this.LatestProductField.Equals(value) != true)) {
+                    this.LatestProductField = value;
+                    this.RaisePropertyChanged("LatestProduct");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ISalonService")]
     public interface ISalonService {
@@ -187,6 +344,24 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/SignIn", ReplyAction="http://tempuri.org/ISalonService/SignInResponse")]
         System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.User> SignInAsync(string Email, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getLatestProducts", ReplyAction="http://tempuri.org/ISalonService/getLatestProductsResponse")]
+        Group_Project_WebApplication.ServiceReference1.Product[] getLatestProducts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getLatestProducts", ReplyAction="http://tempuri.org/ISalonService/getLatestProductsResponse")]
+        System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product[]> getLatestProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getProducts", ReplyAction="http://tempuri.org/ISalonService/getProductsResponse")]
+        Group_Project_WebApplication.ServiceReference1.Product[] getProducts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getProducts", ReplyAction="http://tempuri.org/ISalonService/getProductsResponse")]
+        System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product[]> getProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getProduct", ReplyAction="http://tempuri.org/ISalonService/getProductResponse")]
+        Group_Project_WebApplication.ServiceReference1.Product getProduct(int prodID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getProduct", ReplyAction="http://tempuri.org/ISalonService/getProductResponse")]
+        System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product> getProductAsync(int prodID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -254,6 +429,30 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.User> SignInAsync(string Email, string Password) {
             return base.Channel.SignInAsync(Email, Password);
+        }
+        
+        public Group_Project_WebApplication.ServiceReference1.Product[] getLatestProducts() {
+            return base.Channel.getLatestProducts();
+        }
+        
+        public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product[]> getLatestProductsAsync() {
+            return base.Channel.getLatestProductsAsync();
+        }
+        
+        public Group_Project_WebApplication.ServiceReference1.Product[] getProducts() {
+            return base.Channel.getProducts();
+        }
+        
+        public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product[]> getProductsAsync() {
+            return base.Channel.getProductsAsync();
+        }
+        
+        public Group_Project_WebApplication.ServiceReference1.Product getProduct(int prodID) {
+            return base.Channel.getProduct(prodID);
+        }
+        
+        public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product> getProductAsync(int prodID) {
+            return base.Channel.getProductAsync(prodID);
         }
     }
 }

@@ -36,7 +36,7 @@
         <div class="latest-products">
           <div class="container">
               <div class="container-background"></div>
-              <div class="row">
+              <div runat="server" id="latestProducts" class="row">
                 <div class="col-md-12">
                   <div class="section-heading">
                     <h2>Latest Products</h2>
@@ -60,12 +60,12 @@
                         </ul>
                         <a href="#"> <span>Reviews (24)</span></a>
                       </div>
-                      <a href="Cart.html">
+                      <a href="Cart.aspx" hidden>
                         <button type="button" class="btn btn-primary btn-sm btn-block">
                         <span class="glyphicon glyphicon-share-alt"></span> Add to Cart
                       </button>
                       </a>
-                      <a href="AboutProduct.html">
+                      <a href="AboutProduct.aspx" hidden>
                         <button type="button" class="btn btn-primary btn-sm btn-block">
                         <span class="glyphicon glyphicon-share-alt"></span> Edit Product
                       </button>

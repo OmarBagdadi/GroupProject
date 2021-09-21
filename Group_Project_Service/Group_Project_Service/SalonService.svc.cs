@@ -118,5 +118,49 @@ namespace Group_Project_Service
             }
             return isStaff;
         }
+
+        public List<Product> getLatestProducts()
+        {
+            List<Product> latestProducts = new List<Product>();
+            var lProd = (from p in db.Products
+                         where p.LatestProduct.Equals(1)
+                         select p);
+
+            foreach(Product p in lProd)
+            {
+                latestProducts.Add(p);
+            }
+
+            return latestProducts;
+        }
+
+        public List<Product> getProducts()
+        {
+            List<Product> products = new List<Product>();
+            var prod = (from p in db.Products
+                         select p);
+
+            foreach (Product p in prod)
+            {
+                products.Add(p);
+            }
+
+            return products;
+        }
+
+        public Product getProduct(int prodID)
+        {
+            Product prod = null;
+            var reqProd = (from p in db.Products
+                           where p.Id.Equals(prodID)
+                           select p).FirstOrDefault();
+
+            if(reqProd is Product)
+            {
+                prod = reqProd;
+            }
+
+            return prod;
+        }
     }
 }

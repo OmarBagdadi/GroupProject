@@ -29,15 +29,15 @@
             <div class="filters">
               <ul>
                   <li class="active" data-filter="*">All Products</li>
-                  <li data-filter=".des">Featured</li>
-                  <li data-filter=".dev">Flash Deals</li>
-                  <li data-filter=".gra">Last Minute</li>
+                  <li data-filter=".des">Hair Appliances</li>
+                  <li data-filter=".dev">Hair Products</li>
+                  <li data-filter=".gra">Hair Accessories</li>
               </ul>
             </div>
           </div>
           <div class="col-md-12">
             <div class="filters-content">
-                <div class="owl-banner owl-carousel">
+                <div runat="server" id="products" class="owl-banner owl-carousel">
                     <div class="row grid">
                         <div class="col-lg-4 col-md-4 all des">
                           <div class="product-item">
