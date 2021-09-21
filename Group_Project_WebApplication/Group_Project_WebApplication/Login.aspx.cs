@@ -24,11 +24,13 @@ namespace Group_Project_WebApplication
             var user = client.SignIn(username, password);
             if(user is User)
             {
+                Session["UserID"] = user.Id;
                 Session["UserType"] = user.Usertype;
                 Session["UserName"] = user.Name;
                 Session["UserSurname"] = user.Surname;
                 Session["UserEmail"] = user.Email;
                 Session["UserPhoneNo"] = user.PhoneNo;
+                Response.Redirect("Home.aspx");
             }else
             {
                 loginStatus.Visible = true;

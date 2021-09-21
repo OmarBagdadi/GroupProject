@@ -92,5 +92,31 @@ namespace Group_Project_Service
 
             return exists;
         }
+
+        public bool registerStaff(string name, string Surname, string email, string UserType)
+        {
+            bool isStaff = false;
+            var reqUser = (from u in db.Users
+                           where u.Name.Equals(name) && u.Surname.Equals(Surname)
+                           && u.Email.Equals(email)
+                           select u).FirstOrDefault();
+            if(reqUser is User)
+            {
+                isStaff = true;
+                reqUser.Usertype = "MA";
+            }else
+            {
+                isStaff = false;
+            }
+
+            try
+            {
+                db.SubmitChanges();
+            }catch(Exception ex)
+            {
+                ex.GetBaseException();
+            }
+            return isStaff;
+        }
     }
 }

@@ -49,10 +49,10 @@ https://templatemo.com/tm-546-sixteen-clothing
           <nav class="LogIn">
               <ul>
                 <li>
-                  <div class="container">
+                  <div runat="server" id="userIcon" class="container" visible="false">
                     <div class="d-flex justify-content-center h-100">
                       <div class="image_outer_container">
-                        <div class="green_icon" hidden="true"></div>
+                        <div class="green_icon"></div>
                         <div class="image_inner_container">
                           <img src="assets/images/Icon.jpg">
                         </div>
@@ -60,17 +60,17 @@ https://templatemo.com/tm-546-sixteen-clothing
                     </div>
                   </div>
                 </li>
-                <li>
+                <li runat="server" id="userProfile" visible="false">
                   <div class="action">
                     <div class="profile">
                       <h6 onclick="menuToggle();">Username</h6>
                       <div class="menu">
-                        <h6>Name Surname</h6>
+                        <h3>Name Surname<br><span>Email</span></h3>
                         <ul>
                           <li><img src="assets/images/user-icon.png"><a href="Register.aspx?userID">My Profile</a></li>
                           <li><img src="assets/images/edit-icon.png"><a href="Register.aspx">Edit Profile</a></li>
-                          <li><img src="assets/images/register-staff-icon.png"><a href="Register.aspx">Register Staff</a></li>
-                          <li><img src="assets/images/report-icon.png"><a href="Register.aspx">Reports</a></li>
+                          <li visible="false"><img src="assets/images/register-staff-icon.png"><a href="Register.aspx">Register Staff</a></li>
+                          <li visible="false"><img src="assets/images/report-icon.png"><a href="Register.aspx">Reports</a></li>
                           <li><img src="assets/images/Shopping-Cart.jfif"><a href="Cart.aspx">My Cart</a></li>
                           <li><img src="assets/images/log-out-icon.png"><a href="Logout.aspx">Log Out</a></li>
                         </ul>
@@ -78,9 +78,9 @@ https://templatemo.com/tm-546-sixteen-clothing
                     </div>
                   </div>
                 </li>
-                <li ><a href="Login.html">Sign In</a></li>
+                <li runat="server" id="showLogin"><a href="Login.aspx">Sign In</a></li>
                 <li><p style="color: blue;">|</p></li>
-                <li ><a href="Register.html">Register</a></li>
+                <li runat="server" id="showRegister"><a href="Register.aspx">Register</a></li>
               </ul>
           </nav>
           <nav class="navbar navbar-expand-lg">

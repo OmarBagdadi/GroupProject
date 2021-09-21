@@ -176,6 +176,12 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/UpdateInfo", ReplyAction="http://tempuri.org/ISalonService/UpdateInfoResponse")]
         System.Threading.Tasks.Task<bool> UpdateInfoAsync(int id, string name, string Surname, string email, string phoneNo, string UserType);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/registerStaff", ReplyAction="http://tempuri.org/ISalonService/registerStaffResponse")]
+        bool registerStaff(string name, string Surname, string email, string UserType);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/registerStaff", ReplyAction="http://tempuri.org/ISalonService/registerStaffResponse")]
+        System.Threading.Tasks.Task<bool> registerStaffAsync(string name, string Surname, string email, string UserType);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/SignIn", ReplyAction="http://tempuri.org/ISalonService/SignInResponse")]
         Group_Project_WebApplication.ServiceReference1.User SignIn(string Email, string Password);
         
@@ -232,6 +238,14 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> UpdateInfoAsync(int id, string name, string Surname, string email, string phoneNo, string UserType) {
             return base.Channel.UpdateInfoAsync(id, name, Surname, email, phoneNo, UserType);
+        }
+        
+        public bool registerStaff(string name, string Surname, string email, string UserType) {
+            return base.Channel.registerStaff(name, Surname, email, UserType);
+        }
+        
+        public System.Threading.Tasks.Task<bool> registerStaffAsync(string name, string Surname, string email, string UserType) {
+            return base.Channel.registerStaffAsync(name, Surname, email, UserType);
         }
         
         public Group_Project_WebApplication.ServiceReference1.User SignIn(string Email, string Password) {

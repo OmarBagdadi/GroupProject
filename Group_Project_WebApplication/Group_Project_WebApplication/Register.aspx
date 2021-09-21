@@ -9,38 +9,38 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
-                  <div class="inner-content">
-                    <h1>Register</h1>
+                  <div runat="server" id="isEdit" class="inner-content">
+                    <h1 runat="server" id="pageHeading">Register</h1>
                     <div class="txtbox">
                         <label for="">First Name:</label>
                         <input runat="server" id="uName" type="text" placeholder="First Name" required>
-                        <h6 hidden>Testing</h6>
+                        <h6 runat="server" id="vuName" visible="false">Testing</h6>
                     </div>
             
                     <div class="txtbox">
                         <label for="">Last Name:</label>
                         <input runat="server" id="uSurname" type="text" placeholder="Last Name" required>
-                        <h6 hidden>Testing</h6>
+                        <h6 runat="server" id="vuSurname" visible="false">Testing</h6>
                     </div>
             
                     <div class="txtbox">
                         <label for="">Email:</label>
                         <input runat="server" id="uEmail" type="email" placeholder="example@gmail.com" required>
-                        <h6 hidden>Testing</h6>
+                        <h6 runat="server" id="vuEmail" visible="false">Testing</h6>
                     </div>
             
-                    <div class="txtbox">
+                    <div runat="server" id="hidePhoneNo" class="txtbox">
                         <label for="">Phone Number:</label>
                         <input type="tel" runat="server" id="uPhoneNo" name="phone" placeholder="123 456 789" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
-                        <h6 hidden>Testing</h6>
+                        <h6 runat="server" id="vuPhoneNo" visible="false">Testing</h6>
                     </div>
             
-                    <div class="txtbox">
+                    <div runat="server" id="hidePassword" class="txtbox">
                         <label for="">Password:</label>
                         <input runat="server" id="uPassword" type="password" placeholder="Password" required>
                     </div>
             
-                    <div class="txtbox">
+                    <div runat="server" id="hideCPassword" class="txtbox">
                         <label for="">Confirm Password:</label>
                         <input runat="server" id="uCPassword" type="password" placeholder="Confirm Password" required>
                     </div>
@@ -49,11 +49,11 @@
 
                     <asp:Button class="btnLogin" ID="btnRegister" runat="server" Text="Register Account" OnClick="btnRegister_Click" />
 
-                    <div class="register">
+                    <div runat="server" id="vhideSI" class="register">
                         <p>Already have an account? <a href="Login.aspx">Sign In</a></p>
                     </div>
 
-                    <div class="Invoices" hidden>
+                    <div runat="server" id="uInvoice" visible="false" class="Invoices">
                       <h6>Invoice ID</h6>
                       <a href="Invoice.aspx">
                         <button type="button" class="btn btn-primary btn-sm btn-block">
@@ -64,7 +64,7 @@
                     </div>
             
                     <div class="return">
-                        <a href="index.html">Return</a>
+                        <a href="Home.aspx">Return</a>
                     </div>
                   </div>
                 </div>

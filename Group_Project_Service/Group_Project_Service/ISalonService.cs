@@ -21,6 +21,9 @@ namespace Group_Project_Service
         bool UpdateInfo(int id, string name, string Surname, string email, string phoneNo,string UserType);
 
         [OperationContract]
+        bool registerStaff(string name, string Surname, string email, string UserType);
+
+        [OperationContract]
         User SignIn(string Email,string Password);
     }
 }

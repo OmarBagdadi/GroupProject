@@ -12,48 +12,189 @@ namespace Group_Project_WebApplication
     public partial class Register : System.Web.UI.Page
     {
         SalonServiceClient client = new SalonServiceClient();
+        bool edit = false;
+        bool regStaff = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["UserType"] != null)
+            if (Session["UserType"] != null)
             {
-
-            }else
-            {
-               
+                if(Request.QueryString["viewEdit"] != null)
+                {
+                    if(Request.QueryString["viewEdit"].ToString() == "EDIT")
+                    {
+                        edit = true;
+                    }else if(Request.QueryString["viewEdit"].ToString() == "VIEW")
+                    {
+                        edit = false;
+                    }
+                }else if(Request.QueryString["registerStaff"] != null)
+                {
+                    if(Request.QueryString["registerStaff"].ToString() == "REG")
+                    {
+                        regStaff = true;
+                    }
+                }
+                if(Session["UserType"].ToString() == "CU")
+                {
+                    if(edit)
+                    {
+                        pageHeading.InnerText = "Edit Profile";
+                        hidePassword.Visible = false;
+                        hideCPassword.Visible = false;
+                        vhideSI.Visible = false;
+                        btnRegister.Text = "Edit Profile";
+                    }
+                    else
+                    {
+                        pageHeading.InnerText = "My Profile";
+                        uName.Visible = false;
+                        uSurname.Visible = false;
+                        uEmail.Visible = false;
+                        uPhoneNo.Visible = false;
+                        hidePassword.Visible = false;
+                        hideCPassword.Visible = false;
+                        vhideSI.Visible = false;
+                        vuName.Visible = true;
+                        vuName.InnerText = Session["UserName"].ToString();
+                        vuSurname.Visible = true;
+                        vuSurname.InnerText = Session["UserSurname"].ToString();
+                        vuEmail.Visible = true;
+                        vuEmail.InnerText = Session["UserEmail"].ToString();
+                        vuPhoneNo.Visible = true;
+                        vuPhoneNo.InnerText = Session["UserPhoneNo"].ToString();
+                        btnRegister.Text = "View Invoices";
+                    }
+                }else if(Session["UserType"].ToString() == "MA")
+                {
+                    if(!regStaff)
+                    {
+                        if (edit)
+                        {
+                            pageHeading.InnerText = "Edit Profile";
+                            hidePassword.Visible = false;
+                            hideCPassword.Visible = false;
+                            vhideSI.Visible = false;
+                            btnRegister.Text = "Edit Profile";
+                        }
+                        else if (!edit)
+                        {
+                            pageHeading.InnerText = "My Profile";
+                            uName.Visible = false;
+                            uSurname.Visible = false;
+                            uEmail.Visible = false;
+                            uPhoneNo.Visible = false;
+                            hidePassword.Visible = false;
+                            hideCPassword.Visible = false;
+                            vhideSI.Visible = false;
+                            vuName.Visible = true;
+                            vuName.InnerText = Session["UserName"].ToString();
+                            vuSurname.Visible = true;
+                            vuSurname.InnerText = Session["UserSurname"].ToString();
+                            vuEmail.Visible = true;
+                            vuEmail.InnerText = Session["UserEmail"].ToString();
+                            vuPhoneNo.Visible = true;
+                            vuPhoneNo.InnerText = Session["UserPhoneNo"].ToString();
+                            btnRegister.Text = "View Invoices";
+                        }
+                    }
+                    else
+                    {
+                        pageHeading.InnerText = "Register Staff";
+                        hidePhoneNo.Visible = false;
+                        hidePassword.Visible = false;
+                        hideCPassword.Visible = false;
+                        vhideSI.Visible = false;
+                        btnRegister.Text = "Register Account";
+                    }
+                }
             }
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            string Name = uName.Value;
-            string Surname = uSurname.Value;
-            string Email = uEmail.Value;
-            string phoneNo = uPhoneNo.Value;
-            string password = uPassword.Value;
-            string CPassword = uCPassword.Value;
-            if (password == CPassword)
+            if(Request.QueryString["viewEdit"] != null)
             {
-                bool isReg = client.Register(Name, Surname, Email, Secrecy.HashPassword(password), phoneNo, "CU");
-                if (isReg)
+                if(Session["UserType"].ToString() == "CU")
                 {
-                    registerStatus.Visible = true;
-                    registerStatus.InnerText = "Registered Sucessfully";
-                    registerStatus.Attributes.Add("style","color: green");
+                    if(edit)
+                    {
+                        int id = int.Parse(Session["UserID"].ToString());
+                        string Name = uName.Value;
+                        string Surname = uSurname.Value;
+                        string Email = uEmail.Value;
+                        string phoneNo = uPhoneNo.Value;
+                        bool didUpdate = client.UpdateInfo(id, Name, Surname, Email, phoneNo, "CU");
+                        if(didUpdate)
+                        {
+                            Session["UserName"] = uName.Value;
+                            Session["UserSurname"] = uSurname.Value;
+                            Session["UserEmail"] = uEmail.Value;
+                            Session["UserPhoneNo"] = uPhoneNo.Value;
+                            registerStatus.Visible = true;
+                            registerStatus.InnerText = "Profile Sucessfully Edited";
+                            registerStatus.Attributes.Add("style", "color: green");
+                            Response.Redirect("Register.aspx?viewEdit=VIEW");
+                        }else
+                        {
+                            registerStatus.Visible = true;
+                            registerStatus.InnerText = "Unable to edit profile Try again";
+                            registerStatus.Attributes.Add("style", "color: red");
+                        }
+                    }
                 }
-                else
+            }else
+            {
+                if(regStaff)
                 {
-                    registerStatus.Visible = true;
-                    registerStatus.InnerText = "Did not register Try Again";
-                    registerStatus.Attributes.Add("style", "color: red");
+                    string strName = uName.Value;
+                    string strSurname = uSurname.Value;
+                    string strEmail = uEmail.Value;
+                    bool isStaff = client.registerStaff(strName, strSurname, strEmail, "MA");
+                    if(isStaff)
+                    {
+                        registerStatus.Visible = true;
+                        registerStatus.InnerText = "Staff Account Sucessfully Registered";
+                        registerStatus.Attributes.Add("style", "color: green");
+                    }else
+                    {
+                        registerStatus.Visible = true;
+                        registerStatus.InnerText = "The Specified Details do not match any Registerd User!!Try Again";
+                        registerStatus.Attributes.Add("style", "color: red");
+                    }
+                }else
+                {
+                    string Name = uName.Value;
+                    string Surname = uSurname.Value;
+                    string Email = uEmail.Value;
+                    string phoneNo = uPhoneNo.Value;
+                    string password = uPassword.Value;
+                    string CPassword = uCPassword.Value;
+                    if (password == CPassword)
+                    {
+                        bool isReg = client.Register(Name, Surname, Email, Secrecy.HashPassword(password), phoneNo, "CU");
+                        if (isReg)
+                        {
+                            registerStatus.Visible = true;
+                            registerStatus.InnerText = "Registered Sucessfully";
+                            registerStatus.Attributes.Add("style", "color: green");
+                        }
+                        else
+                        {
+                            registerStatus.Visible = true;
+                            registerStatus.InnerText = "Did not register Try Again";
+                            registerStatus.Attributes.Add("style", "color: red");
+                        }
+                    }
+                    else
+                    {
+                        registerStatus.Visible = true;
+                        registerStatus.InnerText = "Password did not match Confirm Password";
+                        registerStatus.Attributes.Add("style", "color: red");
+                    }
                 }
             }
-            else
-            {
-                registerStatus.Visible = true;
-                registerStatus.InnerText = "Password did not match Confirm Password";
-                registerStatus.Attributes.Add("style", "color: red");
-            }
+            
         }
     }
 }

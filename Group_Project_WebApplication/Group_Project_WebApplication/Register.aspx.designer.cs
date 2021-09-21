@@ -15,6 +15,24 @@ namespace Group_Project_WebApplication
     {
 
         /// <summary>
+        /// isEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl isEdit;
+
+        /// <summary>
+        /// pageHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pageHeading;
+
+        /// <summary>
         /// uName control.
         /// </summary>
         /// <remarks>
@@ -22,6 +40,15 @@ namespace Group_Project_WebApplication
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText uName;
+
+        /// <summary>
+        /// vuName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl vuName;
 
         /// <summary>
         /// uSurname control.
@@ -33,6 +60,15 @@ namespace Group_Project_WebApplication
         protected global::System.Web.UI.HtmlControls.HtmlInputText uSurname;
 
         /// <summary>
+        /// vuSurname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl vuSurname;
+
+        /// <summary>
         /// uEmail control.
         /// </summary>
         /// <remarks>
@@ -40,6 +76,24 @@ namespace Group_Project_WebApplication
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl uEmail;
+
+        /// <summary>
+        /// vuEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl vuEmail;
+
+        /// <summary>
+        /// hidePhoneNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hidePhoneNo;
 
         /// <summary>
         /// uPhoneNo control.
@@ -51,6 +105,24 @@ namespace Group_Project_WebApplication
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl uPhoneNo;
 
         /// <summary>
+        /// vuPhoneNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl vuPhoneNo;
+
+        /// <summary>
+        /// hidePassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hidePassword;
+
+        /// <summary>
         /// uPassword control.
         /// </summary>
         /// <remarks>
@@ -58,6 +130,15 @@ namespace Group_Project_WebApplication
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword uPassword;
+
+        /// <summary>
+        /// hideCPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hideCPassword;
 
         /// <summary>
         /// uCPassword control.
@@ -85,6 +166,24 @@ namespace Group_Project_WebApplication
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRegister;
+
+        /// <summary>
+        /// vhideSI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl vhideSI;
+
+        /// <summary>
+        /// uInvoice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl uInvoice;
 
         /// <summary>
         /// btnInvoice control.

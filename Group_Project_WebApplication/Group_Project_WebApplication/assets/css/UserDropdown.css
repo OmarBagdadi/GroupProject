@@ -39,6 +39,12 @@
     opacity: 0.9;
 }
 
+.action .menu h3 span{
+    font-size: 14px;
+    color: #cecece;
+    font-weight: 400;
+}
+
 .action .menu::before{
     content: '';
     position: absolute;
