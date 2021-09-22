@@ -187,5 +187,50 @@ namespace Group_Project_Service
             }
             return didUpdate;
         }
+
+        public List<Product> getHairApp()
+        {
+            List<Product> products = new List<Product>();
+            var prod = (from p in db.Products
+                        where p.Category.Equals("HAP")
+                        select p);
+
+            foreach (Product p in prod)
+            {
+                products.Add(p);
+            }
+
+            return products;
+        }
+
+        public List<Product> getHairProd()
+        {
+            List<Product> products = new List<Product>();
+            var prod = (from p in db.Products
+                        where p.Category.Equals("HP")
+                        select p);
+
+            foreach (Product p in prod)
+            {
+                products.Add(p);
+            }
+
+            return products;
+        }
+
+        public List<Product> getHairAcc()
+        {
+            List<Product> products = new List<Product>();
+            var prod = (from p in db.Products
+                        where p.Category.Equals("HA")
+                        select p);
+
+            foreach (Product p in prod)
+            {
+                products.Add(p);
+            }
+
+            return products;
+        }
     }
 }

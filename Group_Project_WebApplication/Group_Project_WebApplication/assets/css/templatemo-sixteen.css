@@ -731,6 +731,25 @@ footer .inner-content p a {
 	cursor: pointer;
 }
 
+.products .row .filters .tabHeading {
+	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: 700;
+	color: #121212;
+	display: inline-block;
+	margin: 0px 10px;
+	transition: all .3s;
+	cursor: pointer;
+	border: none;
+	color: none;
+	background: none;
+}
+
+.products .filters ul li.active,
+.products .filters ul .tabHeading:hover {
+	color: #f33f3f;
+}
+
 .products .filters ul li.active,
 .products .filters ul li:hover {
   color: #f33f3f;
@@ -756,6 +775,13 @@ footer .inner-content p a {
 	font-weight: 700;
 	color: #121212;
 	transition: all .3s;
+}
+
+.products ul.pages .tabHeading a:hover,
+.products ul.pages li.active a {
+	background-color: #f33f3f;
+	border-color: #f33f3f;
+	color: #fff;
 }
 
 .products ul.pages li a:hover,

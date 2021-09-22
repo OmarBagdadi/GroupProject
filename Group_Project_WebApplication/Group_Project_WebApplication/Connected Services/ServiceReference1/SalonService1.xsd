@@ -99,6 +99,42 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getHairApp">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHairAppResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getHairAppResult" nillable="true" type="q3:ArrayOfProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHairProd">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHairProdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getHairProdResult" nillable="true" type="q4:ArrayOfProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHairAcc">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getHairAccResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getHairAccResult" nillable="true" type="q5:ArrayOfProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="getProducts">
     <xs:complexType>
       <xs:sequence />
@@ -107,7 +143,7 @@
   <xs:element name="getProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getProductsResult" nillable="true" type="q3:ArrayOfProduct" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getProductsResult" nillable="true" type="q6:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -121,7 +157,7 @@
   <xs:element name="getProductResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getProductResult" nillable="true" type="q4:Product" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getProductResult" nillable="true" type="q7:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -43,6 +43,24 @@
   <wsdl:message name="ISalonService_getLatestProducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:getLatestProductsResponse" />
   </wsdl:message>
+  <wsdl:message name="ISalonService_getHairApp_InputMessage">
+    <wsdl:part name="parameters" element="tns:getHairApp" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getHairApp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getHairAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getHairProd_InputMessage">
+    <wsdl:part name="parameters" element="tns:getHairProd" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getHairProd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getHairProdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getHairAcc_InputMessage">
+    <wsdl:part name="parameters" element="tns:getHairAcc" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getHairAcc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getHairAccResponse" />
+  </wsdl:message>
   <wsdl:message name="ISalonService_getProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:getProducts" />
   </wsdl:message>
@@ -85,6 +103,18 @@
     <wsdl:operation name="getLatestProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getLatestProducts" message="tns:ISalonService_getLatestProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getLatestProductsResponse" message="tns:ISalonService_getLatestProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getHairApp">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getHairApp" message="tns:ISalonService_getHairApp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getHairAppResponse" message="tns:ISalonService_getHairApp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getHairProd">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getHairProd" message="tns:ISalonService_getHairProd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getHairProdResponse" message="tns:ISalonService_getHairProd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getHairAcc">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getHairAcc" message="tns:ISalonService_getHairAcc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getHairAccResponse" message="tns:ISalonService_getHairAcc_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getProducts" message="tns:ISalonService_getProducts_InputMessage" />
@@ -148,6 +178,33 @@
     </wsdl:operation>
     <wsdl:operation name="getLatestProducts">
       <soap:operation soapAction="http://tempuri.org/ISalonService/getLatestProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHairApp">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/getHairApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHairProd">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/getHairProd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHairAcc">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/getHairAcc" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

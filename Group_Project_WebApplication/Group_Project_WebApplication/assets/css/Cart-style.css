@@ -62,6 +62,7 @@
     font-size:16px;
     color:#000;
     margin-bottom: 0px;
+    display: inline-block;
 }
 
 .cart .table tbody tr td .counter{

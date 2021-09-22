@@ -15,6 +15,42 @@ namespace Group_Project_WebApplication
     {
 
         /// <summary>
+        /// btnAllProducts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAllProducts;
+
+        /// <summary>
+        /// btnHairApp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHairApp;
+
+        /// <summary>
+        /// btnHairProd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHairProd;
+
+        /// <summary>
+        /// btnHairAcc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHairAcc;
+
+        /// <summary>
         /// products control.
         /// </summary>
         /// <remarks>

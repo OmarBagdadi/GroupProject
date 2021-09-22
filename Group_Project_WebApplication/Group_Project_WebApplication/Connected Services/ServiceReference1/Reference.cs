@@ -351,6 +351,24 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getLatestProducts", ReplyAction="http://tempuri.org/ISalonService/getLatestProductsResponse")]
         System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product[]> getLatestProductsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getHairApp", ReplyAction="http://tempuri.org/ISalonService/getHairAppResponse")]
+        Group_Project_WebApplication.ServiceReference1.Product[] getHairApp();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getHairApp", ReplyAction="http://tempuri.org/ISalonService/getHairAppResponse")]
+        System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product[]> getHairAppAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getHairProd", ReplyAction="http://tempuri.org/ISalonService/getHairProdResponse")]
+        Group_Project_WebApplication.ServiceReference1.Product[] getHairProd();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getHairProd", ReplyAction="http://tempuri.org/ISalonService/getHairProdResponse")]
+        System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product[]> getHairProdAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getHairAcc", ReplyAction="http://tempuri.org/ISalonService/getHairAccResponse")]
+        Group_Project_WebApplication.ServiceReference1.Product[] getHairAcc();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getHairAcc", ReplyAction="http://tempuri.org/ISalonService/getHairAccResponse")]
+        System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product[]> getHairAccAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getProducts", ReplyAction="http://tempuri.org/ISalonService/getProductsResponse")]
         Group_Project_WebApplication.ServiceReference1.Product[] getProducts();
         
@@ -443,6 +461,30 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product[]> getLatestProductsAsync() {
             return base.Channel.getLatestProductsAsync();
+        }
+        
+        public Group_Project_WebApplication.ServiceReference1.Product[] getHairApp() {
+            return base.Channel.getHairApp();
+        }
+        
+        public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product[]> getHairAppAsync() {
+            return base.Channel.getHairAppAsync();
+        }
+        
+        public Group_Project_WebApplication.ServiceReference1.Product[] getHairProd() {
+            return base.Channel.getHairProd();
+        }
+        
+        public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product[]> getHairProdAsync() {
+            return base.Channel.getHairProdAsync();
+        }
+        
+        public Group_Project_WebApplication.ServiceReference1.Product[] getHairAcc() {
+            return base.Channel.getHairAcc();
+        }
+        
+        public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product[]> getHairAccAsync() {
+            return base.Channel.getHairAccAsync();
         }
         
         public Group_Project_WebApplication.ServiceReference1.Product[] getProducts() {

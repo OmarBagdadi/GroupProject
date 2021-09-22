@@ -56,16 +56,16 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <h6>R20.00</h6>
+                                        <div><h6>R</h6><h6 id="prodPrice">50</h6></div>
                                     </td>
                                     <td>
                                         <div class="counter">
-                                            <input class="input-number"type="number"
+                                            <input id="Quantity" class="input-number"type="number" onchange="Total()"
                                             value="1"min="0"max="10">
                                         </div>
                                     </td>
                                     <td>
-                                        <h6>R20.00</h6>
+                                        <h6 id="prodTotal">R20.00</h6>
                                     </td>
                                     <td>
                                       <button type="button" class="btn btn-primary btn-sm btn-block">
@@ -154,6 +154,14 @@
             </div>
           </div>
         </div>
-        
+
+        <script>
+          function Total()
+          {
+            var pPrice = parseInt(document.getElementById("prodPrice").innerText);
+            var pQunatity = parseInt(document.getElementById("Quantity").value);
+            document.getElementById("prodTotal").innerText = "R" + (pPrice*pQunatity);
+          }
+        </script>
       <!-- Cart Ends Here -->
 </asp:Content>

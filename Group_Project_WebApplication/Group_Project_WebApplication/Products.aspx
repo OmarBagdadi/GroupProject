@@ -3,6 +3,7 @@
     <title>Salon Products</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <form runat="server">
     <!-- Banner Start -->
     <div class="page-banner">
       <div class="page-heading products-heading header-text">
@@ -28,10 +29,18 @@
           <div class="col-md-12">
             <div class="filters">
               <ul>
-                  <li class="active" data-filter="*">All Products</li>
-                  <li data-filter=".des">Hair Appliances</li>
-                  <li data-filter=".dev">Hair Products</li>
-                  <li data-filter=".gra">Hair Accessories</li>
+                  <li class="active" data-filter="*">
+                      <asp:Button class="tabHeading" ID="btnAllProducts" runat="server" Text="All Products" OnClick="btnAllProducts_Click" />
+                  </li>
+                  <li data-filter=".des">
+                      <asp:Button class="tabHeading" ID="btnHairApp" runat="server" Text="Hair Appliances" OnClick="btnHairApp_Click" />
+                  </li>
+                  <li data-filter=".dev">
+                      <asp:Button class="tabHeading" ID="btnHairProd" runat="server" Text="Hair Products" OnClick="btnHairProd_Click" />
+                  </li>
+                  <li data-filter=".gra">
+                      <asp:Button class="tabHeading" ID="btnHairAcc" runat="server" Text="Hair Accessories" OnClick="btnHairAcc_Click" />
+                  </li>
               </ul>
             </div>
           </div>
@@ -288,4 +297,5 @@
         </div>
       </div>
     </div>
+    </form>
 </asp:Content>

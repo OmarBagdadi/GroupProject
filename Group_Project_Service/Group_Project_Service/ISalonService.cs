@@ -30,6 +30,15 @@ namespace Group_Project_Service
         List<Product> getLatestProducts();
 
         [OperationContract]
+        List<Product> getHairApp();
+
+        [OperationContract]
+        List<Product> getHairProd();
+
+        [OperationContract]
+        List<Product> getHairAcc();
+
+        [OperationContract]
         List<Product> getProducts();
 
         [OperationContract]
