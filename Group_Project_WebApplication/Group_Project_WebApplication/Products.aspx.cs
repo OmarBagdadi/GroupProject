@@ -13,6 +13,7 @@ namespace Group_Project_WebApplication
         SalonServiceClient client = new SalonServiceClient();
         string isManager = "hidden";
         string isCustomer = "hidden";
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             btnAllProducts.Attributes.Add("style","border-bottom: 3px solid #f33f3f");

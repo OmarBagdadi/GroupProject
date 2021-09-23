@@ -21,8 +21,8 @@
 
 
     <div class="find-us">
-      <div class="container-background"></div>
       <div class="container">
+          <div class="container-background"></div>
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
