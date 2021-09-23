@@ -37,7 +37,7 @@
             <div class="col-md-6">
               <div class="left-content">
                 <h4>Who we are &amp; What we do?</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis.</p>
+                <p>Established in the spring of 2021, we tried finding ways to make shopping for hair products easier, running completely online allows us to be up and working 24/7 please feel free to contact us on 011 444 HAIR or send us as email to SimplySalon@mail.com</p>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@
                 <div class="down-content">
                   <h4>Omar Bagdadi</h4>
                   <span>CO-Founder</span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+                  <p>Born and raised in Lenasia where a barber shop is around every corner, Omar discovered that certain hair products were not availabale at these establishments, in the hopes to make exclusive hair products more available, Omar set out to do just that.</p>
                 </div>
               </div>
             </div>
@@ -92,9 +92,9 @@
                   </div>
                 </div>
                 <div class="down-content">
-                  <h4>PapaLuqs</h4>
+                  <h4>Luqmaan Makda</h4>
                   <span>Product Specialist</span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+                  <p>Luqmaan, our product specialist was brought on board in order to find what it is customers need/want for their hair as well as finding suppliers to bring you quality at affordable prices.</p>
                 </div>
               </div>
             </div>
@@ -115,9 +115,9 @@
                   </div>
                 </div>
                 <div class="down-content">
-                  <h4>Azan S</h4>
-                  <span>General Manager</span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+                  <h4>Azan Sajjad</h4>
+                  <span>Public Relations</span>
+                  <p>Born in Pakistan and raised in South Africa, Azan found that many products that available comercially do not satisfy the needs of many, as a result he got in contact with Omar to make this project of bringing exclusive hair products to masses.</p>
                 </div>
               </div>
             </div>
@@ -138,9 +138,9 @@
                   </div>
                 </div>
                 <div class="down-content">
-                  <h4>Aamir N</h4>
-                  <span>General Manager</span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+                  <h4>Aamir Nakedar</h4>
+                  <span>Market Research</span>
+                  <p>Aamir, in looking for an exciting challange decided to join the team on their little project in bringing you the hair products you now know and love.</p>
                 </div>
               </div>
             </div>
@@ -159,7 +159,7 @@
               </div>
               <div class="down-content">
                 <h4>Product Management</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat.</p>
+                <p>Each of our products are carefully selected, taking into account pricing, as well as utility and smell, if you require more specialised items, please feel free to contact us.</p>
                 <a href="#" class="filled-button">Read More</a>
               </div>
             </div>
