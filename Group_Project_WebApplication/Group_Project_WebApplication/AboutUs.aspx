@@ -20,9 +20,9 @@
     
 
     <div class="about-content">
-      <div class="container-background"></div>
       <div class="best-features about-features">
         <div class="container">
+            <div class="container-background"></div>
           <div class="row">
             <div class="col-md-12">
               <div class="section-heading">
@@ -37,7 +37,11 @@
             <div class="col-md-6">
               <div class="left-content">
                 <h4>Who we are &amp; What we do?</h4>
+<<<<<<< Updated upstream
                 <p>Established in the spring of 2021, we tried finding ways to make shopping for hair products easier, running completely online allows us to be up and working 24/7 please feel free to contact us on 011 444 HAIR or send us as email to SimplySalon@mail.com</p>
+=======
+                <p>This is a test.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis.</p>
+>>>>>>> Stashed changes
               </div>
             </div>
           </div>

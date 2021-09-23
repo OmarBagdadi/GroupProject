@@ -802,6 +802,7 @@ footer .inner-content p a {
 }
 
 .team-member {
+	background-color: white;
 	border: 1px solid #eee;
 	margin-bottom: 30px;
 }
@@ -866,7 +867,7 @@ footer .inner-content p a {
 }
 
 .about-content .container-background{
-	height: 1600px;
+	height: 1850px;
 }
 
 
