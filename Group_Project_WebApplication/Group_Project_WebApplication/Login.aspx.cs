@@ -30,6 +30,15 @@ namespace Group_Project_WebApplication
                 Session["UserSurname"] = user.Surname;
                 Session["UserEmail"] = user.Email;
                 Session["UserPhoneNo"] = user.PhoneNo;
+                var userCart = client.getCartItems(user.Id);
+                if(userCart.Count() > 0)
+                {
+                    foreach (ServiceReference1.Cart c in userCart)
+                    {
+                        ShoppingCart cartItem = new ShoppingCart(c.productID, c.Quantity);
+                        SalonMaster.cart.Add(cartItem);
+                    }
+                }
                 Response.Redirect("Home.aspx");
             }else
             {

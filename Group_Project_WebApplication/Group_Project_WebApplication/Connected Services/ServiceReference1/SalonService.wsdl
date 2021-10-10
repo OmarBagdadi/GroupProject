@@ -79,6 +79,54 @@
   <wsdl:message name="ISalonService_updateProductInfo_OutputMessage">
     <wsdl:part name="parameters" element="tns:updateProductInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="ISalonService_removeProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:removeProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_removeProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removeProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_addProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:addProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_addProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_addToCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:addToCart" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_addToCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addToCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_isInCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:isInCart" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_isInCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isInCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getCartItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCartItems" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getCartItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCartItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_removeFromCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:removeFromCart" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_removeFromCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removeFromCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_editCartQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:editCartQuantity" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_editCartQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editCartQuantityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_clearCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:clearCart" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_clearCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:clearCartResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISalonService">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/Register" message="tns:ISalonService_Register_InputMessage" />
@@ -127,6 +175,38 @@
     <wsdl:operation name="updateProductInfo">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/updateProductInfo" message="tns:ISalonService_updateProductInfo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/updateProductInfoResponse" message="tns:ISalonService_updateProductInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removeProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/removeProduct" message="tns:ISalonService_removeProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/removeProductResponse" message="tns:ISalonService_removeProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/addProduct" message="tns:ISalonService_addProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/addProductResponse" message="tns:ISalonService_addProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addToCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/addToCart" message="tns:ISalonService_addToCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/addToCartResponse" message="tns:ISalonService_addToCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isInCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/isInCart" message="tns:ISalonService_isInCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/isInCartResponse" message="tns:ISalonService_isInCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCartItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getCartItems" message="tns:ISalonService_getCartItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getCartItemsResponse" message="tns:ISalonService_getCartItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removeFromCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/removeFromCart" message="tns:ISalonService_removeFromCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/removeFromCartResponse" message="tns:ISalonService_removeFromCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editCartQuantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/editCartQuantity" message="tns:ISalonService_editCartQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/editCartQuantityResponse" message="tns:ISalonService_editCartQuantity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="clearCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/clearCart" message="tns:ISalonService_clearCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/clearCartResponse" message="tns:ISalonService_clearCart_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISalonService" type="tns:ISalonService">
@@ -232,6 +312,78 @@
     </wsdl:operation>
     <wsdl:operation name="updateProductInfo">
       <soap:operation soapAction="http://tempuri.org/ISalonService/updateProductInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeProduct">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/removeProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addProduct">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/addProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addToCart">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/addToCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isInCart">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/isInCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCartItems">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/getCartItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeFromCart">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/removeFromCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editCartQuantity">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/editCartQuantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearCart">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/clearCart" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

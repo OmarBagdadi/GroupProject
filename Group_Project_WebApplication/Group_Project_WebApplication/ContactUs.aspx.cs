@@ -11,7 +11,7 @@ namespace Group_Project_WebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SalonMaster.activePage = "ContactUs";
         }
     }
 }

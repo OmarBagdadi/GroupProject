@@ -71,6 +71,7 @@
   <ItemGroup>
     <Content Include="AboutProduct.aspx" />
     <Content Include="AboutUs.aspx" />
+    <Content Include="AddRemoveProduct.aspx" />
     <Content Include="assets\css\About-Product.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\Cart-style.css" />
@@ -82,6 +83,7 @@
     <Content Include="assets\css\Login.css" />
     <Content Include="assets\css\owl.css" />
     <Content Include="assets\css\Register.css" />
+    <Content Include="assets\css\Star.css" />
     <Content Include="assets\css\templatemo-sixteen.css" />
     <Content Include="assets\css\UserDropdown.css" />
     <Content Include="assets\fonts\Custom fonts\Read Me.txt" />
@@ -172,13 +174,17 @@
     <Content Include="assets\js\jquery-1.11.1.min.js" />
     <Content Include="assets\js\owl.js" />
     <Content Include="assets\js\slick.js" />
+    <Content Include="assets\js\Star.js" />
     <Content Include="assets\js\user-menu.js" />
     <Content Include="Cart.aspx" />
     <Content Include="Checkout.aspx" />
+    <Content Include="Connected Services\ServiceReference1\Group_Project_WebApplication.ServiceReference1.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\ServiceReference1\Group_Project_WebApplication.ServiceReference1.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiceReference1\Group_Project_WebApplication.ServiceReference1.Product.datasource">
+    <Content Include="Connected Services\ServiceReference1\Group_Project_WebApplication.ServiceReference1.Cart.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReference1\SalonService.disco" />
@@ -221,6 +227,13 @@
     </Compile>
     <Compile Include="AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddRemoveProduct.aspx.cs">
+      <DependentUpon>AddRemoveProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddRemoveProduct.aspx.designer.cs">
+      <DependentUpon>AddRemoveProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
@@ -299,6 +312,7 @@
       <DependentUpon>SalonMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Secrecy.cs" />
+    <Compile Include="ShoppingCart.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\fonts\Blenda-Script.otf" />
@@ -318,13 +332,13 @@
     <Content Include="assets\fonts\slick.ttf" />
     <Content Include="assets\fonts\slick.woff" />
     <None Include="Connected Services\ServiceReference1\SalonService.wsdl" />
+    <None Include="Connected Services\ServiceReference1\SalonService.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiceReference1\SalonService1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReference1\SalonService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference1\SalonService3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

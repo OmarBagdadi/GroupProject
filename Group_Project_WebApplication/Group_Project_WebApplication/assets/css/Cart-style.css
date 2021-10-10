@@ -7,6 +7,10 @@
 	filter: opacity(0.5);
 }
 
+.manage-product .cart .table {
+    width: fit-content;
+}
+
 .cart-background {
     border-radius: 20px;
 	border-style: 2px solid black;
@@ -121,14 +125,17 @@
     margin-left: 110px;
 }
 .checkout ul li.cart-total{
-    padding-top: 10px
+    padding-top: 10px;
 }
-.checkout ul li.cart-total span{
-    color:#e7ab3c;
+
+.checkout ul li.cart-total h6 {
+    display: inline-block;
 }
-.checkout ul li span{
-    float:right;
+
+.checkout ul li .total{
+    float: right;
 }
+
 .checkout .proceed-btn{
     margin: 10px;
     border-radius: 10px;

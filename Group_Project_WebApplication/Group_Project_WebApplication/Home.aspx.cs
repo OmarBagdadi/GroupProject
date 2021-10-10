@@ -13,6 +13,7 @@ namespace Group_Project_WebApplication
         SalonServiceClient client = new SalonServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SalonMaster.activePage = "Home";
             string addCart = "hidden";
             string editProduct = "hidden";
             string products = "<div class=\"col-md-12\">"
@@ -35,12 +36,13 @@ namespace Group_Project_WebApplication
             var LP = client.getLatestProducts();
             foreach(Product p in LP)
             {
+                
                 products += "<div class=\"col-md-4\">"
                             + "<div class=\"product-item\">"
                             + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\"><img src=\"" + p.ImageLocation + "\" alt=\"\"></a>"
                             + "<div class=\"down-content\">"
                             + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\"><h4>" + p.Name + "</h4></a>"
-                            + "<h6>R" + p.Price + "</h6>"
+                            + "<h6>R" + String.Format("{0:0.00}", p.Price) + "</h6>"
                             + "<p>Quantity: " + p.Quantity + "</p>"
                             + "<div class=\"rating\">"
                             + "<ul class=\"stars\">"
@@ -50,9 +52,9 @@ namespace Group_Project_WebApplication
                             + "<li><i class=\"fa fa-star\"></i></li>"
                             + "<li><i class=\"fa fa-star\"></i></li>"
                             + "</ul>"
-                            + "<a href=\"#\"> <span>Reviews (24)</span></a>"
+                            + "<a href=\"AboutProduct.aspx?prodID=\"> <span>Reviews (24)</span></a>"
                             + "</div>"
-                            + "<a href=\"Cart.aspx?prodID=" + p.Id + "\" " + addCart + ">"
+                            + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\" " + addCart + ">"
                             + "<button type=\"button\" class=\"btn btn-primary btn-sm btn-block\">"
                             + "<span class=\"glyphicon glyphicon-share-alt\"></span> Add to Cart"
                             + "</button>"

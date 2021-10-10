@@ -137,14 +137,13 @@ namespace Group_Project_Service
         public List<Product> getProducts()
         {
             List<Product> products = new List<Product>();
-            var prod = (from p in db.Products
-                         select p);
-
-            foreach (Product p in prod)
+            List<Product> prod = (from p in db.Products
+                                  select p).ToList<Product>();
+            //Arranging the products from newest to oldest
+            for(int i = (prod.Count() - 1); i >-1;i--)
             {
-                products.Add(p);
+                products.Add(prod.ElementAt(i));
             }
-
             return products;
         }
 
@@ -163,18 +162,21 @@ namespace Group_Project_Service
             return prod;
         }
 
-        public bool updateProductInfo(int prodID, string prodName, string prodDesc, int prodQuantity, decimal prodPrice, string imgLoc)
+        public bool updateProductInfo(int prodID, string prodName, string prodDesc, int prodQuantity, string prodCat, decimal prodPrice, string imgLoc)
         {
             bool didUpdate = false;
-            var reqProduct = (from p in db.Products
+            Product reqProduct = (from p in db.Products
                               where p.Id.Equals(prodID)
                               select p).FirstOrDefault();
             reqProduct.Name = prodName;
             reqProduct.Description = prodDesc;
             reqProduct.Quantity = prodQuantity;
             reqProduct.Price = prodPrice;
-            reqProduct.ImageLocation = imgLoc;
-
+            reqProduct.Category = prodCat;
+            if(!imgLoc.Equals(""))
+            {
+                reqProduct.ImageLocation = imgLoc;
+            }
             try
             {
                 db.SubmitChanges();
@@ -231,6 +233,155 @@ namespace Group_Project_Service
             }
 
             return products;
+        }
+
+        public bool removeProduct(int prodID)
+        {
+            bool isRemoved = false;
+            Product removeItem = (from c in db.Products
+                               where c.Id.Equals(prodID)
+                               select c).FirstOrDefault();
+            db.Products.DeleteOnSubmit(removeItem);
+            try
+            {
+                db.SubmitChanges();
+                isRemoved = true;
+            }
+            catch (Exception ex)
+            {
+                isRemoved = false;
+                ex.GetBaseException();
+            }
+            return isRemoved;
+        }
+
+        public bool addProduct(string prodName, string prodDesc, decimal prodPrice, string imgLoc, int prodQuantity, string Category)
+        {
+            bool isAdded = false;
+            Product newProduct = new Product
+            {
+                Name = prodName,
+                Description = prodDesc,
+                Price = prodPrice,
+                ImageLocation = imgLoc,
+                Quantity = prodQuantity,
+                Category = Category,
+                LatestProduct = 1
+            };
+            db.Products.InsertOnSubmit(newProduct);
+            try
+            {
+                db.SubmitChanges();
+                isAdded = true;
+            }
+            catch (Exception ex)
+            {
+                isAdded = false;
+                ex.GetBaseException();
+            }
+            return isAdded;
+        }
+
+        public void addToCart(int userID, int prodID, int Quantity)
+        {
+            Cart newItem = new Cart
+            {
+                userID = userID,
+                productID = prodID,
+                Quantity = Quantity
+            };
+            db.Carts.InsertOnSubmit(newItem);
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
+        }
+
+        public List<Cart> getCartItems(int userID)
+        {
+            List<Cart> cartItems = new List<Cart>();
+            var userCart = (from c in db.Carts
+                            where c.userID.Equals(userID)
+                            select c);
+            foreach (Cart c in userCart)
+            {
+                cartItems.Add(c);
+            }
+
+            return cartItems;
+        }
+
+        public void removeFromCart(int userID,int prodID)
+        {
+            Cart removeItem = (from c in db.Carts
+                               where c.productID.Equals(prodID) && c.productID.Equals(prodID)
+                               select c).FirstOrDefault();
+            db.Carts.DeleteOnSubmit(removeItem);
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
+        }
+
+        public void editCartQuantity(int userID, int prodID, int Quantity)
+        {
+            var cartItem = (from c in db.Carts
+                            where c.userID.Equals(userID) && c.productID.Equals(prodID)
+                            select c).FirstOrDefault();
+            cartItem.Quantity = Quantity;
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
+        }
+
+        public void clearCart(int userID)
+        {
+            List<Cart> deleteItems = new List<Cart>();
+            var userItem = (from c in db.Carts
+                            where c.userID.Equals(userID)
+                            select c);
+            foreach(Cart c in userItem)
+            {
+                deleteItems.Add(c);
+            }
+            db.Carts.DeleteAllOnSubmit(deleteItems);
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
+        }
+
+        public bool isInCart(int userID, int prodID)
+        {
+            bool isInCart = false;
+            var checkProd = (from c in db.Carts
+                             where c.userID.Equals(userID) && c.productID.Equals(prodID)
+                             select c).FirstOrDefault();
+            if(checkProd is Cart)
+            {
+                isInCart = true;
+            }else
+            {
+                isInCart = false;
+            }
+            return isInCart;
         }
     }
 }

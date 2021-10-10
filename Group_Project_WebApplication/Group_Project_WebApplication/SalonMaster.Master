@@ -70,7 +70,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                           <li><img src="assets/images/user-icon.png"><a href="Register.aspx?userID">My Profile</a></li>
                           <li><img src="assets/images/edit-icon.png"><a href="Register.aspx">Edit Profile</a></li>
                           <li visible="false"><img src="assets/images/register-staff-icon.png"><a href="Register.aspx">Register Staff</a></li>
-                          <li visible="false"><img src="assets/images/report-icon.png"><a href="Register.aspx">Reports</a></li>
+                          <li visible="false"><img src="assets/images/manage-product.png"><a href="AddRemoveProduct.aspx">Manage Products</a></li>
                           <li><img src="assets/images/Shopping-Cart.jfif"><a href="Cart.aspx">My Cart</a></li>
                           <li><img src="assets/images/log-out-icon.png"><a href="Logout.aspx">Log Out</a></li>
                         </ul>
@@ -80,6 +80,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                 </li>
                 <li runat="server" id="showLogin"><a href="Login.aspx">Sign In</a></li>
                 <li><p style="color: blue;">|</p></li>
+                <li runat="server" id="showCart" visible="false"><a href="Cart.aspx"><i class="fa fa-shopping-cart fa-2x"></i><div runat="server" id="cartCount" class="itemCount">1</div></a></li>
                 <li runat="server" id="showRegister"><a href="Register.aspx">Register</a></li>
               </ul>
           </nav>
@@ -91,21 +92,18 @@ https://templatemo.com/tm-546-sixteen-clothing
               </button>
               <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
+                  <li runat="server" id="activeHome" class="nav-item">
                     <a class="nav-link" href="Home.aspx">Home
-                      <span class="sr-only">(current)</span>
+                        <span class="sr-only">(current)</span>
                     </a>
                   </li> 
-                  <li class="nav-item">
+                  <li runat="server" id="activeProduct" class="nav-item">
                     <a class="nav-link" href="Products.aspx">Our Products</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Book Now</a>
-                  </li>
-                  <li class="nav-item">
+                  <li runat="server" id="activeAboutUs" class="nav-item">
                     <a class="nav-link" href="AboutUs.aspx">About Us</a>
                   </li>
-                  <li class="nav-item">
+                  <li runat="server" id="activeContactUs" class="nav-item">
                     <a class="nav-link" href="ContactUs.aspx">Contact Us</a>
                   </li>
                 </ul>

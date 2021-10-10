@@ -28,9 +28,9 @@
                   <div class="cart">
                     <div class="table-responsive">
                       <div class="btnContinue">
-                        <button type="button" class="btn btn-primary btn-sm btn-block">
+                        <a href="Products.aspx"><button type="button" class="btn btn-primary btn-sm btn-block">
                           <span class="glyphicon glyphicon-share-alt"></span> Continue shopping
-                        </button>
+                        </button></a>
                       </div>
                         <table class="table">
                             <thead class="thead-dark">
@@ -42,7 +42,7 @@
                                     <th scope="col"class="text-white">Remove</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody runat="server" id="populateCart">
                               <!-- Cart item -->
                                 <tr>
                                     <td>
@@ -65,7 +65,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <h6 id="prodTotal">R20.00</h6>
+                                        <h6>R</h6><h6 id="prodTotal">20.00</h6>
                                     </td>
                                     <td>
                                       <button type="button" class="btn btn-primary btn-sm btn-block">
@@ -136,32 +136,29 @@
                 </section>
                   <div class="col-lg-4 offset-lg-4">
                     <div class="checkout">
-                        <ul>
-                            <li class="subtotal">subtotal
-                                <span>R60.00</span>
+                        <ul runat="server" id="cartCalculations">
+                            <li class="subtotal">Total Including VAT
+                                 <div class ="total"><h6>R60.00</h6></div>
                             </li>
-                            <li class="subtotal">Delivery
-                              <!-- <input type="checkbox"> -->
-                              <span>R60.00</span>
+                            <li class="subtotal">VAT(15%)
+                              <div class ="total"><h6>R60.00</h6></div>
+                            </li>
+                            <li class="subtotal">Discount(20%)
+                              <div class ="total"><h6>R60.00</h6></div>
+                            </li>
+                            <li class="subtotal">Shipping Fee
+                              <div class ="total"><h6>R60.00</h6></div>
                             </li>
                             <li class="cart-total">Total
-                            <span>R60.00</span></li>
+                                <div class ="total"><h6>R60.00</h6></div>
+                            </li>
                         </ul>
-                        <a href="Checkout.html"class="proceed-btn">Proceed to Checkout</a>
+                        <a href="Checkout.aspx"class="proceed-btn">Proceed to Checkout</a>
                     </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <script>
-          function Total()
-          {
-            var pPrice = parseInt(document.getElementById("prodPrice").innerText);
-            var pQunatity = parseInt(document.getElementById("Quantity").value);
-            document.getElementById("prodTotal").innerText = "R" + (pPrice*pQunatity);
-          }
-        </script>
       <!-- Cart Ends Here -->
 </asp:Content>

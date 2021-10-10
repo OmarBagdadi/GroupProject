@@ -290,7 +290,20 @@ header .navbar {
 }
 
 .LogIn li{
+	width:auto;
 	display: inline-block;
+}
+
+.LogIn li .itemCount{
+	font-family: Arial;
+	font-size: 17px;
+	/*font-weight: bold;*/
+	display: inline-block;
+	margin-left: 5px;
+	width: 20px;
+	height: 20px;
+	position:relative;
+	top: -20px;
 }
 
 .LogIn a{
@@ -792,8 +805,6 @@ footer .inner-content p a {
 	border-color: #f33f3f;
 	color: #fff;
 }
-
-
 
 /* Team Members */
 

@@ -11,14 +11,34 @@ namespace Group_Project_WebApplication
     public partial class SalonMaster : System.Web.UI.MasterPage
     {
         SalonServiceClient client = new SalonServiceClient();
+        public static List<ShoppingCart> cart = new List<ShoppingCart>();
+        public static string activePage = "Home";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["UserType"] != null)
+            if(activePage == "Home")
+            {
+                activeHome.Attributes.Add("class", "nav-item active");
+            }else if(activePage == "Products")
+            {
+                activeProduct.Attributes.Add("class", "nav-item active");
+            }
+            else if(activePage == "ContactUs")
+            {
+                activeContactUs.Attributes.Add("class", "nav-item active");
+            }
+            else if(activePage == "AboutUs")
+            {
+                activeAboutUs.Attributes.Add("class", "nav-item active");
+            }
+
+            if (Session["UserType"] != null)
             {
                 userProfile.Visible = true;
                 userIcon.Visible = true;
                 showLogin.Visible = false;
                 showRegister.Visible = false;
+                showCart.Visible = true;
+                cartCount.InnerHtml = cart.Count().ToString();
                 string uName = Session["UserName"].ToString();
                 string uSurname = Session["UserSurname"].ToString();
                 string uEmail = Session["UserEmail"].ToString();
@@ -34,7 +54,6 @@ namespace Group_Project_WebApplication
                             + "<li><img src=\"assets/images/user-icon.png\"><a href=\"Register.aspx?viewEdit=VIEW\">My Profile</a></li>"
                             + "<li><img src=\"assets/images/edit-icon.png\"><a href=\"Register.aspx?viewEdit=EDIT\">Edit Profile</a></li>"
                             + "<li hidden><img src=\"assets/images/register-staff-icon.png\"><a href=\"Register.aspx\">Register Staff</a></li>"
-                            + "<li hidden><img src=\"assets/images/report-icon.png\"><a href=\"Register.aspx\">Reports</a></li>"
                             + "<li><img src=\"assets/images/Shopping-Cart.jfif\"><a href=\"Cart.aspx\">My Cart</a></li>"
                             + "<li><img src=\"assets/images/log-out-icon.png\"><a href=\"Logout.aspx\">Log Out</a></li>"
                             + "</ul>"
@@ -53,7 +72,7 @@ namespace Group_Project_WebApplication
                         + "<li><img src=\"assets/images/user-icon.png\"><a href=\"Register.aspx?viewEdit=VIEW\">My Profile</a></li>"
                         + "<li><img src=\"assets/images/edit-icon.png\"><a href=\"Register.aspx?viewEdit=EDIT\">Edit Profile</a></li>"
                         + "<li><img src=\"assets/images/register-staff-icon.png\"><a href=\"Register.aspx?registerStaff=REG\">Register Staff</a></li>"
-                        + "<li><img src=\"assets/images/report-icon.png\"><a href=\"Register.aspx\">Reports</a></li>"
+                        + "<li><img src=\"assets/images/manage-product.png\"><a href=\"AddRemoveProduct.aspx\">Add Products</a></li>"
                         + "<li><img src=\"assets/images/Shopping-Cart.jfif\"><a href=\"Cart.aspx\">My Cart</a></li>"
                         + "<li><img src=\"assets/images/log-out-icon.png\"><a href=\"Logout.aspx\">Log Out</a></li>"
                         + "</ul>"

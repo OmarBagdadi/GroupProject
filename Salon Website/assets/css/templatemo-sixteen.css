@@ -473,6 +473,7 @@ header .navbar {
 }
 
 .product-item {
+	display: inline-block;
 	border: 1px solid #eee;
 	background-color: #f1f1f1;
 	border-radius: 10px;

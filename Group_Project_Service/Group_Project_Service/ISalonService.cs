@@ -45,6 +45,31 @@ namespace Group_Project_Service
         Product getProduct(int prodID);
 
         [OperationContract]
-        bool updateProductInfo(int prodID,string prodName,string prodDesc,int prodQuantity,decimal prodPrice,string imgLoc);
+        bool updateProductInfo(int prodID,string prodName,string prodDesc,int prodQuantity,string prodCat,decimal prodPrice,string imgLoc);
+
+        [OperationContract]
+        bool removeProduct(int prodID);
+
+        [OperationContract]
+        bool addProduct(string prodName, string prodDesc, decimal prodPrice, string imgLoc, int prodQuantity, string Category);
+
+        [OperationContract]
+        void addToCart(int userID,int prodID,int Quantity);
+
+        [OperationContract]
+        bool isInCart(int userID, int prodID);
+
+        [OperationContract]
+        List<Cart> getCartItems(int userID);
+
+        [OperationContract]
+        void removeFromCart(int userID,int prodID);
+
+        [OperationContract]
+        void editCartQuantity(int userID,int prodID,int Quantity);
+
+        [OperationContract]
+        void clearCart(int userID);
+
     }
 }

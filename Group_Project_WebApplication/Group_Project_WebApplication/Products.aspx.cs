@@ -16,6 +16,7 @@ namespace Group_Project_WebApplication
        
         protected void Page_Load(object sender, EventArgs e)
         {
+            SalonMaster.activePage = "Products";
             btnAllProducts.Attributes.Add("style","border-bottom: 3px solid #f33f3f");
             if(Session["UserType"] != null)
             {
@@ -82,10 +83,10 @@ namespace Group_Project_WebApplication
                 index++;
                 page += "<div class=\"col-lg-4 col-md-4 all \">"
                         + "<div class=\"product-item\">"
-                        + "<a href=\"AboutProduct.html?prodID=" + p.Id + "\"><img src=\"" + p.ImageLocation + "\" alt=\"\"></a>"
+                        + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\"><img src=\"" + p.ImageLocation + "\" alt=\"\"></a>"
                         + "<div class=\"down-content\">"
                         + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\"><h4>" + p.Name + "</h4></a>"
-                        + "<h6>R" + p.Price + "</h6>"
+                        + "<h6>R" + String.Format("{0:0.00}",p.Price) + "</h6>"
                         + "<p>Quantity: " + p.Quantity + "</p>"
                         + "<div class=\"rating\">"
                         + "<ul class=\"stars\">"
@@ -97,7 +98,7 @@ namespace Group_Project_WebApplication
                         + "</ul>"
                         + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\"> <span>Reviews (24)</span></a>"
                         + "</div>"
-                        + "<a href=\"Cart.aspx\">"
+                        + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\">"
                         + "<button type=\"button\" class=\"btn btn-primary btn-sm btn-block\" " + isCustomer + ">"
                         + "<span class=\"glyphicon glyphicon-share-alt\"></span> Add to Cart"
                         + "</button>"

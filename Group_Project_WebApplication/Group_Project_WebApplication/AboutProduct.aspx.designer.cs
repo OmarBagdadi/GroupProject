@@ -51,6 +51,15 @@ namespace Group_Project_WebApplication
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl prodInfo;
 
         /// <summary>
+        /// prodName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prodName;
+
+        /// <summary>
         /// newName control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,24 @@ namespace Group_Project_WebApplication
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText newName;
+
+        /// <summary>
+        /// addCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect addCategory;
+
+        /// <summary>
+        /// prodDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prodDesc;
 
         /// <summary>
         /// newDesc control.
@@ -69,13 +96,49 @@ namespace Group_Project_WebApplication
         protected global::System.Web.UI.HtmlControls.HtmlTextArea newDesc;
 
         /// <summary>
+        /// prodAvaliable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl prodAvaliable;
+
+        /// <summary>
         /// newQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText newQuantity;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl newQuantity;
+
+        /// <summary>
+        /// hideQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hideQuantity;
+
+        /// <summary>
+        /// addQuan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl addQuan;
+
+        /// <summary>
+        /// currentPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl currentPrice;
 
         /// <summary>
         /// newPrice control.
@@ -84,16 +147,16 @@ namespace Group_Project_WebApplication
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl newPrice;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText newPrice;
 
         /// <summary>
-        /// errorMessage control.
+        /// userMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorMessage;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl userMessage;
 
         /// <summary>
         /// btnAddCart control.
@@ -114,6 +177,15 @@ namespace Group_Project_WebApplication
         protected global::System.Web.UI.WebControls.Button btnEditProduct;
 
         /// <summary>
+        /// btnAddProduct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddProduct;
+
+        /// <summary>
         /// prodReviews control.
         /// </summary>
         /// <remarks>
@@ -121,5 +193,32 @@ namespace Group_Project_WebApplication
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl prodReviews;
+
+        /// <summary>
+        /// addRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl addRating;
+
+        /// <summary>
+        /// rate4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl rate4;
+
+        /// <summary>
+        /// test control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea test;
     }
 }

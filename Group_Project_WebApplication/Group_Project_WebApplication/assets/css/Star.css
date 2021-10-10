@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+.star-container{
+  position: relative;
+  width: 100%;
+  background: #f1f1f1;
+  padding: 20px 30px;
+  border-radius: 5px;
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+}
+.star-container .post{
+  display: none;
+}
+.star-container .text{
+  font-size: 25px;
+  color: #666;
+  font-weight: 500;
+}
+.star-container .edit{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+}
+.star-container .edit:hover{
+  text-decoration: underline;
+}
+.star-container .star-widget input{
+  display: none;
+}
+.star-widget label{
+  justify-items: center;
+  font-size: 40px;
+  color: #444;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+  color: #fd4;
+}
+input[type="radio"]:checked ~ label {
+    color: #fd4;
+}
+input#rate-5:checked ~ label{
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
+}
+.star-container .frm{
+  display: none;
+}
+input:checked ~ .frm {
+    display: block;
+}
+
+.frm .textarea {
+    height: 100px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+.frm .textarea textarea {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #eee;
+    border: 1px solid #333;
+    background: #222;
+    padding: 10px;
+    font-size: 17px;
+    resize: none;
+}
+.textarea textarea:focus{
+  border-color: #444;
+}
+.frm .btn {
+    height: 45px;
+    width: 100%;
+    margin: 15px 0;
+}
+.frm .btn button {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #444;
+    outline: none;
+    background: #222;
+    color: #999;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.frm .btn button:hover {
+    background: #1b1b1b;
+}

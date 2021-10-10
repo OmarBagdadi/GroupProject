@@ -311,6 +311,99 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cart", Namespace="http://schemas.datacontract.org/2004/07/Group_Project_Service")]
+    [System.SerializableAttribute()]
+    public partial class Cart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int productIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int userIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int productID {
+            get {
+                return this.productIDField;
+            }
+            set {
+                if ((this.productIDField.Equals(value) != true)) {
+                    this.productIDField = value;
+                    this.RaisePropertyChanged("productID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int userID {
+            get {
+                return this.userIDField;
+            }
+            set {
+                if ((this.userIDField.Equals(value) != true)) {
+                    this.userIDField = value;
+                    this.RaisePropertyChanged("userID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ISalonService")]
     public interface ISalonService {
@@ -382,10 +475,58 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product> getProductAsync(int prodID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateProductInfo", ReplyAction="http://tempuri.org/ISalonService/updateProductInfoResponse")]
-        bool updateProductInfo(int prodID, string prodName, string prodDesc, int prodQuantity, decimal prodPrice, string imgLoc);
+        bool updateProductInfo(int prodID, string prodName, string prodDesc, int prodQuantity, string prodCat, decimal prodPrice, string imgLoc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateProductInfo", ReplyAction="http://tempuri.org/ISalonService/updateProductInfoResponse")]
-        System.Threading.Tasks.Task<bool> updateProductInfoAsync(int prodID, string prodName, string prodDesc, int prodQuantity, decimal prodPrice, string imgLoc);
+        System.Threading.Tasks.Task<bool> updateProductInfoAsync(int prodID, string prodName, string prodDesc, int prodQuantity, string prodCat, decimal prodPrice, string imgLoc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/removeProduct", ReplyAction="http://tempuri.org/ISalonService/removeProductResponse")]
+        bool removeProduct(int prodID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/removeProduct", ReplyAction="http://tempuri.org/ISalonService/removeProductResponse")]
+        System.Threading.Tasks.Task<bool> removeProductAsync(int prodID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/addProduct", ReplyAction="http://tempuri.org/ISalonService/addProductResponse")]
+        bool addProduct(string prodName, string prodDesc, decimal prodPrice, string imgLoc, int prodQuantity, string Category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/addProduct", ReplyAction="http://tempuri.org/ISalonService/addProductResponse")]
+        System.Threading.Tasks.Task<bool> addProductAsync(string prodName, string prodDesc, decimal prodPrice, string imgLoc, int prodQuantity, string Category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/addToCart", ReplyAction="http://tempuri.org/ISalonService/addToCartResponse")]
+        void addToCart(int userID, int prodID, int Quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/addToCart", ReplyAction="http://tempuri.org/ISalonService/addToCartResponse")]
+        System.Threading.Tasks.Task addToCartAsync(int userID, int prodID, int Quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/isInCart", ReplyAction="http://tempuri.org/ISalonService/isInCartResponse")]
+        bool isInCart(int userID, int prodID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/isInCart", ReplyAction="http://tempuri.org/ISalonService/isInCartResponse")]
+        System.Threading.Tasks.Task<bool> isInCartAsync(int userID, int prodID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getCartItems", ReplyAction="http://tempuri.org/ISalonService/getCartItemsResponse")]
+        Group_Project_WebApplication.ServiceReference1.Cart[] getCartItems(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getCartItems", ReplyAction="http://tempuri.org/ISalonService/getCartItemsResponse")]
+        System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Cart[]> getCartItemsAsync(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/removeFromCart", ReplyAction="http://tempuri.org/ISalonService/removeFromCartResponse")]
+        void removeFromCart(int cartID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/removeFromCart", ReplyAction="http://tempuri.org/ISalonService/removeFromCartResponse")]
+        System.Threading.Tasks.Task removeFromCartAsync(int cartID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/editCartQuantity", ReplyAction="http://tempuri.org/ISalonService/editCartQuantityResponse")]
+        void editCartQuantity(int userID, int prodID, int Quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/editCartQuantity", ReplyAction="http://tempuri.org/ISalonService/editCartQuantityResponse")]
+        System.Threading.Tasks.Task editCartQuantityAsync(int userID, int prodID, int Quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/clearCart", ReplyAction="http://tempuri.org/ISalonService/clearCartResponse")]
+        void clearCart(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/clearCart", ReplyAction="http://tempuri.org/ISalonService/clearCartResponse")]
+        System.Threading.Tasks.Task clearCartAsync(int userID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -503,12 +644,76 @@ namespace Group_Project_WebApplication.ServiceReference1 {
             return base.Channel.getProductAsync(prodID);
         }
         
-        public bool updateProductInfo(int prodID, string prodName, string prodDesc, int prodQuantity, decimal prodPrice, string imgLoc) {
-            return base.Channel.updateProductInfo(prodID, prodName, prodDesc, prodQuantity, prodPrice, imgLoc);
+        public bool updateProductInfo(int prodID, string prodName, string prodDesc, int prodQuantity, string prodCat, decimal prodPrice, string imgLoc) {
+            return base.Channel.updateProductInfo(prodID, prodName, prodDesc, prodQuantity, prodCat, prodPrice, imgLoc);
         }
         
-        public System.Threading.Tasks.Task<bool> updateProductInfoAsync(int prodID, string prodName, string prodDesc, int prodQuantity, decimal prodPrice, string imgLoc) {
-            return base.Channel.updateProductInfoAsync(prodID, prodName, prodDesc, prodQuantity, prodPrice, imgLoc);
+        public System.Threading.Tasks.Task<bool> updateProductInfoAsync(int prodID, string prodName, string prodDesc, int prodQuantity, string prodCat, decimal prodPrice, string imgLoc) {
+            return base.Channel.updateProductInfoAsync(prodID, prodName, prodDesc, prodQuantity, prodCat, prodPrice, imgLoc);
+        }
+        
+        public bool removeProduct(int prodID) {
+            return base.Channel.removeProduct(prodID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> removeProductAsync(int prodID) {
+            return base.Channel.removeProductAsync(prodID);
+        }
+        
+        public bool addProduct(string prodName, string prodDesc, decimal prodPrice, string imgLoc, int prodQuantity, string Category) {
+            return base.Channel.addProduct(prodName, prodDesc, prodPrice, imgLoc, prodQuantity, Category);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addProductAsync(string prodName, string prodDesc, decimal prodPrice, string imgLoc, int prodQuantity, string Category) {
+            return base.Channel.addProductAsync(prodName, prodDesc, prodPrice, imgLoc, prodQuantity, Category);
+        }
+        
+        public void addToCart(int userID, int prodID, int Quantity) {
+            base.Channel.addToCart(userID, prodID, Quantity);
+        }
+        
+        public System.Threading.Tasks.Task addToCartAsync(int userID, int prodID, int Quantity) {
+            return base.Channel.addToCartAsync(userID, prodID, Quantity);
+        }
+        
+        public bool isInCart(int userID, int prodID) {
+            return base.Channel.isInCart(userID, prodID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> isInCartAsync(int userID, int prodID) {
+            return base.Channel.isInCartAsync(userID, prodID);
+        }
+        
+        public Group_Project_WebApplication.ServiceReference1.Cart[] getCartItems(int userID) {
+            return base.Channel.getCartItems(userID);
+        }
+        
+        public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Cart[]> getCartItemsAsync(int userID) {
+            return base.Channel.getCartItemsAsync(userID);
+        }
+        
+        public void removeFromCart(int cartID) {
+            base.Channel.removeFromCart(cartID);
+        }
+        
+        public System.Threading.Tasks.Task removeFromCartAsync(int cartID) {
+            return base.Channel.removeFromCartAsync(cartID);
+        }
+        
+        public void editCartQuantity(int userID, int prodID, int Quantity) {
+            base.Channel.editCartQuantity(userID, prodID, Quantity);
+        }
+        
+        public System.Threading.Tasks.Task editCartQuantityAsync(int userID, int prodID, int Quantity) {
+            return base.Channel.editCartQuantityAsync(userID, prodID, Quantity);
+        }
+        
+        public void clearCart(int userID) {
+            base.Channel.clearCart(userID);
+        }
+        
+        public System.Threading.Tasks.Task clearCartAsync(int userID) {
+            return base.Channel.clearCartAsync(userID);
         }
     }
 }
