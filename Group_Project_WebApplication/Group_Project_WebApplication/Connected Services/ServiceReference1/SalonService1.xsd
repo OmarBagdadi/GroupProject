@@ -260,7 +260,8 @@
   <xs:element name="removeFromCart">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="cartID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="prodID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -293,6 +294,40 @@
   <xs:element name="clearCartResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="Products" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Subtotal" type="xs:double" />
+        <xs:element minOccurs="0" name="VAT" type="xs:double" />
+        <xs:element minOccurs="0" name="Discount" type="xs:double" />
+        <xs:element minOccurs="0" name="Shipping" type="xs:double" />
+        <xs:element minOccurs="0" name="GrandTotal" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addInvoiceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="invoiceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getInvoiceResult" nillable="true" type="q9:Invoice" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

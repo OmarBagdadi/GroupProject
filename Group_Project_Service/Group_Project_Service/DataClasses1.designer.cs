@@ -39,6 +39,9 @@ namespace Group_Project_Service
     partial void InsertProduct(Product instance);
     partial void UpdateProduct(Product instance);
     partial void DeleteProduct(Product instance);
+    partial void InsertInvoice(Invoice instance);
+    partial void UpdateInvoice(Invoice instance);
+    partial void DeleteInvoice(Invoice instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -92,6 +95,14 @@ namespace Group_Project_Service
 			get
 			{
 				return this.GetTable<Product>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Invoice> Invoices
+		{
+			get
+			{
+				return this.GetTable<Invoice>();
 			}
 		}
 	}
@@ -641,6 +652,236 @@ namespace Group_Project_Service
 					this._LatestProduct = value;
 					this.SendPropertyChanged("LatestProduct");
 					this.OnLatestProductChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Invoice")]
+	public partial class Invoice : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _userID;
+		
+		private string _Products;
+		
+		private decimal _Subtotal;
+		
+		private decimal _VAT;
+		
+		private decimal _Discount;
+		
+		private decimal _ShippingFee;
+		
+		private decimal _GrandTotal;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnuserIDChanging(int value);
+    partial void OnuserIDChanged();
+    partial void OnProductsChanging(string value);
+    partial void OnProductsChanged();
+    partial void OnSubtotalChanging(decimal value);
+    partial void OnSubtotalChanged();
+    partial void OnVATChanging(decimal value);
+    partial void OnVATChanged();
+    partial void OnDiscountChanging(decimal value);
+    partial void OnDiscountChanged();
+    partial void OnShippingFeeChanging(decimal value);
+    partial void OnShippingFeeChanged();
+    partial void OnGrandTotalChanging(decimal value);
+    partial void OnGrandTotalChanged();
+    #endregion
+		
+		public Invoice()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userID", DbType="Int NOT NULL")]
+		public int userID
+		{
+			get
+			{
+				return this._userID;
+			}
+			set
+			{
+				if ((this._userID != value))
+				{
+					this.OnuserIDChanging(value);
+					this.SendPropertyChanging();
+					this._userID = value;
+					this.SendPropertyChanged("userID");
+					this.OnuserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Products", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Products
+		{
+			get
+			{
+				return this._Products;
+			}
+			set
+			{
+				if ((this._Products != value))
+				{
+					this.OnProductsChanging(value);
+					this.SendPropertyChanging();
+					this._Products = value;
+					this.SendPropertyChanged("Products");
+					this.OnProductsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subtotal", DbType="Money NOT NULL")]
+		public decimal Subtotal
+		{
+			get
+			{
+				return this._Subtotal;
+			}
+			set
+			{
+				if ((this._Subtotal != value))
+				{
+					this.OnSubtotalChanging(value);
+					this.SendPropertyChanging();
+					this._Subtotal = value;
+					this.SendPropertyChanged("Subtotal");
+					this.OnSubtotalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VAT", DbType="Money NOT NULL")]
+		public decimal VAT
+		{
+			get
+			{
+				return this._VAT;
+			}
+			set
+			{
+				if ((this._VAT != value))
+				{
+					this.OnVATChanging(value);
+					this.SendPropertyChanging();
+					this._VAT = value;
+					this.SendPropertyChanged("VAT");
+					this.OnVATChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discount", DbType="Money NOT NULL")]
+		public decimal Discount
+		{
+			get
+			{
+				return this._Discount;
+			}
+			set
+			{
+				if ((this._Discount != value))
+				{
+					this.OnDiscountChanging(value);
+					this.SendPropertyChanging();
+					this._Discount = value;
+					this.SendPropertyChanged("Discount");
+					this.OnDiscountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShippingFee", DbType="Money NOT NULL")]
+		public decimal ShippingFee
+		{
+			get
+			{
+				return this._ShippingFee;
+			}
+			set
+			{
+				if ((this._ShippingFee != value))
+				{
+					this.OnShippingFeeChanging(value);
+					this.SendPropertyChanging();
+					this._ShippingFee = value;
+					this.SendPropertyChanged("ShippingFee");
+					this.OnShippingFeeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GrandTotal", DbType="Money NOT NULL")]
+		public decimal GrandTotal
+		{
+			get
+			{
+				return this._GrandTotal;
+			}
+			set
+			{
+				if ((this._GrandTotal != value))
+				{
+					this.OnGrandTotalChanging(value);
+					this.SendPropertyChanging();
+					this._GrandTotal = value;
+					this.SendPropertyChanged("GrandTotal");
+					this.OnGrandTotalChanged();
 				}
 			}
 		}

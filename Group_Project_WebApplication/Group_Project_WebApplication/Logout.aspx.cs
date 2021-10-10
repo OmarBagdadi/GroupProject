@@ -15,21 +15,6 @@ namespace Group_Project_WebApplication
         {
             if(Session["UserType"] != null)
             {
-                int userID = int.Parse(Session["UserID"].ToString());
-                if(SalonMaster.cart.Count > 0)
-                {
-                    foreach (ShoppingCart s in SalonMaster.cart)
-                    {
-                        bool isInCart = client.isInCart(userID, s.prodID);
-                        if(isInCart)
-                        {
-                            client.editCartQuantity(userID, s.prodID, s.Quantity);
-                        }else
-                        {
-                            client.addToCart(userID, s.prodID, s.Quantity);
-                        }
-                    }
-                }
                 SalonMaster.cart.Clear();
                 Session["UserType"] = null;
                 Session["UserID"] = null;
@@ -38,7 +23,7 @@ namespace Group_Project_WebApplication
             }
             else
             {
-                Response.Redirect("Home.aspx");
+                Response.Redirect(Request.UrlReferrer.ToString());
             }
         }
     }

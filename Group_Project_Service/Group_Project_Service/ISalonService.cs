@@ -71,5 +71,10 @@ namespace Group_Project_Service
         [OperationContract]
         void clearCart(int userID);
 
+        [OperationContract]
+        int addInvoice(int userID,string Products,double Subtotal, double VAT, double Discount, double Shipping, double GrandTotal);
+
+        [OperationContract]
+        Invoice getInvoice(int invoiceID);
     }
 }

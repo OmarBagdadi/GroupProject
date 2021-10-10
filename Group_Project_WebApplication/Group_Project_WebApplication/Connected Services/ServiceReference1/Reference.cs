@@ -404,6 +404,163 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Invoice", Namespace="http://schemas.datacontract.org/2004/07/Group_Project_Service")]
+    [System.SerializableAttribute()]
+    public partial class Invoice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal DiscountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal GrandTotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ShippingFeeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal SubtotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal VATField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int userIDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Discount {
+            get {
+                return this.DiscountField;
+            }
+            set {
+                if ((this.DiscountField.Equals(value) != true)) {
+                    this.DiscountField = value;
+                    this.RaisePropertyChanged("Discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal GrandTotal {
+            get {
+                return this.GrandTotalField;
+            }
+            set {
+                if ((this.GrandTotalField.Equals(value) != true)) {
+                    this.GrandTotalField = value;
+                    this.RaisePropertyChanged("GrandTotal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Products {
+            get {
+                return this.ProductsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
+                    this.ProductsField = value;
+                    this.RaisePropertyChanged("Products");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal ShippingFee {
+            get {
+                return this.ShippingFeeField;
+            }
+            set {
+                if ((this.ShippingFeeField.Equals(value) != true)) {
+                    this.ShippingFeeField = value;
+                    this.RaisePropertyChanged("ShippingFee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Subtotal {
+            get {
+                return this.SubtotalField;
+            }
+            set {
+                if ((this.SubtotalField.Equals(value) != true)) {
+                    this.SubtotalField = value;
+                    this.RaisePropertyChanged("Subtotal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal VAT {
+            get {
+                return this.VATField;
+            }
+            set {
+                if ((this.VATField.Equals(value) != true)) {
+                    this.VATField = value;
+                    this.RaisePropertyChanged("VAT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int userID {
+            get {
+                return this.userIDField;
+            }
+            set {
+                if ((this.userIDField.Equals(value) != true)) {
+                    this.userIDField = value;
+                    this.RaisePropertyChanged("userID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ISalonService")]
     public interface ISalonService {
@@ -511,10 +668,10 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Cart[]> getCartItemsAsync(int userID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/removeFromCart", ReplyAction="http://tempuri.org/ISalonService/removeFromCartResponse")]
-        void removeFromCart(int cartID);
+        void removeFromCart(int userID, int prodID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/removeFromCart", ReplyAction="http://tempuri.org/ISalonService/removeFromCartResponse")]
-        System.Threading.Tasks.Task removeFromCartAsync(int cartID);
+        System.Threading.Tasks.Task removeFromCartAsync(int userID, int prodID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/editCartQuantity", ReplyAction="http://tempuri.org/ISalonService/editCartQuantityResponse")]
         void editCartQuantity(int userID, int prodID, int Quantity);
@@ -527,6 +684,18 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/clearCart", ReplyAction="http://tempuri.org/ISalonService/clearCartResponse")]
         System.Threading.Tasks.Task clearCartAsync(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/addInvoice", ReplyAction="http://tempuri.org/ISalonService/addInvoiceResponse")]
+        int addInvoice(int userID, string Products, double Subtotal, double VAT, double Discount, double Shipping, double GrandTotal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/addInvoice", ReplyAction="http://tempuri.org/ISalonService/addInvoiceResponse")]
+        System.Threading.Tasks.Task<int> addInvoiceAsync(int userID, string Products, double Subtotal, double VAT, double Discount, double Shipping, double GrandTotal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getInvoice", ReplyAction="http://tempuri.org/ISalonService/getInvoiceResponse")]
+        Group_Project_WebApplication.ServiceReference1.Invoice getInvoice(int invoiceID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getInvoice", ReplyAction="http://tempuri.org/ISalonService/getInvoiceResponse")]
+        System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Invoice> getInvoiceAsync(int invoiceID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -692,12 +861,12 @@ namespace Group_Project_WebApplication.ServiceReference1 {
             return base.Channel.getCartItemsAsync(userID);
         }
         
-        public void removeFromCart(int cartID) {
-            base.Channel.removeFromCart(cartID);
+        public void removeFromCart(int userID, int prodID) {
+            base.Channel.removeFromCart(userID, prodID);
         }
         
-        public System.Threading.Tasks.Task removeFromCartAsync(int cartID) {
-            return base.Channel.removeFromCartAsync(cartID);
+        public System.Threading.Tasks.Task removeFromCartAsync(int userID, int prodID) {
+            return base.Channel.removeFromCartAsync(userID, prodID);
         }
         
         public void editCartQuantity(int userID, int prodID, int Quantity) {
@@ -714,6 +883,22 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         public System.Threading.Tasks.Task clearCartAsync(int userID) {
             return base.Channel.clearCartAsync(userID);
+        }
+        
+        public int addInvoice(int userID, string Products, double Subtotal, double VAT, double Discount, double Shipping, double GrandTotal) {
+            return base.Channel.addInvoice(userID, Products, Subtotal, VAT, Discount, Shipping, GrandTotal);
+        }
+        
+        public System.Threading.Tasks.Task<int> addInvoiceAsync(int userID, string Products, double Subtotal, double VAT, double Discount, double Shipping, double GrandTotal) {
+            return base.Channel.addInvoiceAsync(userID, Products, Subtotal, VAT, Discount, Shipping, GrandTotal);
+        }
+        
+        public Group_Project_WebApplication.ServiceReference1.Invoice getInvoice(int invoiceID) {
+            return base.Channel.getInvoice(invoiceID);
+        }
+        
+        public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Invoice> getInvoiceAsync(int invoiceID) {
+            return base.Channel.getInvoiceAsync(invoiceID);
         }
     }
 }

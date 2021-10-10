@@ -138,6 +138,7 @@
 
 .checkout .proceed-btn{
     margin: 10px;
+    width: 295px;
     border-radius: 10px;
     font-size:15px;
     font-weight: bold;

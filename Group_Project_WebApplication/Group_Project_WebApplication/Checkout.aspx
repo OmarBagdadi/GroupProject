@@ -85,14 +85,18 @@
                     </div>
                 </div>
                 <div class="col-25">
-                    <div class="checkout-container">
+                    <div runat="server" id="checkOutInvoice" class="checkout-container">
                         <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
                         <p><a href="#">IPHONE 12 Pro Mac</a> <span class="price">$1500</span></p>
                         <p><a href="#">SAMSUNG S21</a> <span class="price">$1500</span></p>
                         <p><a href="#">OPPO F14</a> <span class="price">$1400</span></p>
                         <p><a href="#">HUAWEI 20 Mac</a> <span class="price">$1200</span></p>
                         <hr>
-                        <p>Total <span class="price" style="color:black"><b>$12600</b></span></p>
+                        <p>SubTotal Including VAT<span class="price" style="color:black"><b>R12600</b></span></p>
+                        <p>VAT <span class="price" style="color:black"><b>R12600</b></span></p>
+                        <p>Discount <span class="price" style="color:black"><b>R12600</b></span></p>
+                        <p>Shipping <span class="price" style="color:black"><b>R12600</b></span></p>
+                        <p>Grand Total <span class="price" style="color:black"><b>R12600</b></span></p>
                     </div>
                 </div>
             </div>

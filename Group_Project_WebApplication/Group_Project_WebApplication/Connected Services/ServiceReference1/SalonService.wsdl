@@ -127,6 +127,18 @@
   <wsdl:message name="ISalonService_clearCart_OutputMessage">
     <wsdl:part name="parameters" element="tns:clearCartResponse" />
   </wsdl:message>
+  <wsdl:message name="ISalonService_addInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:addInvoice" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_addInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:getInvoice" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getInvoiceResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISalonService">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/Register" message="tns:ISalonService_Register_InputMessage" />
@@ -207,6 +219,14 @@
     <wsdl:operation name="clearCart">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/clearCart" message="tns:ISalonService_clearCart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/clearCartResponse" message="tns:ISalonService_clearCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/addInvoice" message="tns:ISalonService_addInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/addInvoiceResponse" message="tns:ISalonService_addInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getInvoice" message="tns:ISalonService_getInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getInvoiceResponse" message="tns:ISalonService_getInvoice_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISalonService" type="tns:ISalonService">
@@ -384,6 +404,24 @@
     </wsdl:operation>
     <wsdl:operation name="clearCart">
       <soap:operation soapAction="http://tempuri.org/ISalonService/clearCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addInvoice">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/addInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInvoice">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/getInvoice" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

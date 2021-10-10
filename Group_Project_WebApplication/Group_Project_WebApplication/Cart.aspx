@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="assets/css/Cart-style.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<form runat="server">
     <!-- Banner Starts Here -->
         <div class="banner header-text">
           <div class="owl-banner owl-carousel">
@@ -68,9 +69,6 @@
                                         <h6>R</h6><h6 id="prodTotal">20.00</h6>
                                     </td>
                                     <td>
-                                      <button type="button" class="btn btn-primary btn-sm btn-block">
-                                      <span class="glyphicon glyphicon-share-alt"></span> Edit Product
-                                      </button>
                                       <button type="button" class="btn btn-primary btn-sm btn-block" style="background-color: #f33f3f;">
                                         <span class="glyphicon glyphicon-share-alt"></span> Remove Product
                                       </button>
@@ -138,27 +136,29 @@
                     <div class="checkout">
                         <ul runat="server" id="cartCalculations">
                             <li class="subtotal">Total Including VAT
-                                 <div class ="total"><h6>R60.00</h6></div>
+                                 <div class ="total"><h6>R0.00</h6></div>
                             </li>
                             <li class="subtotal">VAT(15%)
-                              <div class ="total"><h6>R60.00</h6></div>
+                              <div class ="total"><h6>R0.00</h6></div>
                             </li>
                             <li class="subtotal">Discount(20%)
-                              <div class ="total"><h6>R60.00</h6></div>
+                              <div class ="total"><h6>R0.00</h6></div>
                             </li>
                             <li class="subtotal">Shipping Fee
-                              <div class ="total"><h6>R60.00</h6></div>
+                              <div class ="total"><h6>R0.00</h6></div>
                             </li>
                             <li class="cart-total">Total
-                                <div class ="total"><h6>R60.00</h6></div>
+                                <div class ="total"><h6>R0.00</h6></div>
                             </li>
+                            <li class="cart-total"><p runat="server" id="errorMessage" style="color: red"></p></li>
                         </ul>
-                        <a href="Checkout.aspx"class="proceed-btn">Proceed to Checkout</a>
+                        <asp:Button class="proceed-btn" ID="btnCheckout" runat="server" Text="Proceed to Checkout" OnClick="btnCheckout_Click" />
                     </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+</form>
       <!-- Cart Ends Here -->
 </asp:Content>

@@ -383,5 +383,44 @@ namespace Group_Project_Service
             }
             return isInCart;
         }
+
+        public int addInvoice(int userID, string Products, double Subtotal, double VAT, double Discount, double Shipping, double GrandTotal)
+        {
+            int invoiceID = -1;
+            Invoice newInvoice = new Invoice
+            {
+                userID = userID,
+                Products = Products,
+                Subtotal = (decimal)Subtotal,
+                VAT = (decimal)VAT,
+                Discount = (decimal)Discount,
+                ShippingFee = (decimal)Shipping,
+                GrandTotal = (decimal)GrandTotal
+            };
+            db.Invoices.InsertOnSubmit(newInvoice);
+            try
+            {
+                db.SubmitChanges();
+                invoiceID = newInvoice.Id;
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
+            return invoiceID;
+        }
+
+        public Invoice getInvoice(int invoiceID)
+        {
+            Invoice reqInvoice = null;
+            var getInvoice = (from i in db.Invoices
+                              where i.Id.Equals(invoiceID)
+                              select i).FirstOrDefault();
+            if(getInvoice is Invoice)
+            {
+                reqInvoice = getInvoice;
+            }
+            return reqInvoice;
+        }
     }
 }

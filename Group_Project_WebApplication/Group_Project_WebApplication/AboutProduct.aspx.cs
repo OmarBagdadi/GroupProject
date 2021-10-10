@@ -95,7 +95,7 @@ namespace Group_Project_WebApplication
                 }
                 else
                 {
-                    Response.Redirect("Home.aspx");
+                    Response.Redirect(Request.UrlReferrer.ToString());
                 }
                 
             }
@@ -104,6 +104,7 @@ namespace Group_Project_WebApplication
         protected void btnAddCart_Click(object sender, EventArgs e)
         {
             int prodID = int.Parse(Request.QueryString["prodID"].ToString());
+            int userID = int.Parse(Session["UserID"].ToString());
             int Quantity = int.Parse(addQuan.Value.ToString());
             bool isInCart = false;
             foreach (ShoppingCart c in SalonMaster.cart)
@@ -112,12 +113,14 @@ namespace Group_Project_WebApplication
                 {
                     isInCart = true;
                     c.Quantity += Quantity;
+                    client.editCartQuantity(userID, prodID, c.Quantity);
                 }
             }
             if (!isInCart)
             {
                 ShoppingCart newItem = new ShoppingCart(prodID, Quantity);
                 SalonMaster.cart.Add(newItem);
+                client.addToCart(userID, newItem.prodID, newItem.Quantity);
             }
             Response.Redirect("AboutProduct.aspx?prodID=" + prodID);
 

@@ -46,4 +46,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Cart" nillable="true" type="tns:Cart" />
+  <xs:complexType name="Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Discount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GrandTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Products" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShippingFee" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Subtotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VAT" type="xs:decimal" />
+      <xs:element minOccurs="0" name="userID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Invoice" nillable="true" type="tns:Invoice" />
 </xs:schema>

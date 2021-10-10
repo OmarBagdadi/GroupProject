@@ -10,13 +10,30 @@ namespace Group_Project_WebApplication
 {
     public partial class Cart : System.Web.UI.Page
     {
-        string display;
+        private string display;
+        private double subTotal = 0;
+        private string displayDiscount = "";
+        private double discount = 0;
+        private double VAT = 0;
+        private double grandTotal = 0;
+        private int shippingAmount = 60;
         SalonServiceClient client = new SalonServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.QueryString["removeCart"] != null)
+            if(Request.QueryString["removeCartID"] != null)
             {
-
+                int remProdID = int.Parse(Request.QueryString["removeCartID"].ToString());
+                int userID = int.Parse(Session["UserID"].ToString());
+                client.removeFromCart(userID,remProdID);
+                ShoppingCart remItem = null;
+                foreach(ShoppingCart s in SalonMaster.cart)
+                {
+                    if(s.prodID.Equals(remProdID))
+                    {
+                        remItem = s;
+                    }
+                }
+                SalonMaster.cart.Remove(remItem);
             }
             if (!IsPostBack)
             {
@@ -32,12 +49,7 @@ namespace Group_Project_WebApplication
 
         private void displayCart()
         {
-            double subTotal = 0;
-            string displayDiscount = "";
-            double discount = 0;
-            double VAT = 0;
-            double grandTotal = 0;
-            string shippingFee = "R" + 60;
+            string shippingFee = "R" + shippingAmount;
             foreach(ShoppingCart s in SalonMaster.cart)
             {
                 Product p = client.getProduct(s.prodID);
@@ -75,6 +87,7 @@ namespace Group_Project_WebApplication
             {
                 discount = subTotal * (0.1);
                 displayDiscount = "(10%)";
+                shippingAmount = 0;
                 shippingFee = "Free";
             }
             VAT = subTotal - ((subTotal) / (1.15));
@@ -86,7 +99,7 @@ namespace Group_Project_WebApplication
                                 + "<div class =\"total\"><h6>R" + String.Format("{0:0.00}", VAT) + "</h6></div>"
                                 + "</li>"
                                 + "<li class=\"subtotal\">Discount" + displayDiscount
-                                + "<div class =\"total\"><h6>R"+discount+"</h6></div>"
+                                + "<div class =\"total\"><h6>R"+ string.Format("{0:0.00}", discount) +"</h6></div>"
                                 + "</li>"
                                 + "<li class=\"subtotal\">Shipping Fee"
                                 + "<div class =\"total\"><h6>"+ string.Format("{0:0.00}", shippingFee) +"</h6></div>"
@@ -96,6 +109,25 @@ namespace Group_Project_WebApplication
                                 + "</li>";
             cartCalculations.InnerHtml = displayTotals;
             populateCart.InnerHtml = display;
+        }
+
+        protected void btnCheckout_Click(object sender, EventArgs e)
+        {
+            if(SalonMaster.cart.Count>0)
+            {
+                int userID = int.Parse(Session["UserID"].ToString());
+                string invoiceItems = "";
+                foreach(ShoppingCart s in SalonMaster.cart)
+                {
+                    invoiceItems += s.prodID + " " + s.Quantity + "#";
+                }
+                int invoiceID = client.addInvoice(userID, invoiceItems, subTotal, VAT, discount, shippingAmount, grandTotal);
+                Response.Redirect("Checkout.aspx?invoiceID=" + invoiceID);
+            }
+            else
+            {
+                errorMessage.InnerHtml = "There are no items in the cart";
+            }
         }
     }
 }
