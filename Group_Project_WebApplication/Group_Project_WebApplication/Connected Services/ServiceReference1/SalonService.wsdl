@@ -169,6 +169,18 @@
   <wsdl:message name="ISalonService_paidInvoice_OutputMessage">
     <wsdl:part name="parameters" element="tns:paidInvoiceResponse" />
   </wsdl:message>
+  <wsdl:message name="ISalonService_updateProductReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateProductReport" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_updateProductReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateProductReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getProductReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductReport" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getProductReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductReportResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISalonService">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/Register" message="tns:ISalonService_Register_InputMessage" />
@@ -277,6 +289,14 @@
     <wsdl:operation name="paidInvoice">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/paidInvoice" message="tns:ISalonService_paidInvoice_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/paidInvoiceResponse" message="tns:ISalonService_paidInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProductReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/updateProductReport" message="tns:ISalonService_updateProductReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/updateProductReportResponse" message="tns:ISalonService_updateProductReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getProductReport" message="tns:ISalonService_getProductReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getProductReportResponse" message="tns:ISalonService_getProductReport_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISalonService" type="tns:ISalonService">
@@ -517,6 +537,24 @@
     </wsdl:operation>
     <wsdl:operation name="paidInvoice">
       <soap:operation soapAction="http://tempuri.org/ISalonService/paidInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProductReport">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/updateProductReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductReport">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/getProductReport" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

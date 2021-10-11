@@ -68,4 +68,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfInvoice" nillable="true" type="tns:ArrayOfInvoice" />
+  <xs:complexType name="ProductReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalProdsAvaliable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalProdsSold" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="totalHA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="totalHAP" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="totalHAPSold" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="totalHASold" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="totalHP" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="totalHPSold" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductReport" nillable="true" type="tns:ProductReport" />
 </xs:schema>

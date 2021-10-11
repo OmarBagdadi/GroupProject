@@ -74,3 +74,6 @@
 .singleInvoice *{
     display: inline-block;
 }
+.singleInvoice button{
+    margin-left: 50px;
+}

@@ -404,4 +404,30 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="updateProductReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="totalHASold" type="xs:int" />
+        <xs:element minOccurs="0" name="totalHPSold" type="xs:int" />
+        <xs:element minOccurs="0" name="totalHAPSold" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateProductReportResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductReport">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getProductReportResult" nillable="true" type="q11:ProductReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

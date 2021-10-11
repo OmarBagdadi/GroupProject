@@ -46,4 +46,17 @@
       <Column Name="LatestProduct" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ProductReport" Member="ProductReports">
+    <Type Name="ProductReport">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="totalHA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalHP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalHAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalHASold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalHPSold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalHAPSold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalProdsSold" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalProdsAvaliable" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

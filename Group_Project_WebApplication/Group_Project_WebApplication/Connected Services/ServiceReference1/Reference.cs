@@ -609,6 +609,179 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductReport", Namespace="http://schemas.datacontract.org/2004/07/Group_Project_Service")]
+    [System.SerializableAttribute()]
+    public partial class ProductReport : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> TotalProdsAvaliableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> TotalProdsSoldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> totalHAField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> totalHAPField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> totalHAPSoldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> totalHASoldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> totalHPField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> totalHPSoldField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> TotalProdsAvaliable {
+            get {
+                return this.TotalProdsAvaliableField;
+            }
+            set {
+                if ((this.TotalProdsAvaliableField.Equals(value) != true)) {
+                    this.TotalProdsAvaliableField = value;
+                    this.RaisePropertyChanged("TotalProdsAvaliable");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> TotalProdsSold {
+            get {
+                return this.TotalProdsSoldField;
+            }
+            set {
+                if ((this.TotalProdsSoldField.Equals(value) != true)) {
+                    this.TotalProdsSoldField = value;
+                    this.RaisePropertyChanged("TotalProdsSold");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> totalHA {
+            get {
+                return this.totalHAField;
+            }
+            set {
+                if ((this.totalHAField.Equals(value) != true)) {
+                    this.totalHAField = value;
+                    this.RaisePropertyChanged("totalHA");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> totalHAP {
+            get {
+                return this.totalHAPField;
+            }
+            set {
+                if ((this.totalHAPField.Equals(value) != true)) {
+                    this.totalHAPField = value;
+                    this.RaisePropertyChanged("totalHAP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> totalHAPSold {
+            get {
+                return this.totalHAPSoldField;
+            }
+            set {
+                if ((this.totalHAPSoldField.Equals(value) != true)) {
+                    this.totalHAPSoldField = value;
+                    this.RaisePropertyChanged("totalHAPSold");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> totalHASold {
+            get {
+                return this.totalHASoldField;
+            }
+            set {
+                if ((this.totalHASoldField.Equals(value) != true)) {
+                    this.totalHASoldField = value;
+                    this.RaisePropertyChanged("totalHASold");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> totalHP {
+            get {
+                return this.totalHPField;
+            }
+            set {
+                if ((this.totalHPField.Equals(value) != true)) {
+                    this.totalHPField = value;
+                    this.RaisePropertyChanged("totalHP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> totalHPSold {
+            get {
+                return this.totalHPSoldField;
+            }
+            set {
+                if ((this.totalHPSoldField.Equals(value) != true)) {
+                    this.totalHPSoldField = value;
+                    this.RaisePropertyChanged("totalHPSold");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ISalonService")]
     public interface ISalonService {
@@ -774,6 +947,18 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/paidInvoice", ReplyAction="http://tempuri.org/ISalonService/paidInvoiceResponse")]
         System.Threading.Tasks.Task paidInvoiceAsync(int invoiceID, string Address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateProductReport", ReplyAction="http://tempuri.org/ISalonService/updateProductReportResponse")]
+        void updateProductReport(int totalHASold, int totalHPSold, int totalHAPSold);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateProductReport", ReplyAction="http://tempuri.org/ISalonService/updateProductReportResponse")]
+        System.Threading.Tasks.Task updateProductReportAsync(int totalHASold, int totalHPSold, int totalHAPSold);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getProductReport", ReplyAction="http://tempuri.org/ISalonService/getProductReportResponse")]
+        Group_Project_WebApplication.ServiceReference1.ProductReport getProductReport();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getProductReport", ReplyAction="http://tempuri.org/ISalonService/getProductReportResponse")]
+        System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.ProductReport> getProductReportAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1017,6 +1202,22 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         public System.Threading.Tasks.Task paidInvoiceAsync(int invoiceID, string Address) {
             return base.Channel.paidInvoiceAsync(invoiceID, Address);
+        }
+        
+        public void updateProductReport(int totalHASold, int totalHPSold, int totalHAPSold) {
+            base.Channel.updateProductReport(totalHASold, totalHPSold, totalHAPSold);
+        }
+        
+        public System.Threading.Tasks.Task updateProductReportAsync(int totalHASold, int totalHPSold, int totalHAPSold) {
+            return base.Channel.updateProductReportAsync(totalHASold, totalHPSold, totalHAPSold);
+        }
+        
+        public Group_Project_WebApplication.ServiceReference1.ProductReport getProductReport() {
+            return base.Channel.getProductReport();
+        }
+        
+        public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.ProductReport> getProductReportAsync() {
+            return base.Channel.getProductReportAsync();
         }
     }
 }

@@ -509,5 +509,50 @@ namespace Group_Project_Service
             }
             return userInvoices;
         }
+
+        public void updateProductReport(int totalHASold, int totalHPSold, int totalHAPSold)
+        {
+            var getReport = (from r in db.ProductReports
+                             select r).FirstOrDefault();
+            var HA = getHairAcc();
+            var HP = getHairProd();
+            var HAP = getHairApp();
+            var AP = getProducts();
+            foreach(Product p in HA)
+            {
+                getReport.totalHA += p.Quantity;
+            }
+            foreach (Product p in HP)
+            {
+                getReport.totalHP += p.Quantity;
+            }
+            foreach (Product p in HAP)
+            {
+                getReport.totalHAP += p.Quantity;
+            }
+            foreach (Product p in AP)
+            {
+                getReport.TotalProdsAvaliable += p.Quantity;
+            }
+            getReport.totalHASold += totalHASold;
+            getReport.totalHPSold += totalHPSold;
+            getReport.totalHAPSold += totalHAPSold;
+            getReport.TotalProdsSold = totalHAPSold + totalHASold + totalHPSold;
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
+        }
+
+        public ProductReport getProductReport()
+        {
+            ProductReport prodRep = (from r in db.ProductReports
+                                     select r).FirstOrDefault();
+            return prodRep;
+        }
     }
 }

@@ -68,10 +68,25 @@ namespace Group_Project_WebApplication
             int userID = int.Parse(Session["UserID"].ToString());
             string invAddress = address.Value + "#" + city.Value + "#" + province.Value + "#" + postalCode.Value; 
             client.paidInvoice(invoiceID,invAddress);
-            foreach(ShoppingCart s in SalonMaster.cart)
+            int totalHASold = 0;
+            int totalHPSold = 0;
+            int totalHAPSold = 0;
+            foreach (ShoppingCart s in SalonMaster.cart)
             {
+                var getProd = client.getProduct(s.prodID);
+                if(getProd.Category.Equals("HA"))
+                {
+                    totalHASold = s.Quantity;
+                }else if (getProd.Category.Equals("HP"))
+                {
+                    totalHPSold = s.Quantity;
+                }else if (getProd.Category.Equals("HAP"))
+                {
+                    totalHAPSold = s.Quantity;
+                }
                 client.updateProductQuantity(s.prodID, s.Quantity);
             }
+            client.updateProductReport(totalHASold, totalHPSold, totalHAPSold);
             SalonMaster.cart.Clear();
             client.clearCart(userID);
             Response.Redirect("Invoice.aspx?invoiceID="+invoiceID);
