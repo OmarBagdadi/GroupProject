@@ -162,6 +162,22 @@ namespace Group_Project_Service
             return prod;
         }
 
+        public void updateProductQuantity(int prodID, int subtractQunatity)
+        {
+            var reqProd = (from p in db.Products
+                           where p.Id.Equals(prodID)
+                           select p).FirstOrDefault();
+            reqProd.Quantity -= subtractQunatity;
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
+        }
+
         public bool updateProductInfo(int prodID, string prodName, string prodDesc, int prodQuantity, string prodCat, decimal prodPrice, string imgLoc)
         {
             bool didUpdate = false;
@@ -421,6 +437,64 @@ namespace Group_Project_Service
                 reqInvoice = getInvoice;
             }
             return reqInvoice;
+        }
+
+        public void paidInvoice(int invoiceID, string Address)
+        {
+            var reqInvoice = (from i in db.Invoices
+                              where i.Id.Equals(invoiceID)
+                              select i).FirstOrDefault();
+            reqInvoice.isPaid = 1;
+            reqInvoice.Date = DateTime.Now.Date;
+            reqInvoice.Address = Address;
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
+        }
+
+        public bool doesInvoiceExist(int userID)
+        {
+            bool doesExist = false;
+            var userInvoice = (from i in db.Invoices
+                               where i.userID.Equals(userID) && !(i.isPaid.Equals(1))
+                               select i).FirstOrDefault();
+            if(userInvoice is Invoice)
+            {
+                doesExist = true;
+            }else
+            {
+                doesExist = false;
+            }
+            return doesExist;
+        }
+
+        public int updateUnpaidInvoice(int userID, string Products, double Subtotal, double VAT, double Discount, double Shipping, double GrandTotal)
+        {
+            int invoiceID = 0;
+            var userInvoice = (from i in db.Invoices
+                               where i.userID.Equals(userID) && i.isPaid.Equals(null)
+                               select i).FirstOrDefault();
+            userInvoice.Products = Products;
+            userInvoice.Subtotal= (decimal)Subtotal;
+            userInvoice.VAT= (decimal)VAT;
+            userInvoice.Discount= (decimal)Discount;
+            userInvoice.ShippingFee = (decimal)Shipping;
+            userInvoice.GrandTotal = (decimal)GrandTotal;
+            invoiceID = userInvoice.Id;
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
+            return invoiceID;
         }
     }
 }

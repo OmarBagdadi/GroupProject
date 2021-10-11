@@ -414,6 +414,12 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal DiscountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -435,6 +441,9 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         private decimal VATField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> isPaidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int userIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -444,6 +453,32 @@ namespace Group_Project_WebApplication.ServiceReference1 {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
             }
         }
         
@@ -534,6 +569,19 @@ namespace Group_Project_WebApplication.ServiceReference1 {
                 if ((this.VATField.Equals(value) != true)) {
                     this.VATField = value;
                     this.RaisePropertyChanged("VAT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> isPaid {
+            get {
+                return this.isPaidField;
+            }
+            set {
+                if ((this.isPaidField.Equals(value) != true)) {
+                    this.isPaidField = value;
+                    this.RaisePropertyChanged("isPaid");
                 }
             }
         }
@@ -631,6 +679,12 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getProduct", ReplyAction="http://tempuri.org/ISalonService/getProductResponse")]
         System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Product> getProductAsync(int prodID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateProductQuantity", ReplyAction="http://tempuri.org/ISalonService/updateProductQuantityResponse")]
+        void updateProductQuantity(int prodID, int subtractQunatity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateProductQuantity", ReplyAction="http://tempuri.org/ISalonService/updateProductQuantityResponse")]
+        System.Threading.Tasks.Task updateProductQuantityAsync(int prodID, int subtractQunatity);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateProductInfo", ReplyAction="http://tempuri.org/ISalonService/updateProductInfoResponse")]
         bool updateProductInfo(int prodID, string prodName, string prodDesc, int prodQuantity, string prodCat, decimal prodPrice, string imgLoc);
         
@@ -696,6 +750,24 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getInvoice", ReplyAction="http://tempuri.org/ISalonService/getInvoiceResponse")]
         System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Invoice> getInvoiceAsync(int invoiceID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/doesInvoiceExist", ReplyAction="http://tempuri.org/ISalonService/doesInvoiceExistResponse")]
+        bool doesInvoiceExist(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/doesInvoiceExist", ReplyAction="http://tempuri.org/ISalonService/doesInvoiceExistResponse")]
+        System.Threading.Tasks.Task<bool> doesInvoiceExistAsync(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateUnpaidInvoice", ReplyAction="http://tempuri.org/ISalonService/updateUnpaidInvoiceResponse")]
+        int updateUnpaidInvoice(int userID, string Products, double Subtotal, double VAT, double Discount, double Shipping, double GrandTotal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateUnpaidInvoice", ReplyAction="http://tempuri.org/ISalonService/updateUnpaidInvoiceResponse")]
+        System.Threading.Tasks.Task<int> updateUnpaidInvoiceAsync(int userID, string Products, double Subtotal, double VAT, double Discount, double Shipping, double GrandTotal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/paidInvoice", ReplyAction="http://tempuri.org/ISalonService/paidInvoiceResponse")]
+        void paidInvoice(int invoiceID, string Address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/paidInvoice", ReplyAction="http://tempuri.org/ISalonService/paidInvoiceResponse")]
+        System.Threading.Tasks.Task paidInvoiceAsync(int invoiceID, string Address);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -813,6 +885,14 @@ namespace Group_Project_WebApplication.ServiceReference1 {
             return base.Channel.getProductAsync(prodID);
         }
         
+        public void updateProductQuantity(int prodID, int subtractQunatity) {
+            base.Channel.updateProductQuantity(prodID, subtractQunatity);
+        }
+        
+        public System.Threading.Tasks.Task updateProductQuantityAsync(int prodID, int subtractQunatity) {
+            return base.Channel.updateProductQuantityAsync(prodID, subtractQunatity);
+        }
+        
         public bool updateProductInfo(int prodID, string prodName, string prodDesc, int prodQuantity, string prodCat, decimal prodPrice, string imgLoc) {
             return base.Channel.updateProductInfo(prodID, prodName, prodDesc, prodQuantity, prodCat, prodPrice, imgLoc);
         }
@@ -899,6 +979,30 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Invoice> getInvoiceAsync(int invoiceID) {
             return base.Channel.getInvoiceAsync(invoiceID);
+        }
+        
+        public bool doesInvoiceExist(int userID) {
+            return base.Channel.doesInvoiceExist(userID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> doesInvoiceExistAsync(int userID) {
+            return base.Channel.doesInvoiceExistAsync(userID);
+        }
+        
+        public int updateUnpaidInvoice(int userID, string Products, double Subtotal, double VAT, double Discount, double Shipping, double GrandTotal) {
+            return base.Channel.updateUnpaidInvoice(userID, Products, Subtotal, VAT, Discount, Shipping, GrandTotal);
+        }
+        
+        public System.Threading.Tasks.Task<int> updateUnpaidInvoiceAsync(int userID, string Products, double Subtotal, double VAT, double Discount, double Shipping, double GrandTotal) {
+            return base.Channel.updateUnpaidInvoiceAsync(userID, Products, Subtotal, VAT, Discount, Shipping, GrandTotal);
+        }
+        
+        public void paidInvoice(int invoiceID, string Address) {
+            base.Channel.paidInvoice(invoiceID, Address);
+        }
+        
+        public System.Threading.Tasks.Task paidInvoiceAsync(int invoiceID, string Address) {
+            return base.Channel.paidInvoiceAsync(invoiceID, Address);
         }
     }
 }

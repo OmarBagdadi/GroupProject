@@ -121,7 +121,15 @@ namespace Group_Project_WebApplication
                 {
                     invoiceItems += s.prodID + " " + s.Quantity + "#";
                 }
-                int invoiceID = client.addInvoice(userID, invoiceItems, subTotal, VAT, discount, shippingAmount, grandTotal);
+                bool isUnpaidInvoice = client.doesInvoiceExist(userID);
+                int invoiceID = 0;
+                if (isUnpaidInvoice)
+                {
+                    invoiceID = client.updateUnpaidInvoice(userID, invoiceItems, subTotal, VAT, discount, shippingAmount, grandTotal);
+                }else
+                {
+                    invoiceID = client.addInvoice(userID, invoiceItems, subTotal, VAT, discount, shippingAmount, grandTotal);
+                }
                 Response.Redirect("Checkout.aspx?invoiceID=" + invoiceID);
             }
             else

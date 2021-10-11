@@ -73,6 +73,12 @@
   <wsdl:message name="ISalonService_getProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:getProductResponse" />
   </wsdl:message>
+  <wsdl:message name="ISalonService_updateProductQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateProductQuantity" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_updateProductQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateProductQuantityResponse" />
+  </wsdl:message>
   <wsdl:message name="ISalonService_updateProductInfo_InputMessage">
     <wsdl:part name="parameters" element="tns:updateProductInfo" />
   </wsdl:message>
@@ -139,6 +145,24 @@
   <wsdl:message name="ISalonService_getInvoice_OutputMessage">
     <wsdl:part name="parameters" element="tns:getInvoiceResponse" />
   </wsdl:message>
+  <wsdl:message name="ISalonService_doesInvoiceExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:doesInvoiceExist" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_doesInvoiceExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:doesInvoiceExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_updateUnpaidInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUnpaidInvoice" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_updateUnpaidInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUnpaidInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_paidInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:paidInvoice" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_paidInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:paidInvoiceResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISalonService">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/Register" message="tns:ISalonService_Register_InputMessage" />
@@ -184,6 +208,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getProduct" message="tns:ISalonService_getProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getProductResponse" message="tns:ISalonService_getProduct_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="updateProductQuantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/updateProductQuantity" message="tns:ISalonService_updateProductQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/updateProductQuantityResponse" message="tns:ISalonService_updateProductQuantity_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="updateProductInfo">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/updateProductInfo" message="tns:ISalonService_updateProductInfo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/updateProductInfoResponse" message="tns:ISalonService_updateProductInfo_OutputMessage" />
@@ -227,6 +255,18 @@
     <wsdl:operation name="getInvoice">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getInvoice" message="tns:ISalonService_getInvoice_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getInvoiceResponse" message="tns:ISalonService_getInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="doesInvoiceExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/doesInvoiceExist" message="tns:ISalonService_doesInvoiceExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/doesInvoiceExistResponse" message="tns:ISalonService_doesInvoiceExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUnpaidInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/updateUnpaidInvoice" message="tns:ISalonService_updateUnpaidInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/updateUnpaidInvoiceResponse" message="tns:ISalonService_updateUnpaidInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="paidInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/paidInvoice" message="tns:ISalonService_paidInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/paidInvoiceResponse" message="tns:ISalonService_paidInvoice_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISalonService" type="tns:ISalonService">
@@ -330,6 +370,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="updateProductQuantity">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/updateProductQuantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="updateProductInfo">
       <soap:operation soapAction="http://tempuri.org/ISalonService/updateProductInfo" style="document" />
       <wsdl:input>
@@ -422,6 +471,33 @@
     </wsdl:operation>
     <wsdl:operation name="getInvoice">
       <soap:operation soapAction="http://tempuri.org/ISalonService/getInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doesInvoiceExist">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/doesInvoiceExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUnpaidInvoice">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/updateUnpaidInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="paidInvoice">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/paidInvoice" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

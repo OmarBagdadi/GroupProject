@@ -53,15 +53,9 @@
                         <p>Already have an account? <a href="Login.aspx">Sign In</a></p>
                     </div>
 
-                    <div runat="server" id="uInvoice" visible="false" class="Invoices">
-                      <h6>Invoice ID</h6>
-                      <a href="Invoice.aspx">
-                        <button type="button" class="btn btn-primary btn-sm btn-block">
-                        <asp:Button class="btn btn-primary btn-sm btn-block" ID="btnInvoice" runat="server" Text="Button" />
-                        <span class="glyphicon glyphicon-share-alt"></span> View Invoice
-                        </button>
-                      </a>
-                    </div>
+                     <div class="userInvoices">
+                         <h6></h6>
+                     </div>
             
                     <div class="return">
                         <a href="Home.aspx">Return</a>

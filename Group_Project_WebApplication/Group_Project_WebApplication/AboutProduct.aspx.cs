@@ -142,7 +142,8 @@ namespace Group_Project_WebApplication
                 string strDesc = newDesc.Value;
                 string strCat = addCategory.Value;
                 int iQuantity = int.Parse(newQuantity.Value.ToString());
-                decimal dPrice = decimal.Parse(newPrice.Value); 
+                string[] dec = newPrice.Value.ToString().Split('.');
+                decimal dPrice = (decimal)(int.Parse(dec[0]) + ((double)int.Parse(dec[1])/100));
                 bool isEdited = client.updateProductInfo(intID, strName, strDesc, iQuantity, strCat,dPrice, newImagePath);
                 if (isEdited)
                 {

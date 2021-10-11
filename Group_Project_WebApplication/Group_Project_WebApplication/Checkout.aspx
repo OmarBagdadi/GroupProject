@@ -24,27 +24,27 @@
             <div class="checkout-row">
                 <div class="col-75">
                     <div class="checkout-container">
-                        <form id="validate" action="/action_page.php">
+                        <form runat="server" id="validate" >
                             <div class="checkout-row">
                                 <div class="col-50">
                                     <h3>Billing Address</h3>
                                     <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                                    <input type="text" id="fname" name="fullname" placeholder="Soeng.Souy" required>
+                                    <input type="text" id="fname" name="fullname" placeholder="John Doe" required>
                                     <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                                    <input type="text" id="email" name="email" placeholder="soeng.souy@gmail.com" required>
-                                    <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                                    <input type="text" id="adr" name="address" placeholder="110 W. 15th Phnom Penh" required>
+                                    <input type="text" id="email" name="email" placeholder="johndoe@gmail.com" required>
+                                    <label for="address"><i class="fa fa-address-card-o"></i> Address</label>
+                                    <input runat="server" id="address" type="text" name="address" placeholder="123 SomeStreet" required>
                                     <label for="city"><i class="fa fa-institution"></i> City</label>
-                                    <input type="text" id="city" name="city" placeholder="Phnom Penh" required>
+                                    <input runat="server" id="city" type="text" name="city" placeholder="Johannesburg" required>
 
                                     <div class="checkout-row">
                                         <div class="col-50">
-                                            <label for="state">State</label>
-                                            <input type="text" id="state" name="state" placeholder="Phnom Penh"required>
+                                            <label for="province">Province</label>
+                                            <input runat="server" type="text" id="province" name="province" placeholder="Gauteng" required>
                                         </div>
                                         <div class="col-50">
-                                            <label for="zip">Zip</label>
-                                            <input type="text" id="zip" name="zip" placeholder="12000"required>
+                                            <label for="postalCode">Postal Code</label>
+                                            <input runat="server" type="text" id="postalCode" name="postalCode" placeholder="1234" required>
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                     </div>
 
                                     <label for="cname">Name on Card</label>
-                                    <input type="text" id="cname" name="cardname" placeholder="Soeng Souy"required>
+                                    <input type="text" id="cname" name="cardname" placeholder="Visa"required>
                                     <label for="ccnum">Credit card number</label>
                                     <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"required>
                                     <label for="expmonth">Exp Month</label>
@@ -77,10 +77,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <label>
-                            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-                            </label>
-                            <input type="submit" value="Continue to checkout" class="btn">
+                            <asp:Button class="btn" ID="btnPurchase" runat="server" Text="Purchase" OnClick="btnPurchase_Click" />
                         </form>
                     </div>
                 </div>
@@ -117,10 +114,10 @@
                 city: {
                     required: true,
                 },
-                state: {
+                province: {
                     required: true,
                 },
-                zip: {
+                postalCode: {
                     required: true,
                 },
                 cardname: {

@@ -45,6 +45,9 @@ namespace Group_Project_Service
         Product getProduct(int prodID);
 
         [OperationContract]
+        void updateProductQuantity(int prodID, int subtractQunatity);
+
+        [OperationContract]
         bool updateProductInfo(int prodID,string prodName,string prodDesc,int prodQuantity,string prodCat,decimal prodPrice,string imgLoc);
 
         [OperationContract]
@@ -76,5 +79,14 @@ namespace Group_Project_Service
 
         [OperationContract]
         Invoice getInvoice(int invoiceID);
+
+        [OperationContract]
+        bool doesInvoiceExist(int userID);
+
+        [OperationContract]
+        int updateUnpaidInvoice(int userID, string Products, double Subtotal, double VAT, double Discount, double Shipping, double GrandTotal);
+
+        [OperationContract]
+        void paidInvoice(int invoiceID, string Address);
     }
 }

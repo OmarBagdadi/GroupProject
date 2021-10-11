@@ -27,7 +27,7 @@
                                 <div class="card">
                                     <div class="card-header p-4">
                                         <a class="pt-2 d-inline-block" href="Home.aspx" data-abc="true">SimplySalon.com</a>
-                                        <div class="float-right">
+                                        <div runat="server" id="invNumDate" class="float-right">
                                             <h3 class="mb-0">Invoice #BBB10234</h3>
                                             Date: 12 Jun,2019
                                         </div>
@@ -42,7 +42,7 @@
                                                 <div>Email: simplysalon@gmail.com</div>
                                                 <div>Phone: +27 11 123 4567</div>
                                             </div>
-                                            <div class="col-sm-6 ">
+                                            <div runat="server" id="invAddress" class="col-sm-6 ">
                                                 <h5 class="mb-3">To:</h5>
                                                 <h3 class="text-dark mb-1">Customer Name</h3>
                                                 <div>Customer Address</div>
@@ -57,17 +57,15 @@
                                                     <tr>
                                                         <th class="center">#</th>
                                                         <th>Item</th>
-                                                        <th>Description</th>
                                                         <th class="right">Price</th>
                                                         <th class="center">Qty</th>
                                                         <th class="right">Total</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody runat="server" id="invProducts">
                                                     <tr>
                                                         <td class="center">1</td>
                                                         <td class="left strong">Iphone 10X</td>
-                                                        <td class="left">Iphone 10X with headphone</td>
                                                         <td class="right">$1500</td>
                                                         <td class="center">10</td>
                                                         <td class="right">$15,000</td>
@@ -75,7 +73,6 @@
                                                     <tr>
                                                         <td class="center">2</td>
                                                         <td class="left">Iphone 8X</td>
-                                                        <td class="left">Iphone 8X with extended warranty</td>
                                                         <td class="right">$1200</td>
                                                         <td class="center">10</td>
                                                         <td class="right">$12,000</td>
@@ -83,7 +80,6 @@
                                                     <tr>
                                                         <td class="center">3</td>
                                                         <td class="left">Samsung 4C</td>
-                                                        <td class="left">Samsung 4C with extended warranty</td>
                                                         <td class="right">$800</td>
                                                         <td class="center">10</td>
                                                         <td class="right">$8000</td>
@@ -91,7 +87,6 @@
                                                     <tr>
                                                         <td class="center">4</td>
                                                         <td class="left">Google Pixel</td>
-                                                        <td class="left">Google prime with Amazon prime membership</td>
                                                         <td class="right">$500</td>
                                                         <td class="center">10</td>
                                                         <td class="right">$5000</td>
@@ -104,12 +99,18 @@
                                             </div>
                                             <div class="col-lg-4 col-sm-5 ml-auto">
                                                 <table class="table table-clear">
-                                                    <tbody>
+                                                    <tbody runat="server" id="invTotals">
                                                         <tr>
                                                             <td class="left">
-                                                                <strong class="text-dark">Subtotal</strong>
+                                                                <strong class="text-dark">Subtotal Including VAT</strong>
                                                             </td>
                                                             <td class="right">$28,809,00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="left">
+                                                                <strong class="text-dark">VAT (15%)</strong>
+                                                            </td>
+                                                            <td class="right">$2,304,00</td>
                                                         </tr>
                                                         <tr>
                                                             <td class="left">
@@ -119,13 +120,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="left">
-                                                                <strong class="text-dark">VAT (10%)</strong>
-                                                            </td>
-                                                            <td class="right">$2,304,00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="left">
-                                                                <strong class="text-dark">Total</strong> </td>
+                                                                <strong class="text-dark">Grand Total</strong> </td>
                                                             <td class="right">
                                                                 <strong class="text-dark">$20,744,00</strong>
                                                             </td>

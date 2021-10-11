@@ -161,6 +161,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="updateProductQuantity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="prodID" type="xs:int" />
+        <xs:element minOccurs="0" name="subtractQunatity" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateProductQuantityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="updateProductInfo">
     <xs:complexType>
       <xs:sequence>
@@ -328,6 +341,53 @@
       <xs:sequence>
         <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getInvoiceResult" nillable="true" type="q9:Invoice" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doesInvoiceExist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doesInvoiceExistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="doesInvoiceExistResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateUnpaidInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="Products" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Subtotal" type="xs:double" />
+        <xs:element minOccurs="0" name="VAT" type="xs:double" />
+        <xs:element minOccurs="0" name="Discount" type="xs:double" />
+        <xs:element minOccurs="0" name="Shipping" type="xs:double" />
+        <xs:element minOccurs="0" name="GrandTotal" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateUnpaidInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateUnpaidInvoiceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="paidInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="invoiceID" type="xs:int" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="paidInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

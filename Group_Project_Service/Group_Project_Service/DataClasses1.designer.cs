@@ -699,6 +699,12 @@ namespace Group_Project_Service
 		
 		private decimal _GrandTotal;
 		
+		private System.Nullable<int> _isPaid;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private string _Address;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -719,6 +725,12 @@ namespace Group_Project_Service
     partial void OnShippingFeeChanged();
     partial void OnGrandTotalChanging(decimal value);
     partial void OnGrandTotalChanged();
+    partial void OnisPaidChanging(System.Nullable<int> value);
+    partial void OnisPaidChanged();
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
     #endregion
 		
 		public Invoice()
@@ -882,6 +894,66 @@ namespace Group_Project_Service
 					this._GrandTotal = value;
 					this.SendPropertyChanged("GrandTotal");
 					this.OnGrandTotalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isPaid", DbType="Int")]
+		public System.Nullable<int> isPaid
+		{
+			get
+			{
+				return this._isPaid;
+			}
+			set
+			{
+				if ((this._isPaid != value))
+				{
+					this.OnisPaidChanging(value);
+					this.SendPropertyChanging();
+					this._isPaid = value;
+					this.SendPropertyChanged("isPaid");
+					this.OnisPaidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(MAX)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
 				}
 			}
 		}

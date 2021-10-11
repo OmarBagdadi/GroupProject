@@ -41,6 +41,9 @@
       <Column Name="Discount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="ShippingFee" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="GrandTotal" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="isPaid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

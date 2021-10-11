@@ -53,7 +53,7 @@
                                         <p class="product-description" runat="server" id="prodDesc"><textarea runat="server" id="newDesc" type="description" rows="5" cols="60" visible="false" required></textarea></p>
                                         <p class="product-description" runat="server" id="prodAvaliable">Avaliable: <input runat="server" id="newQuantity" type="number" onkeydown="return false" visible="false" min="1" required></p>
                                         <p class="product-description" runat="server" id="hideQuantity">Quantity: <input runat="server" id="addQuan" type="number" value="1" min="1" onkeydown="return false" visible="false" required></p>
-                                        <h4 class="price">current price: <span runat="server" id="currentPrice">R<input runat="server" id="newPrice" type="text" pattern="[0-9]+,[0-9]+" visible="false" required></span></h4>
+                                        <h4 class="price">current price: <span runat="server" id="currentPrice">R<input runat="server" id="newPrice" type="text" pattern="[0-9]+.[0-9]+" visible="false" required></span></h4>
                                         <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
                                     </div>
                                     <div><p runat="server" id="userMessage" visible="false"></p></div>
