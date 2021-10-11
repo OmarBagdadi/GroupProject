@@ -81,6 +81,9 @@ namespace Group_Project_Service
         Invoice getInvoice(int invoiceID);
 
         [OperationContract]
+        List<Invoice> getUserInvoice(int userID);
+
+        [OperationContract]
         bool doesInvoiceExist(int userID);
 
         [OperationContract]

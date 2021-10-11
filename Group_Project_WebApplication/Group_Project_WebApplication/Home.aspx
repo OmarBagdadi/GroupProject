@@ -42,7 +42,8 @@
                     <a href="Products.aspx">view all products <i class="fa fa-angle-right"></i></a>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="owl-banner owl-carousel">
+                    <div class="col-md-4">
                   <div class="product-item">
                     <a href="#"><img src="assets/images/product_01.jpg" alt=""></a>
                     <div class="down-content">
@@ -62,12 +63,12 @@
                       <a href="Cart.aspx" hidden>
                         <button type="button" class="btn btn-primary btn-sm btn-block">
                         <span class="glyphicon glyphicon-share-alt"></span> Add to Cart
-                      </button>
+                        </button>
                       </a>
                       <a href="AboutProduct.aspx" hidden>
                         <button type="button" class="btn btn-primary btn-sm btn-block">
                         <span class="glyphicon glyphicon-share-alt"></span> Edit Product
-                      </button>
+                        </button>
                       </a>
                     </div>
                   </div>
@@ -162,6 +163,8 @@
                     </div>
                   </div>
                 </div>
+                </div>
+                
               </div>
           </div>
         </div>

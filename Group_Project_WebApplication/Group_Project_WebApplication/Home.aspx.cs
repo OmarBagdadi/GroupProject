@@ -37,7 +37,7 @@ namespace Group_Project_WebApplication
             foreach(Product p in LP)
             {
                 
-                products += "<div class=\"col-md-4\">"
+                products += "<div class=\"col-lg-4 col-md-4 all \">"
                             + "<div class=\"product-item\">"
                             + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\"><img src=\"" + p.ImageLocation + "\" alt=\"\"></a>"
                             + "<div class=\"down-content\">"

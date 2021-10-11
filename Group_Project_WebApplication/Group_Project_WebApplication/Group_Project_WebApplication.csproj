@@ -83,6 +83,7 @@
     <Content Include="assets\css\Login.css" />
     <Content Include="assets\css\owl.css" />
     <Content Include="assets\css\Register.css" />
+    <Content Include="assets\css\Reports.css" />
     <Content Include="assets\css\Star.css" />
     <Content Include="assets\css\templatemo-sixteen.css" />
     <Content Include="assets\css\UserDropdown.css" />
@@ -172,7 +173,9 @@
     <Content Include="assets\js\custom.js" />
     <Content Include="assets\js\isotope.js" />
     <Content Include="assets\js\jquery-1.11.1.min.js" />
+    <Content Include="assets\js\loader.js" />
     <Content Include="assets\js\owl.js" />
+    <Content Include="assets\js\ReportTabs.js" />
     <Content Include="assets\js\slick.js" />
     <Content Include="assets\js\Star.js" />
     <Content Include="assets\js\user-menu.js" />

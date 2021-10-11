@@ -343,6 +343,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getUserInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getUserInvoiceResult" nillable="true" type="q10:ArrayOfInvoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="doesInvoiceExist">
     <xs:complexType>
       <xs:sequence>

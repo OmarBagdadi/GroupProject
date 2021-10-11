@@ -95,7 +95,8 @@ namespace Group_Project_WebApplication
                             vuEmail.InnerText = Session["UserEmail"].ToString();
                             vuPhoneNo.Visible = true;
                             vuPhoneNo.InnerText = Session["UserPhoneNo"].ToString();
-                            btnRegister.Text = "View Invoices";
+                            btnRegister.Visible = false;
+                            displayInvoices();
                         }
                     }
                     else
@@ -108,6 +109,35 @@ namespace Group_Project_WebApplication
                         btnRegister.Text = "Register Account";
                     }
                 }
+            }
+        }
+        private void displayInvoices()
+        {
+            if(Session["UserID"] != null)
+            {
+                userInvoices.Visible = true;
+                int userID = int.Parse(Session["UserID"].ToString());
+                var clientInvoices = client.getUserInvoice(userID);
+                string display = "<h1>Invoices</h1>";
+                if(clientInvoices.Count()>0)
+                {
+                    foreach (ServiceReference1.Invoice i in clientInvoices)
+                    {
+                        display += "<div class=\"singleInvoice\">"
+                                + "<label for=\"\">Invoice #" + i.Id + "</label>"
+                                + "<a href=\"Invoice.aspx?invoiceID=" + i.Id + "\">"
+                                + "<button type=\"button\" class=\"btn btn-primary btn-sm btn-block\">"
+                                + "<span class=\"glyphicon glyphicon-share-alt\"></span> View Invoice"
+                                + "</button>"
+                                + "</a>"
+                                + "</div>";
+                    }
+                }else
+                {
+                    display += "There are no invoices in your account yet";
+                }
+                
+                userInvoices.InnerHtml = display;
             }
         }
 
@@ -194,7 +224,6 @@ namespace Group_Project_WebApplication
                     }
                 }
             }
-            
         }
     }
 }

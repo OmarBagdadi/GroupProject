@@ -70,3 +70,7 @@
     margin-top: 20px;
     text-align: center;
 }
+
+.singleInvoice *{
+    display: inline-block;
+}

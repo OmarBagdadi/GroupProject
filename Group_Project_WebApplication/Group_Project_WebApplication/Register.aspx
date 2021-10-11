@@ -53,8 +53,16 @@
                         <p>Already have an account? <a href="Login.aspx">Sign In</a></p>
                     </div>
 
-                     <div class="userInvoices">
-                         <h6></h6>
+                     <div class="userInvoices" runat="server" id="userInvoices" visible="false">
+                         <h1>Invoices</h1>
+                         <div class="singleInvoice">
+                             <label for="">Invoice #2</label>
+                              <a href="Invoice.aspx">
+                                  <button type="button" class="btn btn-primary btn-sm btn-block">
+                                  <span class="glyphicon glyphicon-share-alt"></span> View Invoice
+                                  </button>
+                              </a>
+                         </div>
                      </div>
             
                     <div class="return">

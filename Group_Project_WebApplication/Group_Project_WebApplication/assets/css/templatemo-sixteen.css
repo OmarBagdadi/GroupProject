@@ -598,10 +598,16 @@ header .navbar {
 }
 
 .products .container .container-background{
+	display: flex;
 	height: 1300px;
 }
 
-.products .row .filters{
+.products .container .owl-carousel{
+	height: 1000px;
+	color : black;
+}
+
+.products .row .filters {
 	margin-top: 30px;
 }
 

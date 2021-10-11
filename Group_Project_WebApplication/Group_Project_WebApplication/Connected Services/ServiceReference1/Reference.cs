@@ -751,6 +751,12 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getInvoice", ReplyAction="http://tempuri.org/ISalonService/getInvoiceResponse")]
         System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Invoice> getInvoiceAsync(int invoiceID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getUserInvoice", ReplyAction="http://tempuri.org/ISalonService/getUserInvoiceResponse")]
+        Group_Project_WebApplication.ServiceReference1.Invoice[] getUserInvoice(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getUserInvoice", ReplyAction="http://tempuri.org/ISalonService/getUserInvoiceResponse")]
+        System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Invoice[]> getUserInvoiceAsync(int userID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/doesInvoiceExist", ReplyAction="http://tempuri.org/ISalonService/doesInvoiceExistResponse")]
         bool doesInvoiceExist(int userID);
         
@@ -979,6 +985,14 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Invoice> getInvoiceAsync(int invoiceID) {
             return base.Channel.getInvoiceAsync(invoiceID);
+        }
+        
+        public Group_Project_WebApplication.ServiceReference1.Invoice[] getUserInvoice(int userID) {
+            return base.Channel.getUserInvoice(userID);
+        }
+        
+        public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Invoice[]> getUserInvoiceAsync(int userID) {
+            return base.Channel.getUserInvoiceAsync(userID);
         }
         
         public bool doesInvoiceExist(int userID) {

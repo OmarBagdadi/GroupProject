@@ -49,8 +49,10 @@ namespace Group_Project_WebApplication
                                 + "<div>Email: "+userEmail+"</div>"
                                 + "<div>Phone: "+userPhone+"</div>";
             string displayProducts = "";
+            int index = 0;
             foreach(string s in prods)
             {
+                index++;
                 if(!s.Equals(""))
                 {
                     string[] cartItem = s.Split(' ');
@@ -58,7 +60,7 @@ namespace Group_Project_WebApplication
                     int Quantity = int.Parse(cartItem[1]);
                     var prod = client.getProduct(prodID);
                     displayProducts += "<tr>"
-                                    + "<td class=\"center\">1</td>"
+                                    + "<td class=\"center\">"+index+"</td>"
                                     + "<td class=\"left strong\">" + prod.Name + "</td>"
                                     + "<td class=\"right\">R" + String.Format("{0:0.00}", prod.Price) + "</td>"
                                     + "<td class=\"center\">" + Quantity + "</td>"
@@ -69,7 +71,7 @@ namespace Group_Project_WebApplication
             string shipping = "";
             if(reqInvoice.ShippingFee > 0)
             {
-                shipping = "R" + reqInvoice.ShippingFee;
+                shipping = "R" + String.Format("{0:0.00}", reqInvoice.ShippingFee);
             }else
             {
                 shipping = "Free";

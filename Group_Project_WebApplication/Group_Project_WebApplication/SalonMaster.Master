@@ -71,6 +71,7 @@ https://templatemo.com/tm-546-sixteen-clothing
                           <li><img src="assets/images/edit-icon.png"><a href="Register.aspx">Edit Profile</a></li>
                           <li visible="false"><img src="assets/images/register-staff-icon.png"><a href="Register.aspx">Register Staff</a></li>
                           <li visible="false"><img src="assets/images/manage-product.png"><a href="AddRemoveProduct.aspx">Manage Products</a></li>
+                          <li visible="false"><img src="assets/images/report-icon.png"><a href="Report.aspx">Statistics</a></li>
                           <li><img src="assets/images/Shopping-Cart.jfif"><a href="Cart.aspx">My Cart</a></li>
                           <li><img src="assets/images/log-out-icon.png"><a href="Logout.aspx">Log Out</a></li>
                         </ul>

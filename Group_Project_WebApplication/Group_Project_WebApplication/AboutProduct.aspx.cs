@@ -82,13 +82,23 @@ namespace Group_Project_WebApplication
                         }
                         int productID = int.Parse(Request.QueryString["prodID"].ToString());
                         var product = client.getProduct(productID);
+                        string strQunatity = "";
+                        if(product.Quantity == 0)
+                        {
+                            addQuan.Visible = false;
+                            btnAddCart.Visible = false;
+                            strQunatity = "<h6>Out Of Stock</h6>";
+                        }else
+                        {
+                            strQunatity = product.Quantity.ToString();
+                        }
                         string PImage = "<div class=\"preview-pic tab-content\">"
                                             + "<div class=\"tab-pane active\" id=\"pic-1\"><img src=\"" + product.ImageLocation + "\" /></div>"
                                             + "</div>";
                         prodImage.InnerHtml = PImage;
                         prodName.InnerHtml = product.Name;
                         prodDesc.InnerHtml = product.Description;
-                        prodAvaliable.InnerHtml = product.Quantity.ToString();
+                        prodAvaliable.InnerHtml = strQunatity;
                         currentPrice.InnerHtml = String.Format("{0:0.00}",product.Price);
                         addQuan.Attributes.Add("max",product.Quantity.ToString());
                     }

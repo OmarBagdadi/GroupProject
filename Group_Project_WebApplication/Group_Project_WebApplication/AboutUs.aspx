@@ -9,8 +9,8 @@
           <div class="row">
             <div class="col-md-12">
               <div class="text-content">
-                <h4>contact us</h4>
-                <h2>get in touch with us</h2>
+                <h4>About us</h4>
+                <h2>get to know us</h2>
               </div>
             </div>
           </div>
@@ -143,49 +143,6 @@
                   <span>Market Research</span>
                   <p>Aamir, in looking for an exciting challange decided to join the team on their little project in bringing you the hair products you now know and love.</p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-gear"></i>
-              </div>
-              <div class="down-content">
-                <h4>Product Management</h4>
-                <p>Each of our products are carefully selected, taking into account pricing, as well as utility and smell, if you require more specialised items, please feel free to contact us.</p>
-                <a href="#" class="filled-button">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-gear"></i>
-              </div>
-              <div class="down-content">
-                <h4>Customer Relations</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat.</p>
-                <a href="#" class="filled-button">Details</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-gear"></i>
-              </div>
-              <div class="down-content">
-                <h4>Global Collection</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat.</p>
-                <a href="#" class="filled-button">Read More</a>
               </div>
             </div>
           </div>

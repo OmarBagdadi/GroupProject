@@ -496,5 +496,18 @@ namespace Group_Project_Service
             }
             return invoiceID;
         }
+
+        public List<Invoice> getUserInvoice(int userID)
+        {
+            List<Invoice> userInvoices = new List<Invoice>();
+            var reqInvoices = (from i in db.Invoices
+                               where i.userID.Equals(userID)
+                               select i);
+            foreach(Invoice i in reqInvoices)
+            {
+                userInvoices.Add(i);
+            }
+            return userInvoices;
+        }
     }
 }

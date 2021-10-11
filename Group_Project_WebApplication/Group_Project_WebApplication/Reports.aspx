@@ -3,114 +3,177 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <title>Reports</title>
-    <title>Reports</title>
-    <script type="text/javascript" src="assets/js/reportgraphuser.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {
-            packages: ['corechart']
-        });
-    </script>
-    <link rel="stylesheet" href="assets/css/report.css">
-    <script type="text/javascript" src="reportgraphinventory.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/Reports.css">
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <%-- Code Snippet for the Bar Graph: < https://www.studentstutorial.com/html/google-chart-tutorial.php > --%>
 
-    <div class="call-to-action">
+    <!-- Banner Starts Here -->
+         <div class="banner header-text">
+              <div>
+                <div class="Reports-banner"></div>
+                  <div class="text-content">
+                    <h4>Reports</h4>
+                    <h2>Website Statistics</h2>
+                  </div>
+              </div>
+          </div>
+          <!-- Banner Ends Here -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div runat="server" id="isEdit" class="inner-content">
-
-
-                        <div id="usercontainer" style="width: 550px; height: 400px; margin: 0 auto"></div>
-                        <!-- Users Registered Graph -->
-                        <script language="JavaScript">
-                            function drawChart() {
-                                /* Define the chart to be drawn.*/
-                                var data = google.visualization.arrayToDataTable([
-                                    ['Page Vist', 'Students Tutorial'],
-                                    ['2012', 10000],
-                                    ['2013', 23000],
-                                    ['2014', 46000],
-                                    ['2015', 49000],
-                                    ['2016', 55000],
-                                    ['2017', 100000]
-                                ]);
-                                var options = {
-                                    title: 'Page visit per year',
-                                    isStacked: true
-                                };
-                                /* Instantiate and draw the chart.*/
-                                var chart = new google.visualization.BarChart(document.getElementById('usercontainer'));
-                                chart.draw(data, options);
-                            }
-                            google.charts.setOnLoadCallback(drawChart);
-                        </script>
-
-                        <div>
-                            <div id="inventorycontainer" style="width: 50%; height: 100%"></div>
-                            <script>
-                                anychart.onDocumentReady(function () {
-
-                                    // set the data
-                                    var data = {
-                                        header: ["Name", "Death toll"],
-                                        rows: [
-                                            ["Hair Appliances", 15],
-                                            ["Hair Products", 87],
-                                            ["Hair Accessories", 65]
-                                        ]
-                                    };
-
-                                    // create the chart
-                                    var chart = anychart.bar();
-
-                                    // add the data
-                                    chart.data(data);
-
-                                    // set the chart title
-                                    chart.title("The deadliest earthquakes in the XXth century");
-
-                                    // draw
-                                    chart.container("inventorycontainer");
-                                    chart.draw();
-                                });
-                            </script>
+                <div class="inner-content">
+                    <div class="tabContainer">
+                        <div class="buttonContainer">
+                            <button onclick="showPanel(0,'#f44336')">User Reports</button>
+                            <button onclick="showPanel(1,'#f44336')">Product Reports</button>
                         </div>
-
+                        <div class="tabPanel">
+                            <div class="userGraph" id="columnchart_values" style="width: 1050px; height: 600px;"></div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                  <div class="down-content">
+                                    <h4>Total Registered Users</h4>
+                                    <p>Quantity: 25</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="product-item">
+                                  <div class="down-content">
+                                    <h4>Total Registered Users</h4>
+                                    <p>Quantity: 25</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="product-item">
+                                  <div class="down-content">
+                                    <h4>Total Registered Users</h4>
+                                    <p>Quantity: 25</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="product-item">
+                                  <div class="down-content">
+                                    <h4>Total Registered Users</h4>
+                                    <p>Quantity: 25</p>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="tabPanel">
+                            <div class="userGraph" id="chart_values" style="width: 1050px; height: 600px;"></div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                  <div class="down-content">
+                                    <h4>Total Registered Users</h4>
+                                    <p>Quantity: 25</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="product-item">
+                                  <div class="down-content">
+                                    <h4>Total Registered Users</h4>
+                                    <p>Quantity: 25</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="product-item">
+                                  <div class="down-content">
+                                    <h4>Total Registered Users</h4>
+                                    <p>Quantity: 25</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="product-item">
+                                  <div class="down-content">
+                                    <h4>Total Registered Users</h4>
+                                    <p>Quantity: 25</p>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
                     </div>
                 </div>
+                </div>
             </div>
-        </div>
-    </div>
+            </div>
+    <script type="text/javascript" src="assets/js/ReportTabs.js"></script>
+    <script type="text/javascript" src="assets/js/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ["Element", "Users", { role: "style" }],
+                ["Monday", 10, "#0033ff"],
+                ["Teusday", 20, "#0033ff"],
+                ["Wednesday", 30, "#0033ff"],
+                ["Thursday", 45, "color: #0033ff"],
+                ["Friday", 50, "color: #0033ff"],
+                ["Saturday", 60, "color: #0033ff"],
+                ["Sunday", 70, "color: #0033ff"]
+            ]);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                {
+                    calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation"
+                },
+                2]);
+
+            var options = {
+                title: "Number of new Users in the week",
+                width: 1050,
+                height: 600,
+                bar: { groupWidth: "95%" },
+                legend: { position: "none" },
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+            chart.draw(view, options);
+        }
+    </script>
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ["Element", "Users", { role: "style" }],
+                ["Hair Products", 10, "#0033ff"],
+                ["Hair Accessories", 20, "#0033ff"],
+                ["Hair Appliances", 30, "#0033ff"],
+                ["Total products Sold", 60, "#0033ff"]
+            ]);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                {
+                    calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation"
+                },
+                2]);
+
+            var options = {
+                title: "Products Sold per Category",
+                width: 1050,
+                height: 600,
+                bar: { groupWidth: "95%" },
+                legend: { position: "none" },
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById("chart_values"));
+            chart.draw(view, options);
+        }
+    </script>
 
 </asp:Content>
-
-<%--<div>
-                            <table class="graph">
-                                <caption>Inventory</caption>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ITEMS</th>
-                                        <th scope="col">CATEGORIES</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- NB: Leave the style-height in percentage and the span/value without percentage -->
-                                    <tr style="height: 85%">
-                                        <th scope="row">HA</th>
-                                        <td><span>85</span></td>
-                                    </tr>
-                                    <tr style="height: 23%">
-                                        <th scope="row">HP</th>
-                                        <td><span>23</span></td>
-                                    </tr>
-                                    <tr style="height: 17%">
-                                        <th scope="row">HAP</th>
-                                        <td><span>17</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>--%>

@@ -132,6 +132,7 @@
               </div>
             </div>
         </div>
+    </div>
     </form>
     <script src="assets/js/Star.js"></script>
 </asp:Content>

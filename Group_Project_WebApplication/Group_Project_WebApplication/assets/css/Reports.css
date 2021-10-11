@@ -1,0 +1,52 @@
+.Reports-banner {
+    padding: 200px 0px;
+    background-image: url(../images/Reports-Background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter: opacity(0.5);
+}
+.tabContainer{
+    transform: translateX(-200px);
+    margin: 50px;
+    width: 120%;
+    height: 1500px;
+}
+.tabContainer .buttonContainer{
+    height: 50px;
+}
+.tabContainer .buttonContainer button{
+    border-radius: 20px;
+    width: 25%;
+    height: 150%;
+    float: left;
+    border: none;
+    outline:none;
+    cursor: pointer;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+    background-color: white;
+}
+.tabContainer .buttonContainer button:hover{
+    background-color: #d7d4d4;
+}
+.tabContainer .tabPanel{
+    border-radius: 20px;
+    height: 85%;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding-top: 105px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 22px;
+    display: none;
+}
+
+.tabPanel .userGraph{
+    margin-left: 150px;
+}
+.tabPanel .col-md-4{
+    display: inline-block;
+}
