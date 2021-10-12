@@ -63,7 +63,8 @@ namespace Group_Project_WebApplication
                         vuEmail.InnerText = Session["UserEmail"].ToString();
                         vuPhoneNo.Visible = true;
                         vuPhoneNo.InnerText = Session["UserPhoneNo"].ToString();
-                        btnRegister.Text = "View Invoices";
+                        btnRegister.Visible = false;
+                        displayInvoices();
                     }
                 }else if(Session["UserType"].ToString() == "MA")
                 {
@@ -208,6 +209,7 @@ namespace Group_Project_WebApplication
                             registerStatus.Visible = true;
                             registerStatus.InnerText = "Registered Sucessfully";
                             registerStatus.Attributes.Add("style", "color: green");
+                            Response.Redirect("Login.aspx");
                         }
                         else
                         {
