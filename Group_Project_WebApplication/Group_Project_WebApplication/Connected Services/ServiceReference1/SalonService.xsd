@@ -91,6 +91,7 @@
   <xs:complexType name="Review">
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="dateReviewed" type="xs:dateTime" />
       <xs:element minOccurs="0" name="prodID" type="xs:int" />
       <xs:element minOccurs="0" name="userID" type="xs:int" />
       <xs:element minOccurs="0" name="userReview" nillable="true" type="xs:string" />

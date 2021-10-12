@@ -561,7 +561,8 @@ namespace Group_Project_Service
             {
                 userID = userID,
                 prodID = productID,
-                userReview = review
+                userReview = review,
+                dateReviewed = DateTime.Now
             };
             db.Reviews.InsertOnSubmit(newReview);
             try
@@ -603,6 +604,7 @@ namespace Group_Project_Service
                              where r.userID.Equals(userID) && r.prodID.Equals(productID)
                              select r).FirstOrDefault();
             updateRev.userReview = review;
+            updateRev.dateReviewed = DateTime.Now;
             try
             {
                 db.SubmitChanges();
@@ -616,10 +618,10 @@ namespace Group_Project_Service
         public bool reviewExist(int userID, int productID)
         {
             bool doesExist = false;
-            var checkReview= (from r in db.Reviews
+            var checkReview = (from r in db.Reviews
                              where r.userID.Equals(userID) && r.prodID.Equals(productID)
                              select r).FirstOrDefault();
-            if(checkReview is Review)
+            if(checkReview != null)
             {
                 doesExist = true;
             }

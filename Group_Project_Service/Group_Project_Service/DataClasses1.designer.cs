@@ -1269,6 +1269,8 @@ namespace Group_Project_Service
 		
 		private string _userReview;
 		
+		private System.DateTime _dateReviewed;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1281,6 +1283,8 @@ namespace Group_Project_Service
     partial void OnprodIDChanged();
     partial void OnuserReviewChanging(string value);
     partial void OnuserReviewChanged();
+    partial void OndateReviewedChanging(System.DateTime value);
+    partial void OndateReviewedChanged();
     #endregion
 		
 		public Review()
@@ -1288,7 +1292,7 @@ namespace Group_Project_Service
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -1364,6 +1368,26 @@ namespace Group_Project_Service
 					this._userReview = value;
 					this.SendPropertyChanged("userReview");
 					this.OnuserReviewChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateReviewed", DbType="DateTime NOT NULL")]
+		public System.DateTime dateReviewed
+		{
+			get
+			{
+				return this._dateReviewed;
+			}
+			set
+			{
+				if ((this._dateReviewed != value))
+				{
+					this.OndateReviewedChanging(value);
+					this.SendPropertyChanging();
+					this._dateReviewed = value;
+					this.SendPropertyChanged("dateReviewed");
+					this.OndateReviewedChanged();
 				}
 			}
 		}

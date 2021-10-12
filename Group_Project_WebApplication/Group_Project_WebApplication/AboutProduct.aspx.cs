@@ -58,7 +58,7 @@ namespace Group_Project_WebApplication
                 btnAddProduct.Visible = false;
                 if (Request.QueryString["prodID"] != null)
                 {
-                    if(!IsPostBack)
+                    if (!IsPostBack)
                     {
                         if (Session["UserType"] != null)
                         {
@@ -76,6 +76,7 @@ namespace Group_Project_WebApplication
                         }
                         else
                         {
+                            btnAddReview.Visible = false;
                             hideQuantity.Visible = false;
                             btnAddCart.Visible = false;
                             btnEditProduct.Visible = false;
@@ -101,13 +102,14 @@ namespace Group_Project_WebApplication
                         prodAvaliable.InnerHtml = strQunatity;
                         currentPrice.InnerHtml = String.Format("{0:0.00}",product.Price);
                         addQuan.Attributes.Add("max",product.Quantity.ToString());
-                        if(Session["UserID"]!= null)
+                        if(Session["UserID"] != null)
                         {
                             int userID = int.Parse(Session["UserID"].ToString());
-                            if (client.reviewExist(userID, productID))
+                            bool doesReviewExist = client.reviewExist(userID, productID);
+                            if (doesReviewExist)
                             {
-                                btnAddReview.Text = "Edit Review";
-                                btnPostReview.Text = "Post";
+                                btnAddReview.Text = "Edit review";
+                                btnPostReview.Text = "Edit";
                             }
                         }
                     }
@@ -235,7 +237,7 @@ namespace Group_Project_WebApplication
                     display += "<div class=\"review\">"
                             + "<div class=\"body-review\">"
                             + "<div class=\"name-review\">"+user.Name + " " + user.Surname +"</div>"
-                            + "<div class=\"place-review\">"+userType+"</div>"
+                            + "<div class=\"place-review\">"+userType+"<p>"+r.dateReviewed+" </p></div>"
                             + "<div class=\"desc-review\">"+r.userReview+"</div>"
                             + "</div>"
                             + "</div>";
@@ -258,12 +260,12 @@ namespace Group_Project_WebApplication
                 int userID = int.Parse(Session["UserID"].ToString());
                 string review = userReview.Value;
                 bool doesReviewExist = client.reviewExist(userID, prodID);
-                if(doesReviewExist)
-                {
-                    client.updateReview(userID, prodID, review);
-                }else
+                if(!doesReviewExist)
                 {
                     client.addReview(userID, prodID, review);
+                }else
+                {
+                    client.updateReview(userID, prodID, review);
                 }
                 Response.Redirect("AboutProduct.aspx?prodID=" + prodID);
             }

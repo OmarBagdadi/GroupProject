@@ -795,6 +795,9 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime dateReviewedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int prodIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -822,6 +825,19 @@ namespace Group_Project_WebApplication.ServiceReference1 {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime dateReviewed {
+            get {
+                return this.dateReviewedField;
+            }
+            set {
+                if ((this.dateReviewedField.Equals(value) != true)) {
+                    this.dateReviewedField = value;
+                    this.RaisePropertyChanged("dateReviewed");
                 }
             }
         }
