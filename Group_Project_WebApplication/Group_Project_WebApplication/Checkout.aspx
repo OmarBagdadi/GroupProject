@@ -18,7 +18,8 @@
           </div>
         </div>
         <!-- Banner Ends Here -->
-
+        
+        <!--Code snippit taken from https://www.soengsouy.com/2019/11/how-to-design-checkout-form-html-and-css.html -->
         <div class="checkout">
             <h2>Checkout </h2>
             <div class="checkout-row">

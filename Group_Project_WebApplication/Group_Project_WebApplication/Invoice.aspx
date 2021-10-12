@@ -11,13 +11,13 @@
                   <div class="text-content">
                     <h4>Invoice</h4>
                     <h2>Customer Invoice</h2>
-                  </div>
-              </div>
+                </div>
             </div>
         </div>
         <!-- Banner Ends Here -->
 
         <!-- Page Content -->
+        <!--Code snippit taken from https://bbbootstrap.com/snippets/ecommerce-product-invoice-template-33361338 -->
         <div class="Invoice">
             <div class="container">
                 <div class="row">

@@ -510,34 +510,86 @@ namespace Group_Project_Service
             return userInvoices;
         }
 
-        public void updateProductReport(int totalHASold, int totalHPSold, int totalHAPSold)
+        public void updateProductReport()
         {
             var getReport = (from r in db.ProductReports
                              select r).FirstOrDefault();
-            var HA = getHairAcc();
-            var HP = getHairProd();
-            var HAP = getHairApp();
             var AP = getProducts();
-            foreach(Product p in HA)
-            {
-                getReport.totalHA += p.Quantity;
-            }
-            foreach (Product p in HP)
-            {
-                getReport.totalHP += p.Quantity;
-            }
-            foreach (Product p in HAP)
-            {
-                getReport.totalHAP += p.Quantity;
-            }
+            int totalProds = 0;
+            int totalHA = 0;
+            int totalHP = 0;
+            int totalHAP = 0;
+            
             foreach (Product p in AP)
             {
-                getReport.TotalProdsAvaliable += p.Quantity;
+                totalProds += p.Quantity;
+                if(p.Category.Equals("HA"))
+                {
+                    totalHA += p.Quantity;
+                } else if (p.Category.Equals("HP"))
+                {
+                    totalHP += p.Quantity;
+                } else if (p.Category.Equals("HAP"))
+                {
+                    totalHAP += p.Quantity;
+                }
             }
+            var invoices = (from i in db.Invoices
+                            select i);
+            decimal earnings = 0;
+            int totalHASold = 0;
+            int totalHPSold = 0;
+            int totalHAPSold = 0;
+            decimal totalHAearnings = 0;
+            decimal totalHPearnings = 0;
+            decimal totalHAPearnings = 0;
+            foreach (Invoice i in invoices)
+            {
+                earnings += i.GrandTotal;
+                string[] prods = i.Products.Split('#');
+                foreach(string p in prods)
+                {
+                    if(!p.Equals(""))
+                    {
+                        string[] prodInfo = p.Split(' ');
+                        int prodID = int.Parse(prodInfo[0]);
+                        int Quantity = int.Parse(prodInfo[1]);
+                        var singleProd = getProduct(prodID);
+                        if (singleProd.Category.Equals("HA"))
+                        {
+                            totalHASold += Quantity;
+                            totalHAearnings += singleProd.Price * Quantity;
+                        }
+                        else if (singleProd.Category.Equals("HP"))
+                        {
+                            totalHPSold += Quantity;
+                            totalHPearnings += singleProd.Price * Quantity;
+                        }
+                        else if (singleProd.Category.Equals("HAP"))
+                        {
+                            totalHAPSold += Quantity;
+                            totalHAPearnings += singleProd.Price * Quantity;
+                        }
+                    }
+                }
+            }
+
+            getReport.totalHA = totalHA;
+            getReport.totalHP = totalHP;
+            getReport.totalHAP = totalHAP;
+
+            getReport.TotalProdsAvaliable = totalProds;
+
             getReport.totalHASold += totalHASold;
             getReport.totalHPSold += totalHPSold;
             getReport.totalHAPSold += totalHAPSold;
-            getReport.TotalProdsSold = totalHAPSold + totalHASold + totalHPSold;
+
+            getReport.TotalProdsSold = getReport.totalHAPSold + getReport.totalHASold + getReport.totalHPSold;
+
+            getReport.totalHAearnings = totalHAearnings;
+            getReport.totalHPearnings = totalHPearnings;
+            getReport.totalHAPearnings = totalHAPearnings;
+            getReport.totalEarnings = earnings;
             try
             {
                 db.SubmitChanges();

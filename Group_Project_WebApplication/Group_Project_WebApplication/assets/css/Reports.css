@@ -29,7 +29,7 @@
     background-color: white;
 }
 .tabContainer .buttonContainer button:hover{
-    background-color: #d7d4d4;
+    background-color: white;
 }
 .tabContainer .tabPanel{
     border-radius: 0 20px 20px 20px;

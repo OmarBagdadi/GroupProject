@@ -86,7 +86,6 @@ namespace Group_Project_WebApplication
                 }
                 client.updateProductQuantity(s.prodID, s.Quantity);
             }
-            client.updateProductReport(totalHASold, totalHPSold, totalHAPSold);
             SalonMaster.cart.Clear();
             client.clearCart(userID);
             Response.Redirect("Invoice.aspx?invoiceID="+invoiceID);

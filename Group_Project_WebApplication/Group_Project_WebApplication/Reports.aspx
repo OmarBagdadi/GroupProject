@@ -26,23 +26,9 @@
                 <div class="inner-content">
                     <div class="tabContainer">
                         <div class="buttonContainer">
-                            <button onclick="showPanel(0,'#f44336')">User Reports</button>
-                            <button onclick="showPanel(1,'#f44336')">Product Reports</button>
+                            <button onclick="showPanel(0,'white')">Product Reports</button>
                         </div>
                         <div class="tabPanel">
-                            <div class="userGraph" id="columnchart_values" style="width: 1050px; height: 600px;"></div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                  <div class="down-content">
-                                    <h4>Total Registered Users</h4>
-                                    <p>Quantity: 25</p>
-                                  </div>
-                                </div>
-                              </div>
-                              
-                        </div>
-                        <div class="tabPanel">
-                            <div class="userGraph" id="chart_values" style="width: 1050px; height: 600px;"></div>
                                 <div class="col-md-4">
                                     <div class="product-item">
                                     <div class="down-content">
@@ -65,6 +51,7 @@
                                     <th scope="col"class="text-white">Product Category</th>
                                     <th scope="col"class="text-white">Avaliable</th>
                                     <th scope="col"class="text-white">Sold</th>
+                                    <th scope="col"class="text-white">Earnings</th>
                                 </tr>
                             </thead>
                             <tbody runat="server" id="populateReportTable">
@@ -92,78 +79,8 @@
             </div>
             </div>
     <script type="text/javascript" src="assets/js/ReportTabs.js"></script>
-    <script type="text/javascript" src="assets/js/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", { packages: ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ["Element", "Users", { role: "style" }],
-                ["Monday", 10, "#0033ff"],
-                ["Teusday", 20, "#0033ff"],
-                ["Wednesday", 30, "#0033ff"],
-                ["Thursday", 45, "color: #0033ff"],
-                ["Friday", 50, "color: #0033ff"],
-                ["Saturday", 60, "color: #0033ff"],
-                ["Sunday", 70, "color: #0033ff"]
-            ]);
-
-            var view = new google.visualization.DataView(data);
-            view.setColumns([0, 1,
-                {
-                    calc: "stringify",
-                    sourceColumn: 1,
-                    type: "string",
-                    role: "annotation"
-                },
-                2]);
-
-            var options = {
-                title: "Number of new Users in the week",
-                width: 1050,
-                height: 600,
-                bar: { groupWidth: "95%" },
-                legend: { position: "none" },
-            };
-            var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
-            chart.draw(view, options);
-        }
-    </script>
-    <div runat="server" id="productGraph">
-        <script type="text/javascript">
-            google.charts.load("current", { packages: ['corechart'] });
-            google.charts.setOnLoadCallback(drawChart);
-            function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                    ["Element", "Users", { role: "style" }],
-                    ["Hair Products", 10, "#0033ff"],
-                    ["Hair Accessories", 20, "#0033ff"],
-                    ["Hair Appliances", 30, "#0033ff"],
-                    ["Total products Sold", 60, "#0033ff"]
-                ]);
-
-                var view = new google.visualization.DataView(data);
-                view.setColumns([0, 1,
-                    {
-                        calc: "stringify",
-                        sourceColumn: 1,
-                        type: "string",
-                        role: "annotation"
-                    },
-                    2]);
-
-                var options = {
-                    title: "Products Sold per Category",
-                    width: 1050,
-                    height: 600,
-                    bar: { groupWidth: "95%" },
-                    legend: { position: "none" },
-                };
-                var chart = new google.visualization.ColumnChart(document.getElementById("chart_values"));
-                chart.draw(view, options);
-            }
-        </script>
-    </div>
+    
+</div>
     
 
 </asp:Content>

@@ -42,12 +42,12 @@ namespace Group_Project_Service
     partial void InsertProduct(Product instance);
     partial void UpdateProduct(Product instance);
     partial void DeleteProduct(Product instance);
-    partial void InsertProductReport(ProductReport instance);
-    partial void UpdateProductReport(ProductReport instance);
-    partial void DeleteProductReport(ProductReport instance);
     partial void InsertReview(Review instance);
     partial void UpdateReview(Review instance);
     partial void DeleteReview(Review instance);
+    partial void InsertProductReport(ProductReport instance);
+    partial void UpdateProductReport(ProductReport instance);
+    partial void DeleteProductReport(ProductReport instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -112,19 +112,19 @@ namespace Group_Project_Service
 			}
 		}
 		
-		public System.Data.Linq.Table<ProductReport> ProductReports
-		{
-			get
-			{
-				return this.GetTable<ProductReport>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Review> Reviews
 		{
 			get
 			{
 				return this.GetTable<Review>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ProductReport> ProductReports
+		{
+			get
+			{
+				return this.GetTable<ProductReport>();
 			}
 		}
 	}
@@ -1001,260 +1001,6 @@ namespace Group_Project_Service
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductReport")]
-	public partial class ProductReport : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private System.Nullable<int> _totalHA;
-		
-		private System.Nullable<int> _totalHP;
-		
-		private System.Nullable<int> _totalHAP;
-		
-		private System.Nullable<int> _totalHASold;
-		
-		private System.Nullable<int> _totalHPSold;
-		
-		private System.Nullable<int> _totalHAPSold;
-		
-		private System.Nullable<int> _TotalProdsSold;
-		
-		private System.Nullable<int> _TotalProdsAvaliable;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OntotalHAChanging(System.Nullable<int> value);
-    partial void OntotalHAChanged();
-    partial void OntotalHPChanging(System.Nullable<int> value);
-    partial void OntotalHPChanged();
-    partial void OntotalHAPChanging(System.Nullable<int> value);
-    partial void OntotalHAPChanged();
-    partial void OntotalHASoldChanging(System.Nullable<int> value);
-    partial void OntotalHASoldChanged();
-    partial void OntotalHPSoldChanging(System.Nullable<int> value);
-    partial void OntotalHPSoldChanged();
-    partial void OntotalHAPSoldChanging(System.Nullable<int> value);
-    partial void OntotalHAPSoldChanged();
-    partial void OnTotalProdsSoldChanging(System.Nullable<int> value);
-    partial void OnTotalProdsSoldChanged();
-    partial void OnTotalProdsAvaliableChanging(System.Nullable<int> value);
-    partial void OnTotalProdsAvaliableChanged();
-    #endregion
-		
-		public ProductReport()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHA", DbType="Int")]
-		public System.Nullable<int> totalHA
-		{
-			get
-			{
-				return this._totalHA;
-			}
-			set
-			{
-				if ((this._totalHA != value))
-				{
-					this.OntotalHAChanging(value);
-					this.SendPropertyChanging();
-					this._totalHA = value;
-					this.SendPropertyChanged("totalHA");
-					this.OntotalHAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHP", DbType="Int")]
-		public System.Nullable<int> totalHP
-		{
-			get
-			{
-				return this._totalHP;
-			}
-			set
-			{
-				if ((this._totalHP != value))
-				{
-					this.OntotalHPChanging(value);
-					this.SendPropertyChanging();
-					this._totalHP = value;
-					this.SendPropertyChanged("totalHP");
-					this.OntotalHPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHAP", DbType="Int")]
-		public System.Nullable<int> totalHAP
-		{
-			get
-			{
-				return this._totalHAP;
-			}
-			set
-			{
-				if ((this._totalHAP != value))
-				{
-					this.OntotalHAPChanging(value);
-					this.SendPropertyChanging();
-					this._totalHAP = value;
-					this.SendPropertyChanged("totalHAP");
-					this.OntotalHAPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHASold", DbType="Int")]
-		public System.Nullable<int> totalHASold
-		{
-			get
-			{
-				return this._totalHASold;
-			}
-			set
-			{
-				if ((this._totalHASold != value))
-				{
-					this.OntotalHASoldChanging(value);
-					this.SendPropertyChanging();
-					this._totalHASold = value;
-					this.SendPropertyChanged("totalHASold");
-					this.OntotalHASoldChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHPSold", DbType="Int")]
-		public System.Nullable<int> totalHPSold
-		{
-			get
-			{
-				return this._totalHPSold;
-			}
-			set
-			{
-				if ((this._totalHPSold != value))
-				{
-					this.OntotalHPSoldChanging(value);
-					this.SendPropertyChanging();
-					this._totalHPSold = value;
-					this.SendPropertyChanged("totalHPSold");
-					this.OntotalHPSoldChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHAPSold", DbType="Int")]
-		public System.Nullable<int> totalHAPSold
-		{
-			get
-			{
-				return this._totalHAPSold;
-			}
-			set
-			{
-				if ((this._totalHAPSold != value))
-				{
-					this.OntotalHAPSoldChanging(value);
-					this.SendPropertyChanging();
-					this._totalHAPSold = value;
-					this.SendPropertyChanged("totalHAPSold");
-					this.OntotalHAPSoldChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalProdsSold", DbType="Int")]
-		public System.Nullable<int> TotalProdsSold
-		{
-			get
-			{
-				return this._TotalProdsSold;
-			}
-			set
-			{
-				if ((this._TotalProdsSold != value))
-				{
-					this.OnTotalProdsSoldChanging(value);
-					this.SendPropertyChanging();
-					this._TotalProdsSold = value;
-					this.SendPropertyChanged("TotalProdsSold");
-					this.OnTotalProdsSoldChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalProdsAvaliable", DbType="Int")]
-		public System.Nullable<int> TotalProdsAvaliable
-		{
-			get
-			{
-				return this._TotalProdsAvaliable;
-			}
-			set
-			{
-				if ((this._TotalProdsAvaliable != value))
-				{
-					this.OnTotalProdsAvaliableChanging(value);
-					this.SendPropertyChanging();
-					this._TotalProdsAvaliable = value;
-					this.SendPropertyChanged("TotalProdsAvaliable");
-					this.OnTotalProdsAvaliableChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Review")]
 	public partial class Review : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1388,6 +1134,356 @@ namespace Group_Project_Service
 					this._dateReviewed = value;
 					this.SendPropertyChanged("dateReviewed");
 					this.OndateReviewedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductReport")]
+	public partial class ProductReport : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _totalHA;
+		
+		private int _totalHP;
+		
+		private int _totalHAP;
+		
+		private int _totalHASold;
+		
+		private int _totalHPSold;
+		
+		private int _totalHAPSold;
+		
+		private int _TotalProdsSold;
+		
+		private int _TotalProdsAvaliable;
+		
+		private decimal _totalHAearnings;
+		
+		private decimal _totalHPearnings;
+		
+		private decimal _totalHAPearnings;
+		
+		private decimal _totalEarnings;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OntotalHAChanging(int value);
+    partial void OntotalHAChanged();
+    partial void OntotalHPChanging(int value);
+    partial void OntotalHPChanged();
+    partial void OntotalHAPChanging(int value);
+    partial void OntotalHAPChanged();
+    partial void OntotalHASoldChanging(int value);
+    partial void OntotalHASoldChanged();
+    partial void OntotalHPSoldChanging(int value);
+    partial void OntotalHPSoldChanged();
+    partial void OntotalHAPSoldChanging(int value);
+    partial void OntotalHAPSoldChanged();
+    partial void OnTotalProdsSoldChanging(int value);
+    partial void OnTotalProdsSoldChanged();
+    partial void OnTotalProdsAvaliableChanging(int value);
+    partial void OnTotalProdsAvaliableChanged();
+    partial void OntotalHAearningsChanging(decimal value);
+    partial void OntotalHAearningsChanged();
+    partial void OntotalHPearningsChanging(decimal value);
+    partial void OntotalHPearningsChanged();
+    partial void OntotalHAPearningsChanging(decimal value);
+    partial void OntotalHAPearningsChanged();
+    partial void OntotalEarningsChanging(decimal value);
+    partial void OntotalEarningsChanged();
+    #endregion
+		
+		public ProductReport()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHA", DbType="Int NOT NULL")]
+		public int totalHA
+		{
+			get
+			{
+				return this._totalHA;
+			}
+			set
+			{
+				if ((this._totalHA != value))
+				{
+					this.OntotalHAChanging(value);
+					this.SendPropertyChanging();
+					this._totalHA = value;
+					this.SendPropertyChanged("totalHA");
+					this.OntotalHAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHP", DbType="Int NOT NULL")]
+		public int totalHP
+		{
+			get
+			{
+				return this._totalHP;
+			}
+			set
+			{
+				if ((this._totalHP != value))
+				{
+					this.OntotalHPChanging(value);
+					this.SendPropertyChanging();
+					this._totalHP = value;
+					this.SendPropertyChanged("totalHP");
+					this.OntotalHPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHAP", DbType="Int NOT NULL")]
+		public int totalHAP
+		{
+			get
+			{
+				return this._totalHAP;
+			}
+			set
+			{
+				if ((this._totalHAP != value))
+				{
+					this.OntotalHAPChanging(value);
+					this.SendPropertyChanging();
+					this._totalHAP = value;
+					this.SendPropertyChanged("totalHAP");
+					this.OntotalHAPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHASold", DbType="Int NOT NULL")]
+		public int totalHASold
+		{
+			get
+			{
+				return this._totalHASold;
+			}
+			set
+			{
+				if ((this._totalHASold != value))
+				{
+					this.OntotalHASoldChanging(value);
+					this.SendPropertyChanging();
+					this._totalHASold = value;
+					this.SendPropertyChanged("totalHASold");
+					this.OntotalHASoldChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHPSold", DbType="Int NOT NULL")]
+		public int totalHPSold
+		{
+			get
+			{
+				return this._totalHPSold;
+			}
+			set
+			{
+				if ((this._totalHPSold != value))
+				{
+					this.OntotalHPSoldChanging(value);
+					this.SendPropertyChanging();
+					this._totalHPSold = value;
+					this.SendPropertyChanged("totalHPSold");
+					this.OntotalHPSoldChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHAPSold", DbType="Int NOT NULL")]
+		public int totalHAPSold
+		{
+			get
+			{
+				return this._totalHAPSold;
+			}
+			set
+			{
+				if ((this._totalHAPSold != value))
+				{
+					this.OntotalHAPSoldChanging(value);
+					this.SendPropertyChanging();
+					this._totalHAPSold = value;
+					this.SendPropertyChanged("totalHAPSold");
+					this.OntotalHAPSoldChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalProdsSold", DbType="Int NOT NULL")]
+		public int TotalProdsSold
+		{
+			get
+			{
+				return this._TotalProdsSold;
+			}
+			set
+			{
+				if ((this._TotalProdsSold != value))
+				{
+					this.OnTotalProdsSoldChanging(value);
+					this.SendPropertyChanging();
+					this._TotalProdsSold = value;
+					this.SendPropertyChanged("TotalProdsSold");
+					this.OnTotalProdsSoldChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalProdsAvaliable", DbType="Int NOT NULL")]
+		public int TotalProdsAvaliable
+		{
+			get
+			{
+				return this._TotalProdsAvaliable;
+			}
+			set
+			{
+				if ((this._TotalProdsAvaliable != value))
+				{
+					this.OnTotalProdsAvaliableChanging(value);
+					this.SendPropertyChanging();
+					this._TotalProdsAvaliable = value;
+					this.SendPropertyChanged("TotalProdsAvaliable");
+					this.OnTotalProdsAvaliableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHAearnings", DbType="Money NOT NULL")]
+		public decimal totalHAearnings
+		{
+			get
+			{
+				return this._totalHAearnings;
+			}
+			set
+			{
+				if ((this._totalHAearnings != value))
+				{
+					this.OntotalHAearningsChanging(value);
+					this.SendPropertyChanging();
+					this._totalHAearnings = value;
+					this.SendPropertyChanged("totalHAearnings");
+					this.OntotalHAearningsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHPearnings", DbType="Money NOT NULL")]
+		public decimal totalHPearnings
+		{
+			get
+			{
+				return this._totalHPearnings;
+			}
+			set
+			{
+				if ((this._totalHPearnings != value))
+				{
+					this.OntotalHPearningsChanging(value);
+					this.SendPropertyChanging();
+					this._totalHPearnings = value;
+					this.SendPropertyChanged("totalHPearnings");
+					this.OntotalHPearningsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalHAPearnings", DbType="Money NOT NULL")]
+		public decimal totalHAPearnings
+		{
+			get
+			{
+				return this._totalHAPearnings;
+			}
+			set
+			{
+				if ((this._totalHAPearnings != value))
+				{
+					this.OntotalHAPearningsChanging(value);
+					this.SendPropertyChanging();
+					this._totalHAPearnings = value;
+					this.SendPropertyChanged("totalHAPearnings");
+					this.OntotalHAPearningsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalEarnings", DbType="Money NOT NULL")]
+		public decimal totalEarnings
+		{
+			get
+			{
+				return this._totalEarnings;
+			}
+			set
+			{
+				if ((this._totalEarnings != value))
+				{
+					this.OntotalEarningsChanging(value);
+					this.SendPropertyChanging();
+					this._totalEarnings = value;
+					this.SendPropertyChanged("totalEarnings");
+					this.OntotalEarningsChanged();
 				}
 			}
 		}

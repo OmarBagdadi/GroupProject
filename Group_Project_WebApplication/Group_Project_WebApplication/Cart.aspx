@@ -26,6 +26,7 @@
               <div class="cart-background"></div>
               <div class="inner-content">
                 <section class="mt-5">
+                    <!--Code snippit take form https://codepen.io/EJW4/pen/mdELmee-->
                   <div class="cart">
                     <div class="table-responsive">
                       <div class="btnContinue">

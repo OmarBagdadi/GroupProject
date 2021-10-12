@@ -96,7 +96,7 @@ namespace Group_Project_Service
         void paidInvoice(int invoiceID, string Address);
 
         [OperationContract]
-        void updateProductReport(int totalHASold, int totalHPSold, int totalHAPSold);
+        void updateProductReport();
 
         [OperationContract]
         ProductReport getProductReport();

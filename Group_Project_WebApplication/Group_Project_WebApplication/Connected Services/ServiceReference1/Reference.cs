@@ -622,28 +622,40 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> TotalProdsAvaliableField;
+        private int TotalProdsAvaliableField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> TotalProdsSoldField;
+        private int TotalProdsSoldField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> totalHAField;
+        private decimal totalEarningsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> totalHAPField;
+        private int totalHAField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> totalHAPSoldField;
+        private int totalHAPField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> totalHASoldField;
+        private int totalHAPSoldField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> totalHPField;
+        private decimal totalHAPearningsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> totalHPSoldField;
+        private int totalHASoldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal totalHAearningsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int totalHPField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int totalHPSoldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal totalHPearningsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -669,7 +681,7 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> TotalProdsAvaliable {
+        public int TotalProdsAvaliable {
             get {
                 return this.TotalProdsAvaliableField;
             }
@@ -682,7 +694,7 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> TotalProdsSold {
+        public int TotalProdsSold {
             get {
                 return this.TotalProdsSoldField;
             }
@@ -695,7 +707,20 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> totalHA {
+        public decimal totalEarnings {
+            get {
+                return this.totalEarningsField;
+            }
+            set {
+                if ((this.totalEarningsField.Equals(value) != true)) {
+                    this.totalEarningsField = value;
+                    this.RaisePropertyChanged("totalEarnings");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int totalHA {
             get {
                 return this.totalHAField;
             }
@@ -708,7 +733,7 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> totalHAP {
+        public int totalHAP {
             get {
                 return this.totalHAPField;
             }
@@ -721,7 +746,7 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> totalHAPSold {
+        public int totalHAPSold {
             get {
                 return this.totalHAPSoldField;
             }
@@ -734,7 +759,20 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> totalHASold {
+        public decimal totalHAPearnings {
+            get {
+                return this.totalHAPearningsField;
+            }
+            set {
+                if ((this.totalHAPearningsField.Equals(value) != true)) {
+                    this.totalHAPearningsField = value;
+                    this.RaisePropertyChanged("totalHAPearnings");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int totalHASold {
             get {
                 return this.totalHASoldField;
             }
@@ -747,7 +785,20 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> totalHP {
+        public decimal totalHAearnings {
+            get {
+                return this.totalHAearningsField;
+            }
+            set {
+                if ((this.totalHAearningsField.Equals(value) != true)) {
+                    this.totalHAearningsField = value;
+                    this.RaisePropertyChanged("totalHAearnings");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int totalHP {
             get {
                 return this.totalHPField;
             }
@@ -760,7 +811,7 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> totalHPSold {
+        public int totalHPSold {
             get {
                 return this.totalHPSoldField;
             }
@@ -768,6 +819,19 @@ namespace Group_Project_WebApplication.ServiceReference1 {
                 if ((this.totalHPSoldField.Equals(value) != true)) {
                     this.totalHPSoldField = value;
                     this.RaisePropertyChanged("totalHPSold");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal totalHPearnings {
+            get {
+                return this.totalHPearningsField;
+            }
+            set {
+                if ((this.totalHPearningsField.Equals(value) != true)) {
+                    this.totalHPearningsField = value;
+                    this.RaisePropertyChanged("totalHPearnings");
                 }
             }
         }
@@ -1064,10 +1128,10 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         System.Threading.Tasks.Task paidInvoiceAsync(int invoiceID, string Address);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateProductReport", ReplyAction="http://tempuri.org/ISalonService/updateProductReportResponse")]
-        void updateProductReport(int totalHASold, int totalHPSold, int totalHAPSold);
+        void updateProductReport();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateProductReport", ReplyAction="http://tempuri.org/ISalonService/updateProductReportResponse")]
-        System.Threading.Tasks.Task updateProductReportAsync(int totalHASold, int totalHPSold, int totalHAPSold);
+        System.Threading.Tasks.Task updateProductReportAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getProductReport", ReplyAction="http://tempuri.org/ISalonService/getProductReportResponse")]
         Group_Project_WebApplication.ServiceReference1.ProductReport getProductReport();
@@ -1357,12 +1421,12 @@ namespace Group_Project_WebApplication.ServiceReference1 {
             return base.Channel.paidInvoiceAsync(invoiceID, Address);
         }
         
-        public void updateProductReport(int totalHASold, int totalHPSold, int totalHAPSold) {
-            base.Channel.updateProductReport(totalHASold, totalHPSold, totalHAPSold);
+        public void updateProductReport() {
+            base.Channel.updateProductReport();
         }
         
-        public System.Threading.Tasks.Task updateProductReportAsync(int totalHASold, int totalHPSold, int totalHAPSold) {
-            return base.Channel.updateProductReportAsync(totalHASold, totalHPSold, totalHAPSold);
+        public System.Threading.Tasks.Task updateProductReportAsync() {
+            return base.Channel.updateProductReportAsync();
         }
         
         public Group_Project_WebApplication.ServiceReference1.ProductReport getProductReport() {

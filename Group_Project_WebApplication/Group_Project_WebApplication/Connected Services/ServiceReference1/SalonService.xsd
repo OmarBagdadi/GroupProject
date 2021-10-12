@@ -71,14 +71,18 @@
   <xs:complexType name="ProductReport">
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="TotalProdsAvaliable" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="TotalProdsSold" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="totalHA" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="totalHAP" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="totalHAPSold" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="totalHASold" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="totalHP" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="totalHPSold" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalProdsAvaliable" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalProdsSold" type="xs:int" />
+      <xs:element minOccurs="0" name="totalEarnings" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalHA" type="xs:int" />
+      <xs:element minOccurs="0" name="totalHAP" type="xs:int" />
+      <xs:element minOccurs="0" name="totalHAPSold" type="xs:int" />
+      <xs:element minOccurs="0" name="totalHAPearnings" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalHASold" type="xs:int" />
+      <xs:element minOccurs="0" name="totalHAearnings" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalHP" type="xs:int" />
+      <xs:element minOccurs="0" name="totalHPSold" type="xs:int" />
+      <xs:element minOccurs="0" name="totalHPearnings" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductReport" nillable="true" type="tns:ProductReport" />

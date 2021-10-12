@@ -46,19 +46,6 @@
       <Column Name="LatestProduct" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ProductReport" Member="ProductReports">
-    <Type Name="ProductReport">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="totalHA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="totalHP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="totalHAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="totalHASold" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="totalHPSold" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="totalHAPSold" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TotalProdsSold" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TotalProdsAvaliable" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Review" Member="Reviews">
     <Type Name="Review">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -66,6 +53,23 @@
       <Column Name="prodID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="userReview" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="dateReviewed" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductReport" Member="ProductReports">
+    <Type Name="ProductReport">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="totalHA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="totalHP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="totalHAP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="totalHASold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="totalHPSold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="totalHAPSold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TotalProdsSold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TotalProdsAvaliable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="totalHAearnings" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="totalHPearnings" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="totalHAPearnings" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="totalEarnings" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>
