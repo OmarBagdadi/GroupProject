@@ -25,10 +25,15 @@
                     <!-- Snippet taken from: https://bootsnipp.com/snippets/56bAW -->
                     <div class="card">
                         <div class="container-fliud">
+                            <a href="Products.aspx">
+                            <button type="button" class="btn btn-primary btn-sm btn-block" style="width:20%;transform:translate(70px,-20px)">
+                            <span class="glyphicon glyphicon-share-alt"></span> ← Back to Products
+                            </button>
+                            </a>
                             <div class="wrapper row">
                                 <div runat="server" id="prodImage" class="preview col-md-6">
                                     <div class="preview-pic tab-content">
-                                      <div class="tab-pane active" id="pic-1"><img runat="server" id="oldImage" src="http://placekitten.com/400/252" /></div>
+                                      <div class="tab-pane active" id="pic-1"><img runat="server" id="oldImage" src="" alt="product Image" /></div>
                                       <input runat="server" id="newImage" type="file" accept=".jpg,.jpeg,.png,.jfif" visible="false" >
                                     </div>
                                 </div>
