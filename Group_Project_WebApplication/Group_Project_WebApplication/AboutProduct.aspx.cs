@@ -101,11 +101,14 @@ namespace Group_Project_WebApplication
                         prodAvaliable.InnerHtml = strQunatity;
                         currentPrice.InnerHtml = String.Format("{0:0.00}",product.Price);
                         addQuan.Attributes.Add("max",product.Quantity.ToString());
-                        int userID = int.Parse(Session["UserID"].ToString());
-                        if (client.reviewExist(userID,productID))
+                        if(Session["UserID"]!= null)
                         {
-                            btnAddReview.Text = "Edit Review";
-                            btnPostReview.Text = "Post";
+                            int userID = int.Parse(Session["UserID"].ToString());
+                            if (client.reviewExist(userID, productID))
+                            {
+                                btnAddReview.Text = "Edit Review";
+                                btnPostReview.Text = "Post";
+                            }
                         }
                     }
                 }
