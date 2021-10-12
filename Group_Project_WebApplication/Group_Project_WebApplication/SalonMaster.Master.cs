@@ -73,7 +73,7 @@ namespace Group_Project_WebApplication
                         + "<li><img src=\"assets/images/edit-icon.png\"><a href=\"Register.aspx?viewEdit=EDIT\">Edit Profile</a></li>"
                         + "<li><img src=\"assets/images/register-staff-icon.png\"><a href=\"Register.aspx?registerStaff=REG\">Register Staff</a></li>"
                         + "<li><img src=\"assets/images/manage-product.png\"><a href=\"AddRemoveProduct.aspx\">Add Products</a></li>"
-                        + "<li><img src=\"assets/images/report-icon.png\"><a href=\"Reports.aspx\">Statistics</a></li>"
+                        + "<li><img src=\"assets/images/report-icon.png\"><a href=\"Reports.aspx\">Reports</a></li>"
                         + "<li><img src=\"assets/images/Shopping-Cart.jfif\"><a href=\"Cart.aspx\">My Cart</a></li>"
                         + "<li><img src=\"assets/images/log-out-icon.png\"><a href=\"Logout.aspx\">Log Out</a></li>"
                         + "</ul>"

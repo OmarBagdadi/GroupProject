@@ -84,7 +84,7 @@
     <Content Include="assets\css\owl.css" />
     <Content Include="assets\css\Register.css" />
     <Content Include="assets\css\Reports.css" />
-    <Content Include="assets\css\Star.css" />
+    <Content Include="assets\css\Review.css" />
     <Content Include="assets\css\templatemo-sixteen.css" />
     <Content Include="assets\css\UserDropdown.css" />
     <Content Include="assets\fonts\Custom fonts\Read Me.txt" />
@@ -194,6 +194,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\Group_Project_WebApplication.ServiceReference1.ProductReport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\Group_Project_WebApplication.ServiceReference1.Review.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReference1\SalonService.disco" />

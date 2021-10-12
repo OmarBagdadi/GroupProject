@@ -782,6 +782,99 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Review", Namespace="http://schemas.datacontract.org/2004/07/Group_Project_Service")]
+    [System.SerializableAttribute()]
+    public partial class Review : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int prodIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int userIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string userReviewField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int prodID {
+            get {
+                return this.prodIDField;
+            }
+            set {
+                if ((this.prodIDField.Equals(value) != true)) {
+                    this.prodIDField = value;
+                    this.RaisePropertyChanged("prodID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int userID {
+            get {
+                return this.userIDField;
+            }
+            set {
+                if ((this.userIDField.Equals(value) != true)) {
+                    this.userIDField = value;
+                    this.RaisePropertyChanged("userID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string userReview {
+            get {
+                return this.userReviewField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.userReviewField, value) != true)) {
+                    this.userReviewField = value;
+                    this.RaisePropertyChanged("userReview");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ISalonService")]
     public interface ISalonService {
@@ -815,6 +908,12 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/SignIn", ReplyAction="http://tempuri.org/ISalonService/SignInResponse")]
         System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.User> SignInAsync(string Email, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getUser", ReplyAction="http://tempuri.org/ISalonService/getUserResponse")]
+        Group_Project_WebApplication.ServiceReference1.User getUser(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getUser", ReplyAction="http://tempuri.org/ISalonService/getUserResponse")]
+        System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.User> getUserAsync(int userID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getLatestProducts", ReplyAction="http://tempuri.org/ISalonService/getLatestProductsResponse")]
         Group_Project_WebApplication.ServiceReference1.Product[] getLatestProducts();
@@ -959,6 +1058,36 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getProductReport", ReplyAction="http://tempuri.org/ISalonService/getProductReportResponse")]
         System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.ProductReport> getProductReportAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/addReview", ReplyAction="http://tempuri.org/ISalonService/addReviewResponse")]
+        void addReview(int userID, int productID, string review);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/addReview", ReplyAction="http://tempuri.org/ISalonService/addReviewResponse")]
+        System.Threading.Tasks.Task addReviewAsync(int userID, int productID, string review);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/reviewExist", ReplyAction="http://tempuri.org/ISalonService/reviewExistResponse")]
+        bool reviewExist(int userID, int productID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/reviewExist", ReplyAction="http://tempuri.org/ISalonService/reviewExistResponse")]
+        System.Threading.Tasks.Task<bool> reviewExistAsync(int userID, int productID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateReview", ReplyAction="http://tempuri.org/ISalonService/updateReviewResponse")]
+        void updateReview(int userID, int productID, string review);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/updateReview", ReplyAction="http://tempuri.org/ISalonService/updateReviewResponse")]
+        System.Threading.Tasks.Task updateReviewAsync(int userID, int productID, string review);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getNumReviews", ReplyAction="http://tempuri.org/ISalonService/getNumReviewsResponse")]
+        int getNumReviews(int productID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getNumReviews", ReplyAction="http://tempuri.org/ISalonService/getNumReviewsResponse")]
+        System.Threading.Tasks.Task<int> getNumReviewsAsync(int productID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getReviews", ReplyAction="http://tempuri.org/ISalonService/getReviewsResponse")]
+        Group_Project_WebApplication.ServiceReference1.Review[] getReviews(int productID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISalonService/getReviews", ReplyAction="http://tempuri.org/ISalonService/getReviewsResponse")]
+        System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Review[]> getReviewsAsync(int productID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1026,6 +1155,14 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.User> SignInAsync(string Email, string Password) {
             return base.Channel.SignInAsync(Email, Password);
+        }
+        
+        public Group_Project_WebApplication.ServiceReference1.User getUser(int userID) {
+            return base.Channel.getUser(userID);
+        }
+        
+        public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.User> getUserAsync(int userID) {
+            return base.Channel.getUserAsync(userID);
         }
         
         public Group_Project_WebApplication.ServiceReference1.Product[] getLatestProducts() {
@@ -1218,6 +1355,46 @@ namespace Group_Project_WebApplication.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.ProductReport> getProductReportAsync() {
             return base.Channel.getProductReportAsync();
+        }
+        
+        public void addReview(int userID, int productID, string review) {
+            base.Channel.addReview(userID, productID, review);
+        }
+        
+        public System.Threading.Tasks.Task addReviewAsync(int userID, int productID, string review) {
+            return base.Channel.addReviewAsync(userID, productID, review);
+        }
+        
+        public bool reviewExist(int userID, int productID) {
+            return base.Channel.reviewExist(userID, productID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> reviewExistAsync(int userID, int productID) {
+            return base.Channel.reviewExistAsync(userID, productID);
+        }
+        
+        public void updateReview(int userID, int productID, string review) {
+            base.Channel.updateReview(userID, productID, review);
+        }
+        
+        public System.Threading.Tasks.Task updateReviewAsync(int userID, int productID, string review) {
+            return base.Channel.updateReviewAsync(userID, productID, review);
+        }
+        
+        public int getNumReviews(int productID) {
+            return base.Channel.getNumReviews(productID);
+        }
+        
+        public System.Threading.Tasks.Task<int> getNumReviewsAsync(int productID) {
+            return base.Channel.getNumReviewsAsync(productID);
+        }
+        
+        public Group_Project_WebApplication.ServiceReference1.Review[] getReviews(int productID) {
+            return base.Channel.getReviews(productID);
+        }
+        
+        public System.Threading.Tasks.Task<Group_Project_WebApplication.ServiceReference1.Review[]> getReviewsAsync(int productID) {
+            return base.Channel.getReviewsAsync(productID);
         }
     }
 }

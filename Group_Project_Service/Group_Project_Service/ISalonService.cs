@@ -27,6 +27,9 @@ namespace Group_Project_Service
         User SignIn(string Email,string Password);
 
         [OperationContract]
+        User getUser(int userID);
+
+        [OperationContract]
         List<Product> getLatestProducts();
 
         [OperationContract]
@@ -97,5 +100,20 @@ namespace Group_Project_Service
 
         [OperationContract]
         ProductReport getProductReport();
+
+        [OperationContract]
+        void addReview(int userID,int productID, string review);
+
+        [OperationContract]
+        bool reviewExist(int userID, int productID);
+
+        [OperationContract]
+        void updateReview(int userID, int productID, string review);
+
+        [OperationContract]
+        int getNumReviews(int productID);
+
+        [OperationContract]
+        List<Review> getReviews(int productID);
     }
 }

@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>About Product</title>
     <link rel="stylesheet" href="assets/css/About-Product.css">
-    <link rel="stylesheet" href="assets/css/Star.css">
+    <link rel="stylesheet" href="assets/css/Review.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form runat="server">
@@ -40,16 +40,6 @@
                                             <option value="HAP">Hair Appliance</option>
                                             <option value="HP">Hair Product</option>
                                         </select>
-                                        <div class="rating">
-                                            <div class="stars">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                            </div>
-                                            <span class="review-no">41 reviews</span>
-                                        </div>
                                         <p class="product-description" runat="server" id="prodDesc"><textarea runat="server" id="newDesc" type="description" rows="5" cols="60" visible="false" required></textarea></p>
                                         <p class="product-description" runat="server" id="prodAvaliable">Avaliable: <input runat="server" id="newQuantity" type="number" onkeydown="return false" visible="false" min="1" required></p>
                                         <p class="product-description" runat="server" id="hideQuantity">Quantity: <input runat="server" id="addQuan" type="number" value="1" min="1" onkeydown="return false" visible="false" required></p>
@@ -70,13 +60,6 @@
                                        <div class="body-review">
                                           <div class="name-review">Nathan D.</div>
                                           <div class="place-review">Germany</div>
-                                          <div class="rating">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star-half"></i>
-                                          </div>
                                           <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
                                        </div>
                                     </div>
@@ -84,45 +67,24 @@
                                        <div class="body-review">
                                           <div class="name-review">Nathan D.</div>
                                           <div class="place-review">Germany</div>
-                                          <div class="rating">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star-half"></i>
-                                          </div>
-                                          <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
+                                          <div class="desc-review">
+                                              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
                                        </div>
                                     </div>
                                 </div>
+                                <asp:Button  class="btn btn-primary btn-sm btn-block" style="margin-top: 20px" ID="btnAddReview" runat="server" Text="Add Review" OnClick="btnAddReview_Click" />
                                 <!---->
                                 <!-- Code snippet taken from https://www.codingnepalweb.com/star-rating-html-css-javascript/-->
-                                <div runat="server" id="addRating" class="col-md-12">
-                                    <div class="star-container">
-                                        <div class="post">
-                                            <div class="text">Thanks for rating us!</div>
-                                            <div class="edit">EDIT</div>
-                                          </div>
-                                          <div class="star-widget">
-                                            <input type="radio" name="rate" id="rate-5">
-                                            <label for="rate-5" class="fa fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-4">
-                                            <label runat="server" id="rate4" for="rate-4" class="fa fa-star"></label>
-                                            <input type="radio" name="rate" id="rate3">
-                                            <label for="rate3" class="fa fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-2">
-                                            <label for="rate-2" class="fa fa-star"></label>
-                                            <input type="radio" name="rate" id="rate-1">
-                                            <label for="rate-1" class="fa fa-star"></label>
-                                            <div class="frm" action="#">
-                                              <div class="textarea">
-                                                <textarea runat="server" id="test" cols="30" placeholder="Describe your experience.."></textarea>
-                                              </div>
-                                              <div class="btn">
-                                                <button type="submit">Post</button>
-                                              </div>
+                                <div runat="server" id="addRating" class="col-md-12" visible="false">
+                                    <div class="review-container">
+                                        <div class="frm">
+                                            <div class="textarea">
+                                            <textarea runat="server" id="userReview" cols="30" placeholder="Describe your experience.."></textarea>
                                             </div>
-                                          </div>
+                                            <div class="btn">
+                                            <asp:Button class="aspbutton" ID="btnPostReview" runat="server" Text="Post" OnClick="btnPostReview_Click" />
+                                            </div>
+                                        </div>
                                     </div>
                                     <!---->
                             </div>
@@ -134,5 +96,4 @@
         </div>
     </div>
     </form>
-    <script src="assets/js/Star.js"></script>
 </asp:Content>

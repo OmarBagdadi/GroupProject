@@ -13,7 +13,7 @@ namespace Group_Project_WebApplication
         SalonServiceClient client = new SalonServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            displayReviews();
             if (Request.QueryString["editProdID"] != null)
             {
                 btnAddProduct.Visible = false;
@@ -101,6 +101,12 @@ namespace Group_Project_WebApplication
                         prodAvaliable.InnerHtml = strQunatity;
                         currentPrice.InnerHtml = String.Format("{0:0.00}",product.Price);
                         addQuan.Attributes.Add("max",product.Quantity.ToString());
+                        int userID = int.Parse(Session["UserID"].ToString());
+                        if (client.reviewExist(userID,productID))
+                        {
+                            btnAddReview.Text = "Edit Review";
+                            btnPostReview.Text = "Post";
+                        }
                     }
                 }
                 else
@@ -201,6 +207,71 @@ namespace Group_Project_WebApplication
                 userMessage.Visible = true;
                 userMessage.Attributes.Add("style", "color: red");
                 userMessage.InnerText = "Something went wrong<br>The product was not edited. Try Again";
+            }
+        }
+
+        private void displayReviews()
+        {
+            int productID = int.Parse(Request.QueryString["prodID"].ToString());
+            var getReviews = client.getReviews(productID);
+            string display = "<h3 class=\"title\">Reviews</h3>";
+            if(getReviews.Count() > 0)
+            {
+                foreach (Review r in getReviews)
+                {
+                    var user = client.getUser(r.userID);
+                    string userType = "";
+                    if (user.Usertype.Equals("CU"))
+                    {
+                        userType = "Customer";
+                    }else if (user.Usertype.Equals("MA"))
+                    {
+                        userType = "Manager";
+                    }
+                    
+                    display += "<div class=\"review\">"
+                            + "<div class=\"body-review\">"
+                            + "<div class=\"name-review\">"+user.Name + " " + user.Surname +"</div>"
+                            + "<div class=\"place-review\">"+userType+"</div>"
+                            + "<div class=\"desc-review\">"+r.userReview+"</div>"
+                            + "</div>"
+                            + "</div>";
+                }
+                prodReviews.InnerHtml = display;
+            }
+            else
+            {
+                display += "<h6>There are currently no Reviews be the first to review the product</h6>";
+                prodReviews.InnerHtml = display;
+            }
+            
+        }
+
+        protected void btnPostReview_Click(object sender, EventArgs e)
+        {
+            if(Session["UserID"] != null)
+            {
+                int prodID = int.Parse(Request.QueryString["prodID"].ToString());
+                int userID = int.Parse(Session["UserID"].ToString());
+                string review = userReview.Value;
+                bool doesReviewExist = client.reviewExist(userID, prodID);
+                if(doesReviewExist)
+                {
+                    client.updateReview(userID, prodID, review);
+                }else
+                {
+                    client.addReview(userID, prodID, review);
+                }
+                Response.Redirect("AboutProduct.aspx?prodID=" + prodID);
+            }
+        }
+
+        protected void btnAddReview_Click(object sender, EventArgs e)
+        {
+            if(Session["UserType"] != null)
+            {
+                addRating.Visible = true;
+                btnAddReview.Visible = false;
             }
         }
     }

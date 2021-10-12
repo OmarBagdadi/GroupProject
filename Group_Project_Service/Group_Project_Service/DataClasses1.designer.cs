@@ -45,6 +45,9 @@ namespace Group_Project_Service
     partial void InsertProductReport(ProductReport instance);
     partial void UpdateProductReport(ProductReport instance);
     partial void DeleteProductReport(ProductReport instance);
+    partial void InsertReview(Review instance);
+    partial void UpdateReview(Review instance);
+    partial void DeleteReview(Review instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -114,6 +117,14 @@ namespace Group_Project_Service
 			get
 			{
 				return this.GetTable<ProductReport>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Review> Reviews
+		{
+			get
+			{
+				return this.GetTable<Review>();
 			}
 		}
 	}
@@ -1219,6 +1230,140 @@ namespace Group_Project_Service
 					this._TotalProdsAvaliable = value;
 					this.SendPropertyChanged("TotalProdsAvaliable");
 					this.OnTotalProdsAvaliableChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Review")]
+	public partial class Review : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _userID;
+		
+		private int _prodID;
+		
+		private string _userReview;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnuserIDChanging(int value);
+    partial void OnuserIDChanged();
+    partial void OnprodIDChanging(int value);
+    partial void OnprodIDChanged();
+    partial void OnuserReviewChanging(string value);
+    partial void OnuserReviewChanged();
+    #endregion
+		
+		public Review()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userID", DbType="Int NOT NULL")]
+		public int userID
+		{
+			get
+			{
+				return this._userID;
+			}
+			set
+			{
+				if ((this._userID != value))
+				{
+					this.OnuserIDChanging(value);
+					this.SendPropertyChanging();
+					this._userID = value;
+					this.SendPropertyChanged("userID");
+					this.OnuserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prodID", DbType="Int NOT NULL")]
+		public int prodID
+		{
+			get
+			{
+				return this._prodID;
+			}
+			set
+			{
+				if ((this._prodID != value))
+				{
+					this.OnprodIDChanging(value);
+					this.SendPropertyChanging();
+					this._prodID = value;
+					this.SendPropertyChanged("prodID");
+					this.OnprodIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userReview", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string userReview
+		{
+			get
+			{
+				return this._userReview;
+			}
+			set
+			{
+				if ((this._userReview != value))
+				{
+					this.OnuserReviewChanging(value);
+					this.SendPropertyChanging();
+					this._userReview = value;
+					this.SendPropertyChanged("userReview");
+					this.OnuserReviewChanged();
 				}
 			}
 		}

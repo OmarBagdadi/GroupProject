@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+.review-container {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+    background: #f1f1f1;
+    padding: 20px 30px;
+    border-radius: 5px;
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.frm .textarea {
+    height: 100px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+.frm .textarea textarea {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #eee;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #222;
+    padding: 10px;
+    font-size: 17px;
+    resize: none;
+}
+.textarea textarea:focus{
+  border-color: #444;
+}
+
+.frm .btn {
+    height: 45px;
+    width: 100%;
+    margin: 15px 0;
+}
+.frm .btn .aspbutton{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #444;
+    outline: none;
+    background: #222;
+    color: #999;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.frm .btn button:hover {
+    background: #1b1b1b;
+}

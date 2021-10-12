@@ -37,6 +37,12 @@
   <wsdl:message name="ISalonService_SignIn_OutputMessage">
     <wsdl:part name="parameters" element="tns:SignInResponse" />
   </wsdl:message>
+  <wsdl:message name="ISalonService_getUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUser" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserResponse" />
+  </wsdl:message>
   <wsdl:message name="ISalonService_getLatestProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:getLatestProducts" />
   </wsdl:message>
@@ -181,6 +187,36 @@
   <wsdl:message name="ISalonService_getProductReport_OutputMessage">
     <wsdl:part name="parameters" element="tns:getProductReportResponse" />
   </wsdl:message>
+  <wsdl:message name="ISalonService_addReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:addReview" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_addReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_reviewExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:reviewExist" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_reviewExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:reviewExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_updateReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateReview" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_updateReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getNumReviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNumReviews" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getNumReviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNumReviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getReviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReviews" />
+  </wsdl:message>
+  <wsdl:message name="ISalonService_getReviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReviewsResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISalonService">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/Register" message="tns:ISalonService_Register_InputMessage" />
@@ -201,6 +237,10 @@
     <wsdl:operation name="SignIn">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/SignIn" message="tns:ISalonService_SignIn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/SignInResponse" message="tns:ISalonService_SignIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getUser" message="tns:ISalonService_getUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getUserResponse" message="tns:ISalonService_getUser_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getLatestProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getLatestProducts" message="tns:ISalonService_getLatestProducts_InputMessage" />
@@ -298,6 +338,26 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getProductReport" message="tns:ISalonService_getProductReport_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getProductReportResponse" message="tns:ISalonService_getProductReport_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="addReview">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/addReview" message="tns:ISalonService_addReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/addReviewResponse" message="tns:ISalonService_addReview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="reviewExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/reviewExist" message="tns:ISalonService_reviewExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/reviewExistResponse" message="tns:ISalonService_reviewExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateReview">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/updateReview" message="tns:ISalonService_updateReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/updateReviewResponse" message="tns:ISalonService_updateReview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNumReviews">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getNumReviews" message="tns:ISalonService_getNumReviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getNumReviewsResponse" message="tns:ISalonService_getNumReviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReviews">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonService/getReviews" message="tns:ISalonService_getReviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonService/getReviewsResponse" message="tns:ISalonService_getReviews_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISalonService" type="tns:ISalonService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -339,6 +399,15 @@
     </wsdl:operation>
     <wsdl:operation name="SignIn">
       <soap:operation soapAction="http://tempuri.org/ISalonService/SignIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/getUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -555,6 +624,51 @@
     </wsdl:operation>
     <wsdl:operation name="getProductReport">
       <soap:operation soapAction="http://tempuri.org/ISalonService/getProductReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addReview">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/addReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reviewExist">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/reviewExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateReview">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/updateReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumReviews">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/getNumReviews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReviews">
+      <soap:operation soapAction="http://tempuri.org/ISalonService/getReviews" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

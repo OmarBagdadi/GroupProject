@@ -87,6 +87,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getUserResult" nillable="true" type="q2:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="getLatestProducts">
     <xs:complexType>
       <xs:sequence />
@@ -95,7 +109,7 @@
   <xs:element name="getLatestProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getLatestProductsResult" nillable="true" type="q2:ArrayOfProduct" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getLatestProductsResult" nillable="true" type="q3:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -107,7 +121,7 @@
   <xs:element name="getHairAppResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getHairAppResult" nillable="true" type="q3:ArrayOfProduct" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getHairAppResult" nillable="true" type="q4:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -119,7 +133,7 @@
   <xs:element name="getHairProdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getHairProdResult" nillable="true" type="q4:ArrayOfProduct" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getHairProdResult" nillable="true" type="q5:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -131,7 +145,7 @@
   <xs:element name="getHairAccResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getHairAccResult" nillable="true" type="q5:ArrayOfProduct" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getHairAccResult" nillable="true" type="q6:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -143,7 +157,7 @@
   <xs:element name="getProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getProductsResult" nillable="true" type="q6:ArrayOfProduct" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getProductsResult" nillable="true" type="q7:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -157,7 +171,7 @@
   <xs:element name="getProductResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getProductResult" nillable="true" type="q7:Product" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getProductResult" nillable="true" type="q8:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -266,7 +280,7 @@
   <xs:element name="getCartItemsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getCartItemsResult" nillable="true" type="q8:ArrayOfCart" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getCartItemsResult" nillable="true" type="q9:ArrayOfCart" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -339,7 +353,7 @@
   <xs:element name="getInvoiceResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getInvoiceResult" nillable="true" type="q9:Invoice" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getInvoiceResult" nillable="true" type="q10:Invoice" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -353,7 +367,7 @@
   <xs:element name="getUserInvoiceResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getUserInvoiceResult" nillable="true" type="q10:ArrayOfInvoice" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getUserInvoiceResult" nillable="true" type="q11:ArrayOfInvoice" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -426,7 +440,78 @@
   <xs:element name="getProductReportResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getProductReportResult" nillable="true" type="q11:ProductReport" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getProductReportResult" nillable="true" type="q12:ProductReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addReview">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
+        <xs:element minOccurs="0" name="review" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addReviewResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="reviewExist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="reviewExistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="reviewExistResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateReview">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
+        <xs:element minOccurs="0" name="review" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateReviewResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getNumReviews">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getNumReviewsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getNumReviewsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReviews">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReviewsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Group_Project_Service" minOccurs="0" name="getReviewsResult" nillable="true" type="q13:ArrayOfReview" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -195,6 +195,15 @@ namespace Group_Project_WebApplication
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl prodReviews;
 
         /// <summary>
+        /// btnAddReview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddReview;
+
+        /// <summary>
         /// addRating control.
         /// </summary>
         /// <remarks>
@@ -204,21 +213,21 @@ namespace Group_Project_WebApplication
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl addRating;
 
         /// <summary>
-        /// rate4 control.
+        /// userReview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl rate4;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea userReview;
 
         /// <summary>
-        /// test control.
+        /// btnPostReview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea test;
+        protected global::System.Web.UI.WebControls.Button btnPostReview;
     }
 }

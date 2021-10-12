@@ -554,5 +554,89 @@ namespace Group_Project_Service
                                      select r).FirstOrDefault();
             return prodRep;
         }
+
+        public void addReview(int userID, int productID, string review)
+        {
+            Review newReview = new Review
+            {
+                userID = userID,
+                prodID = productID,
+                userReview = review
+            };
+            db.Reviews.InsertOnSubmit(newReview);
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
+        }
+
+        public int getNumReviews(int productID)
+        {
+            int numReviews = (from r in db.Reviews
+                              where r.prodID.Equals(productID)
+                              select r).Count();
+            return numReviews;
+        }
+
+        public List<Review> getReviews(int productID)
+        {
+            List<Review> productReviews = new List<Review>();
+            var reqReviews = (from r in db.Reviews
+                              where r.prodID.Equals(productID)
+                              select r);
+
+            foreach(Review r in reqReviews)
+            {
+                productReviews.Add(r);
+            }
+
+            return productReviews;
+        }
+
+        public void updateReview(int userID, int productID, string review)
+        {
+            var updateRev = (from r in db.Reviews
+                             where r.userID.Equals(userID) && r.prodID.Equals(productID)
+                             select r).FirstOrDefault();
+            updateRev.userReview = review;
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                ex.GetBaseException();
+            }
+        }
+
+        public bool reviewExist(int userID, int productID)
+        {
+            bool doesExist = false;
+            var checkReview= (from r in db.Reviews
+                             where r.userID.Equals(userID) && r.prodID.Equals(productID)
+                             select r).FirstOrDefault();
+            if(checkReview is Review)
+            {
+                doesExist = true;
+            }
+            else
+            {
+                doesExist = false;
+            }
+            return doesExist;
+        }
+
+        public User getUser(int userID)
+        {
+            User reqUser = (from u in db.Users
+                            where u.Id.Equals(userID)
+                            select u).FirstOrDefault();
+
+            return reqUser;
+        }
     }
 }
