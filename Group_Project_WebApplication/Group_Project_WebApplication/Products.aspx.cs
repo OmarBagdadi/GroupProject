@@ -81,6 +81,7 @@ namespace Group_Project_WebApplication
             foreach (Product p in products)
             {
                 index++;
+                int numReviews = client.getNumReviews(p.Id);
                 page += "<div class=\"col-lg-4 col-md-4 all \">"
                         + "<div class=\"product-item\">"
                         + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\"><img src=\"" + p.ImageLocation + "\" alt=\"\"></a>"
@@ -89,7 +90,7 @@ namespace Group_Project_WebApplication
                         + "<h6>R" + String.Format("{0:0.00}",p.Price) + "</h6>"
                         + "<p>Quantity: " + p.Quantity + "</p>"
                         + "<div class=\"rating\">"
-                        + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\"> <span>Reviews (24)</span></a>"
+                        + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\"> <span>Reviews ("+numReviews+")</span></a>"
                         + "</div>"
                         + "<a href=\"AboutProduct.aspx?prodID=" + p.Id + "\">"
                         + "<button type=\"button\" class=\"btn btn-primary btn-sm btn-block\" " + isCustomer + ">"
