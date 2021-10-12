@@ -13,7 +13,6 @@ namespace Group_Project_WebApplication
         SalonServiceClient client = new SalonServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
-            displayReviews();
             if (Request.QueryString["editProdID"] != null)
             {
                 btnAddProduct.Visible = false;
@@ -55,6 +54,7 @@ namespace Group_Project_WebApplication
             }
             else
             {
+                displayReviews();
                 btnAddProduct.Visible = false;
                 if (Request.QueryString["prodID"] != null)
                 {

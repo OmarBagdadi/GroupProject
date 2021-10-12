@@ -25,11 +25,11 @@
                     <asp:Button class="btnLogin" ID="btnLogIn" runat="server" Text="Log In" OnClick="btnLogIn_Click" />
 
                     <div class="register">
-                        <p>Dont have an account? <a href="#">Register</a></p>
+                        <p>Dont have an account? <a href="Register.aspx">Register</a></p>
                     </div>
             
                     <div class="return">
-                        <a href="index.html">Return</a>
+                        <a href="Home.aspx">Return</a>
                     </div>
                   </div>
                 </div>

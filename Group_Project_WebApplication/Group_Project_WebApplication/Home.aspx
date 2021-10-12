@@ -17,7 +17,7 @@
               <div class="banner-item-02"></div>
                 <div class="text-content">
                   <h4>Book Now</h4>
-                  <h2>Make a Booking Now</h2>
+                  <h2>Booking Coming Soon</h2>
                 </div>
             </div>
             <div>
@@ -179,16 +179,9 @@
               </div>
               <div class="col-md-6">
                 <div class="left-content">
-                  <h4>Looking for the best products?</h4>
-                  <p><a rel="nofollow" href="https://templatemo.com/tm-546-sixteen-clothing" target="_parent">This template</a> is free to use for your business websites. However, you have no permission to redistribute the downloadable ZIP file on any template collection website. <a rel="nofollow" href="https://templatemo.com/contact">Contact us</a> for more info.</p>
-                  <ul class="featured-list">
-                    <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                    <li><a href="#">Consectetur an adipisicing elit</a></li>
-                    <li><a href="#">It aquecorporis nulla aspernatur</a></li>
-                    <li><a href="#">Corporis, omnis doloremque</a></li>
-                    <li><a href="#">Non cum id reprehenderit</a></li>
-                  </ul>
-                  <a href="about.html" class="filled-button">Read More</a>
+                  <h4>Creative &amp; Unique <em>Hair</em> Products</h4>
+                  <p>Take a look at our catalog. We have a range of hair products from hair appliances to Shampoo's </p>
+                  <a href="Products.aspx" class="filled-button">Purchase Now</a>
                 </div>
               </div>
               <div class="col-md-6">
@@ -208,11 +201,11 @@
                 <div class="inner-content">
                   <div class="row">
                     <div class="col-md-8">
-                      <h4>Creative &amp; Unique <em>Hair</em> Products</h4>
-                      <p>Take a look at our catalog. We have a range of hair products from hair appliances to Shampoo's</p>
+                      <h4>More About us</h4>
+                      <p>Curious to find out who we are and what we do</p>
                     </div>
                     <div class="col-md-4">
-                      <a href="products.html" class="filled-button">Purchase Now</a>
+                      <a href="AboutUs.aspx" class="filled-button">About Us</a>
                     </div>
                   </div>
                 </div>
