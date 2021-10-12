@@ -163,7 +163,7 @@ namespace Group_Project_WebApplication
                 string strDesc = newDesc.Value;
                 string strCat = addCategory.Value;
                 int iQuantity = int.Parse(newQuantity.Value.ToString());
-                string[] dec = newPrice.Value.ToString().Split('.');
+                string[] dec = newPrice.Value.ToString().Split(',');
                 decimal dPrice = (decimal)(int.Parse(dec[0]) + ((double)int.Parse(dec[1])/100));
                 bool isEdited = client.updateProductInfo(intID, strName, strDesc, iQuantity, strCat,dPrice, newImagePath);
                 if (isEdited)
@@ -198,7 +198,8 @@ namespace Group_Project_WebApplication
             string prodName = newName.Value;
             string prodDesc = newDesc.Value;
             int prodQuantity = int.Parse(newQuantity.Value);
-            decimal prodPrice = decimal.Parse(newPrice.Value);
+            string[] dec = newPrice.Value.ToString().Split(',');
+            decimal prodPrice = (decimal)(int.Parse(dec[0]) + ((double)int.Parse(dec[1]) / 100));
             string prodCategory = addCategory.Value;
             bool isAdded = client.addProduct(prodName, prodDesc, prodPrice, newImagePath, prodQuantity, prodCategory);
             if(isAdded)
