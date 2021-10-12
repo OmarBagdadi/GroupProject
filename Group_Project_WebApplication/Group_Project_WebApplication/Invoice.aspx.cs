@@ -41,7 +41,7 @@ namespace Group_Project_WebApplication
             string[] address = reqInvoice.Address.Split('#');
             string[] prods = reqInvoice.Products.Split('#');
             string displayInvoiceHead = "<h3 class=\"mb-0\">Invoice #"+invoiceNo+"</h3>"
-                                        + "Date: " + date.Date;
+                                        + "Date: " + date.Date.ToString("dd/MM/yyyy");
             string displayAddress = "<h5 class=\"mb-3\">To:</h5>"
                                 + "<h3 class=\"text-dark mb-1\">"+userName+"</h3>"
                                 + "<div>"+address[0]+"</div>"
