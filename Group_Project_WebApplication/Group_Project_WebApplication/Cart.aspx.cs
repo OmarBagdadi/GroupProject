@@ -22,18 +22,21 @@ namespace Group_Project_WebApplication
         {
             if(Request.QueryString["removeCartID"] != null)
             {
-                int remProdID = int.Parse(Request.QueryString["removeCartID"].ToString());
-                int userID = int.Parse(Session["UserID"].ToString());
-                client.removeFromCart(userID,remProdID);
-                ShoppingCart remItem = null;
-                foreach(ShoppingCart s in SalonMaster.cart)
+                if(!IsPostBack)
                 {
-                    if(s.prodID.Equals(remProdID))
+                    int remProdID = int.Parse(Request.QueryString["removeCartID"].ToString());
+                    int userID = int.Parse(Session["UserID"].ToString());
+                    client.removeFromCart(userID, remProdID);
+                    ShoppingCart remItem = null;
+                    foreach (ShoppingCart s in SalonMaster.cart)
                     {
-                        remItem = s;
+                        if (s.prodID.Equals(remProdID))
+                        {
+                            remItem = s;
+                        }
                     }
+                    SalonMaster.cart.Remove(remItem);
                 }
-                SalonMaster.cart.Remove(remItem);
             }
             if (!IsPostBack)
             {
